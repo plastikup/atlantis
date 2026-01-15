@@ -1,0 +1,84 @@
+extends Node2D
+
+enum DialTypes { fishing, pressure }
+@export var DIAL_TYPE: DialTypes
+
+@export var DIAL_SIZE := 128
+var DIALS_SCALE = DIAL_SIZE / 2048.0
+const FULL_IMG_TRUE_IMG_RATIO := 3.0/4.0
+@export var DIAL_MARGIN := 0.25
+@export var DIAL_COLOR := Color.ALICE_BLUE
+
+@export var FISHING_SPEED_DAMPING := 0.4
+
+const ANGLE_RANGE := PI * 0.61
+
+const EDGE_ANGLE = PI/2 + ANGLE_RANGE
+
+var color_ranges := [{
+	'angle_from': EDGE_ANGLE,
+	'angle_to': -EDGE_ANGLE,
+	'color': Color.WHITE,
+}, {
+	'angle_from': -PI/2 - 0.1,
+	'angle_to': -PI/2 + 0.1,
+	'color': Color.DARK_GREEN,
+}]
+#var color_ranges := [{
+	#'angle_from': -PI/2 - 0.1,
+	#'angle_to': -PI/2 + 0.1,
+	#'color': Color.LAWN_GREEN,
+#}]
+
+
+func _ready() -> void:
+	%needle.scale.y = (DIAL_SIZE * DIAL_MARGIN) / 48
+	
+	%bottom_dial.scale = Vector2(DIALS_SCALE, DIALS_SCALE)
+	%top_dial.scale = Vector2(DIALS_SCALE, DIALS_SCALE)
+
+
+func _process(_delta: float) -> void:
+	if DIAL_TYPE == DialTypes.fishing:
+		# update the moving needle's angle
+		var needle_progress := (sin(Time.get_unix_time_from_system() / FISHING_SPEED_DAMPING))
+		set_needle_angle(remap(needle_progress, -1, 1, 0, 1))
+
+## Expects a float between 0 and 1 to represent the needle's progress between a from angle and a to angle
+func set_needle_angle(needle_progress: float) -> void:
+	%needle.rotation = remap(needle_progress, 0, 1, -1, 1) * ANGLE_RANGE
+
+## Update the color ranges of the dial
+func set_new_color_range(new_color_ranges: Array) -> void:
+	color_ranges = new_color_ranges
+	queue_redraw()
+
+
+func _draw() -> void:
+	draw_arc(Vector2.ZERO, DIAL_SIZE * DIAL_MARGIN, -PI/2 + ANGLE_RANGE, -PI/2 - ANGLE_RANGE, 16, DIAL_COLOR)
+	
+	var image_center = Vector2(0, DIALS_SCALE * -136)
+	for color_range in color_ranges:
+		# draw from visual center
+		draw_filled_arc(Vector2.ZERO, image_center, DIALS_SCALE * 650, color_range.angle_from, color_range.angle_to, color_range.color, 32)
+		## draw from image center
+		#draw_filled_arc(image_center, DIALS_SCALE * 650, color_range.angle_from, color_range.angle_to, color_range.color, 32)
+
+
+func draw_filled_arc(
+	decenter: Vector2,
+	center: Vector2,
+	radius: float,
+	angle_from: float,
+	angle_to: float,
+	color: Color,
+	nb_points: int
+) -> void:
+	var points := PackedVector2Array()
+	points.push_back(decenter)
+	
+	for i in range(nb_points + 1):
+		var angle_to_point := (angle_to - angle_from) * i / nb_points + angle_from
+		points.push_back(Vector2.from_angle(angle_to_point) * radius + center)
+		
+	draw_polygon(points, PackedColorArray([color]))

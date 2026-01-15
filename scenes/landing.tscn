@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://gklldj5cjux6"]
+
+[ext_resource type="Texture2D" uid="uid://do0f5i76qct71" path="res://assets/landing/title.png" id="1_mfct4"]
+[ext_resource type="FontFile" uid="uid://dyvprayq1vdj" path="res://assets/fonts/BlackOpsOne-Regular.ttf" id="2_b236o"]
+[ext_resource type="PackedScene" uid="uid://drtwycvtikau0" path="res://scenes/landing/select_button.tscn" id="3_usvfl"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_b236o"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_b236o")
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 18.0
+offset_bottom = 217.53596
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+texture = ExtResource("1_mfct4")
+expand_mode = 5
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CenterContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.318
+anchor_top = 0.40227327
+anchor_right = 0.682
+anchor_bottom = 0.59772676
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_b236o")
+theme_override_font_sizes/font_size = 50
+text = "COOL NAME"
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = 18.0
+offset_right = 138.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Button" parent="CenterContainer2/VBoxContainer" instance=ExtResource("3_usvfl")]
+layout_mode = 2
+
+[node name="Button2" parent="CenterContainer2/VBoxContainer" instance=ExtResource("3_usvfl")]
+layout_mode = 2
