@@ -4,5 +4,3 @@
 
 [node name="TileMapLayer" type="TileMapLayer"]
 tile_set = ExtResource("1_71a5w")
-
-[node name="Level" type="Node2D" parent="."]
