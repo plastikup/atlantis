@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://bo8p0litp4f56"]
+[gd_scene load_steps=15 format=3 uid="uid://bo8p0litp4f56"]
 
-[ext_resource type="Texture2D" uid="uid://cu221nby3ujm5" path="res://assets/shop/slim.png" id="1_2tl6a"]
+[ext_resource type="Script" uid="uid://qeu8f7ygm5c0" path="res://scripts/ui/station.gd" id="1_70eh8"]
 [ext_resource type="Texture2D" uid="uid://ckxj58p4qif0k" path="res://assets/shop/bg_panel.png" id="1_fwkoa"]
 [ext_resource type="Texture2D" uid="uid://bjqeoqqg2a4mg" path="res://assets/shop/title.png" id="2_s6h3s"]
 [ext_resource type="Script" uid="uid://btf8dmtq12rnw" path="res://scripts/button_hover.gd" id="4_kphry"]
+[ext_resource type="Texture2D" uid="uid://coiwqpjuxy4sv" path="res://assets/shop/arrow.png" id="5_70eh8"]
 [ext_resource type="Texture2D" uid="uid://b8v0wwpyp8su2" path="res://assets/shop/upgrade.png" id="5_mm2pm"]
 [ext_resource type="Texture2D" uid="uid://bwpxts1fqj0qv" path="res://assets/shop/close.png" id="5_sc7vk"]
+[ext_resource type="PackedScene" uid="uid://bq438ku6gnh3p" path="res://scenes/station/cost_popup.tscn" id="6_mm2pm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kphry"]
 
@@ -26,8 +28,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_70eh8")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+self_modulate = Color(0.66656864, 0.6665687, 0.66656864, 1)
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -35,31 +39,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -189.0
-offset_top = -225.0
-offset_right = 211.0
-offset_bottom = -148.90057
+offset_left = -268.0
+offset_top = -245.0
+offset_right = 152.0
+offset_bottom = 215.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2tl6a")
-expand_mode = 5
-stretch_mode = 5
-
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -189.0
-offset_top = 147.0
-offset_right = 211.0
-offset_bottom = 223.09943
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_2tl6a")
+texture = ExtResource("1_fwkoa")
 expand_mode = 5
 stretch_mode = 5
 
@@ -87,7 +73,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Shop/VBoxContainer"]
 layout_mode = 2
@@ -122,8 +107,8 @@ text = "MAGASIN"
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/Shop/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 25
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2"]
 layout_mode = 2
@@ -132,6 +117,7 @@ theme_override_constants/separation = 20
 [node name="Name" type="Label" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 36
 text = "NOM TRÈS COOL"
 
@@ -149,8 +135,9 @@ text = "DESCRIPTION VRAIMENT COOL"
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
 
-[node name="Button" type="Button" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/VBoxContainer/CenterContainer"]
+[node name="Upgrade" type="Button" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/VBoxContainer/CenterContainer"]
 custom_minimum_size = Vector2(225, 100)
 layout_mode = 2
 size_flags_vertical = 10
@@ -162,7 +149,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_s6ofo")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nc51b")
 script = ExtResource("4_kphry")
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/VBoxContainer/CenterContainer/Button"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/VBoxContainer/CenterContainer/Upgrade"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -174,7 +161,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/VBoxContainer/CenterContainer/Button"]
+[node name="Label" type="Label" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/VBoxContainer/CenterContainer/Upgrade"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -189,6 +176,83 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "AMÉLIORER"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_top = 75
+
+[node name="Left" type="Button" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kphry")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sc7vk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mm2pm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_70eh8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s6ofo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nc51b")
+script = ExtResource("4_kphry")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/Left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_70eh8")
+expand_mode = 3
+stretch_mode = 5
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Right" type="Button" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kphry")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sc7vk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mm2pm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_70eh8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s6ofo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nc51b")
+script = ExtResource("4_kphry")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/Right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_70eh8")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Shop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = 100
+metadata/_edit_use_anchors_ = true
+
+[node name="UpgradePopup" parent="HBoxContainer/Shop/MarginContainer" instance=ExtResource("6_mm2pm")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Repair" type="TextureRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(450, 0)
@@ -238,6 +302,76 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 35
 text = "RÉPARATION"
 
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/Repair/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Repair/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/Repair/VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Repair" type="Button" parent="HBoxContainer/Repair/VBoxContainer/MarginContainer2/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(340, 150)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kphry")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sc7vk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mm2pm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_70eh8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s6ofo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nc51b")
+script = ExtResource("4_kphry")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Repair/VBoxContainer/MarginContainer2/VBoxContainer/CenterContainer/Repair"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_mm2pm")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Repair/VBoxContainer/MarginContainer2/VBoxContainer/CenterContainer/Repair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -16.0
+offset_right = 61.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "RÉPARER"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Repair"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = 340
+metadata/_edit_use_anchors_ = true
+
+[node name="RepairPopup" parent="HBoxContainer/Repair/MarginContainer" instance=ExtResource("6_mm2pm")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -245,13 +379,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_bottom = 35
+mouse_filter = 2
+theme_override_constants/margin_bottom = 45
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+mouse_filter = 2
 
-[node name="Button" type="Button" parent="MarginContainer/CenterContainer"]
+[node name="Close" type="Button" parent="MarginContainer/CenterContainer"]
 custom_minimum_size = Vector2(225, 125)
 layout_mode = 2
 size_flags_vertical = 8
@@ -263,7 +399,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_s6ofo")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nc51b")
 script = ExtResource("4_kphry")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/Button"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/Close"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -275,7 +411,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/Button/TextureRect"]
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/Close/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
