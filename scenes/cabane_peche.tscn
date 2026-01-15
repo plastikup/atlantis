@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://cx0x5gf248w2k"]
+
+[ext_resource type="Texture2D" uid="uid://b1rg3hv4msojh" path="res://assets/cabane.png" id="1_nary3"]
+[ext_resource type="Texture2D" uid="uid://clryewkd3akwc" path="res://assets/bois_atlantis.png" id="2_qoky4"]
+[ext_resource type="FontFile" uid="uid://k1qvplsvp6pa" path="res://assets/BlackOpsOne-Regular.ttf" id="3_p5v54"]
+[ext_resource type="Script" uid="uid://cujcs4ttfsf8w" path="res://scripts/infos_cabane.gd" id="4_xawlb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qoky4"]
+bg_color = Color(0.29803923, 0.16862746, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5v54"]
+bg_color = Color(0.29803923, 0.16862746, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xawlb"]
+bg_color = Color(0.29803923, 0.16862746, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="image cabane" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_nary3")
+
+[node name="image bois" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 456.0
+offset_bottom = 648.0
+texture = ExtResource("2_qoky4")
+expand_mode = 1
+
+[node name="texte level up" type="RichTextLabel" parent="image bois"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 456.0
+offset_bottom = 152.0
+bbcode_enabled = true
+text = "[font=res://assets/BlackOpsOne-Regular.ttf][font_size=45]Améliore ta cabane de pêche![/font_size][/font]
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="upgrade button" type="Button" parent="image bois"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 176.0
+offset_right = 424.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("3_p5v54")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qoky4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p5v54")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xawlb")
+text = "AMÉLIORER"
+
+[node name="texte poissons" type="RichTextLabel" parent="image bois"]
+layout_mode = 0
+offset_top = 360.0
+offset_right = 456.0
+offset_bottom = 616.0
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 3
+script = ExtResource("4_xawlb")
+
+[connection signal="pressed" from="image bois/upgrade button" to="image bois/texte poissons" method="_on_upgrade_button_pressed"]
