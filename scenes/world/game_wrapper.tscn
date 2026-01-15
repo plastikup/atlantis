@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbbvrvjjexwuv"]
+[gd_scene load_steps=4 format=3 uid="uid://dbbvrvjjexwuv"]
 
 [ext_resource type="Script" uid="uid://b6e8jonecxx7o" path="res://scripts/game_wrapper.gd" id="1_i83fe"]
 [ext_resource type="PackedScene" uid="uid://bf3ivtxhsqjfh" path="res://scenes/ship.tscn" id="2_ceuy0"]
-[ext_resource type="PackedScene" uid="uid://dxbd75ad8g2oc" path="res://scenes/fishing_spot.tscn" id="3_eyapj"]
-[ext_resource type="PackedScene" uid="uid://drtyj2j3xpawk" path="res://scenes/ui/onScreenUi.tscn" id="4_bmvob"]
+[ext_resource type="PackedScene" path="res://scenes/ui/onScreenUi.tscn" id="4_bmvob"]
 
 [node name="game_wrapper" type="Node2D"]
 script = ExtResource("1_i83fe")
@@ -14,8 +13,4 @@ motion_mode = 1
 max_turn_speed = 1.04
 turn_accel = 0.73
 
-[node name="fishing_spot" parent="." instance=ExtResource("3_eyapj")]
-position = Vector2(134, -6706)
-
 [node name="OnScreenUi" parent="." instance=ExtResource("4_bmvob")]
-level = 2
