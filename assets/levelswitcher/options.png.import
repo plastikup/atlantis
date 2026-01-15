@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://j36ruxe4wyga"
-path="res://.godot/imported/options.png-0d24f3db4dd8ead7bb7b925fc22d003c.ctex"
+path="res://.godot/imported/options.png-74139f5b59503f03853653169149c0d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/landing/options.png"
-dest_files=["res://.godot/imported/options.png-0d24f3db4dd8ead7bb7b925fc22d003c.ctex"]
+source_file="res://assets/levelswitcher/options.png"
+dest_files=["res://.godot/imported/options.png-74139f5b59503f03853653169149c0d4.ctex"]
 
 [params]
 
