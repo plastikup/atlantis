@@ -1,14 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://wyvvw1mqud5"]
+[gd_scene load_steps=2 format=3 uid="uid://wyvvw1mqud5"]
 
 [ext_resource type="Script" uid="uid://c53bsokwlt6c2" path="res://scripts/ui/input_mapper.gd" id="1_msi8m"]
-[ext_resource type="Script" uid="uid://b8jil0qi65lj0" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="2_at88k"]
-
-[sub_resource type="Texture2D" id="Texture2D_7xwqq"]
-resource_local_to_scene = false
-resource_name = ""
-script = ExtResource("2_at88k")
-path = "left"
-metadata/_custom_type_script = "uid://b8jil0qi65lj0"
 
 [node name="InputMapper" type="CanvasLayer"]
 script = ExtResource("1_msi8m")
@@ -20,29 +12,27 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.3372549, 0.3372549, 0.3372549, 0.5137255)
+[node name="BoxContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -166.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ColorRect/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/BoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/ColorRect/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/BoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Go left"
 
-[node name="TextureRect" type="TextureRect" parent="Control/ColorRect/VBoxContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="Control/BoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(19.83, 0)
 layout_mode = 2
-texture = SubResource("Texture2D_7xwqq")
