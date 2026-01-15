@@ -10,12 +10,14 @@ extends CharacterBody2D
 
 var _turn_rate: float = 0.0
 
-
+	
 func _ready() -> void:
+	signalHub.ship_upgraded.connect(update_ship_material)
 	update_ship_material()
 
 
 ## Updates ship's material and returns the current level of the ship
+
 func update_ship_material() -> int:
 	%AnimatedSprite2D.play(PlayerInfo.ship_level_to_name[PlayerInfo.ship_level])
 	return PlayerInfo.ship_level
