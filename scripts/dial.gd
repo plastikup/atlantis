@@ -19,10 +19,6 @@ var color_ranges := [{
 	'angle_from': EDGE_ANGLE,
 	'angle_to': -EDGE_ANGLE,
 	'color': Color.WHITE,
-}, {
-	'angle_from': -PI/2 - 0.1,
-	'angle_to': -PI/2 + 0.1,
-	'color': Color.DARK_GREEN,
 }]
 #var color_ranges := [{
 	#'angle_from': -PI/2 - 0.1,

@@ -10,6 +10,20 @@ extends CharacterBody2D
 
 var _turn_rate: float = 0.0
 
+	
+func _ready() -> void:
+	PlayerInfo.radarElements.append({"type" : "player", "node" : self}) 
+	signalHub.ship_upgraded.connect(update_ship_material)
+	update_ship_material()
+
+
+## Updates ship's material and returns the current level of the ship
+
+func update_ship_material() -> int:
+	%AnimatedSprite2D.play(PlayerInfo.ship_level_to_name[PlayerInfo.ship_level])
+	return PlayerInfo.ship_level
+
+
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("up", "down") 
 	var turn := Input.get_axis("left", "right")

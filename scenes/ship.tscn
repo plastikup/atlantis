@@ -1,14 +1,145 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf3ivtxhsqjfh"]
+[gd_scene load_steps=29 format=3 uid="uid://bf3ivtxhsqjfh"]
 
 [ext_resource type="Script" uid="uid://cxt5hlp2u6d25" path="res://scripts/ship.gd" id="1_2gnfn"]
-[ext_resource type="Texture2D" uid="uid://blp66sbauru02" path="res://assets/submarine.png" id="1_q631a"]
+[ext_resource type="Texture2D" uid="uid://bvxlo2i0atmu5" path="res://assets/ships/copper/Timeline 1_0000.png" id="3_q0sdf"]
+[ext_resource type="Texture2D" uid="uid://cvrhrfp2dbise" path="res://assets/ships/copper/Timeline 1_0001.png" id="4_u7rkd"]
+[ext_resource type="Texture2D" uid="uid://nl11e1pjdnte" path="res://assets/ships/copper/Timeline 1_0002.png" id="5_o1i5q"]
+[ext_resource type="Texture2D" uid="uid://buebtfvugj87i" path="res://assets/ships/copper/Timeline 1_0003.png" id="6_kwpx1"]
+[ext_resource type="Texture2D" uid="uid://j4xp8ncra6hn" path="res://assets/ships/copper/Timeline 1_0004.png" id="7_qy1vx"]
+[ext_resource type="Texture2D" uid="uid://cwiocgwo8wsng" path="res://assets/ships/gold/Timeline 1_0000.png" id="8_ud00f"]
+[ext_resource type="Texture2D" uid="uid://daukf4ike6bbv" path="res://assets/ships/gold/Timeline 1_0001.png" id="9_rxy3i"]
+[ext_resource type="Texture2D" uid="uid://b37p1205s2kyo" path="res://assets/ships/gold/Timeline 1_0002.png" id="10_g7uqr"]
+[ext_resource type="Texture2D" uid="uid://dpaqmlxv2d716" path="res://assets/ships/gold/Timeline 1_0003.png" id="11_10t3h"]
+[ext_resource type="Texture2D" uid="uid://q6o6qjtn4v5b" path="res://assets/ships/gold/Timeline 1_0004.png" id="12_re7e4"]
+[ext_resource type="Texture2D" uid="uid://ccirq13mfs81r" path="res://assets/ships/leather/Timeline 1_0000.png" id="13_wrc1v"]
+[ext_resource type="Texture2D" uid="uid://dvbed1t1v46rx" path="res://assets/ships/leather/Timeline 1_0001.png" id="14_qdbuh"]
+[ext_resource type="Texture2D" uid="uid://cqolahh6j7xmf" path="res://assets/ships/leather/Timeline 1_0002.png" id="15_h75by"]
+[ext_resource type="Texture2D" uid="uid://bin3xf0xv1odu" path="res://assets/ships/leather/Timeline 1_0003.png" id="16_3mg5m"]
+[ext_resource type="Texture2D" uid="uid://bkb73t7xdtkwx" path="res://assets/ships/leather/Timeline 1_0004.png" id="17_k8rhd"]
+[ext_resource type="Texture2D" uid="uid://vbxd6b0hn3kw" path="res://assets/ships/silver/Timeline 1_0000.png" id="18_iuxt1"]
+[ext_resource type="Texture2D" uid="uid://ga8omdbplhwd" path="res://assets/ships/silver/Timeline 1_0001.png" id="19_od8g6"]
+[ext_resource type="Texture2D" uid="uid://cale5xyd15lk6" path="res://assets/ships/silver/Timeline 1_0002.png" id="20_vsg0s"]
+[ext_resource type="Texture2D" uid="uid://boi8twtmo7rs2" path="res://assets/ships/silver/Timeline 1_0003.png" id="21_3lop3"]
+[ext_resource type="Texture2D" uid="uid://ohwnlm0kqmln" path="res://assets/ships/silver/Timeline 1_0004.png" id="22_i0rmv"]
+[ext_resource type="Texture2D" uid="uid://d38kvpamynqrj" path="res://assets/ships/wooden/Timeline 1_0000.png" id="23_2578s"]
+[ext_resource type="Texture2D" uid="uid://btkddh6lvpykc" path="res://assets/ships/wooden/Timeline 1_0001.png" id="24_8jkn4"]
+[ext_resource type="Texture2D" uid="uid://b2g1oqm5itocv" path="res://assets/ships/wooden/Timeline 1_0002.png" id="25_eiv43"]
+[ext_resource type="Texture2D" uid="uid://b0jcpdxlbd8np" path="res://assets/ships/wooden/Timeline 1_0003.png" id="26_kbhtu"]
+[ext_resource type="Texture2D" uid="uid://ulacpgvjwuod" path="res://assets/ships/wooden/Timeline 1_0004.png" id="27_tol08"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gnfn"]
-radius = 40.009003
-height = 219.892
+[sub_resource type="CircleShape2D" id="CircleShape2D_7tpya"]
+radius = 356.5056
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mvhns"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q0sdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u7rkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o1i5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kwpx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qy1vx")
+}],
+"loop": true,
+"name": &"copper",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ud00f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rxy3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g7uqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_10t3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_re7e4")
+}],
+"loop": true,
+"name": &"gold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_wrc1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qdbuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_h75by")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3mg5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_k8rhd")
+}],
+"loop": true,
+"name": &"leather",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_iuxt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_od8g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vsg0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3lop3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_i0rmv")
+}],
+"loop": true,
+"name": &"silver",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_2578s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8jkn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_eiv43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_kbhtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_tol08")
+}],
+"loop": true,
+"name": &"wooden",
+"speed": 5.0
+}]
 
 [node name="Submarine" type="CharacterBody2D"]
-scale = Vector2(22.22, 22.22)
+scale = Vector2(3.5, 3.5)
 collision_mask = 196864
 script = ExtResource("1_2gnfn")
 max_speed = 2000.0
@@ -18,14 +149,17 @@ max_turn_speed = 0.7
 turn_accel = 0.5
 turn_friction = 1.0
 
-[node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(1.0000153, -0.9999924)
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("1_q631a")
-
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-64, 0)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_2gnfn")
+shape = SubResource("CircleShape2D_7tpya")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.075, 0.075)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_mvhns")
+animation = &"wooden"
+autoplay = "default"
+frame_progress = 0.55542797

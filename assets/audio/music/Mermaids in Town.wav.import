@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqmtww46trx8c"
+path="res://.godot/imported/Mermaids in Town.wav-fe1ef4a0aca1edd04c83ec634b4972f0.sample"
+
+[deps]
+
+source_file="res://assets/audio/music/Mermaids in Town.wav"
+dest_files=["res://.godot/imported/Mermaids in Town.wav-fe1ef4a0aca1edd04c83ec634b4972f0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

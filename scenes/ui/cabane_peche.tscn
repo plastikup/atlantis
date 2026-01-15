@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cx0x5gf248w2k"]
+[gd_scene load_steps=7 format=3 uid="uid://cx0x5gf248w2k"]
 
 [ext_resource type="Texture2D" uid="uid://b1rg3hv4msojh" path="res://assets/cabane.png" id="1_nary3"]
-[ext_resource type="Texture2D" uid="uid://clryewkd3akwc" path="res://assets/bois_atlantis.png" id="2_qoky4"]
+[ext_resource type="Texture2D" uid="uid://ckxj58p4qif0k" path="res://assets/shop/bg_panel.png" id="2_hp1fs"]
 [ext_resource type="FontFile" uid="uid://k1qvplsvp6pa" path="res://assets/BlackOpsOne-Regular.ttf" id="3_p5v54"]
-[ext_resource type="Script" uid="uid://cujcs4ttfsf8w" path="res://scripts/infos_cabane.gd" id="4_xawlb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qoky4"]
 bg_color = Color(0.29803923, 0.16862746, 1, 1)
@@ -46,13 +45,14 @@ texture = ExtResource("1_nary3")
 layout_mode = 0
 offset_right = 456.0
 offset_bottom = 648.0
-texture = ExtResource("2_qoky4")
+texture = ExtResource("2_hp1fs")
 expand_mode = 1
 
 [node name="texte level up" type="RichTextLabel" parent="image bois"]
 layout_mode = 0
+offset_left = 3.0
 offset_top = 8.0
-offset_right = 456.0
+offset_right = 459.0
 offset_bottom = 152.0
 bbcode_enabled = true
 text = "[font=res://assets/BlackOpsOne-Regular.ttf][font_size=45]Améliore ta cabane de pêche![/font_size][/font]
@@ -73,14 +73,129 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_p5v54")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xawlb")
 text = "AMÉLIORER"
 
-[node name="texte poissons" type="RichTextLabel" parent="image bois"]
-layout_mode = 0
-offset_top = 360.0
-offset_right = 456.0
-offset_bottom = 616.0
-bbcode_enabled = true
-horizontal_alignment = 1
-vertical_alignment = 3
-script = ExtResource("4_xawlb")
+[node name="stats" type="VBoxContainer" parent="image bois"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = 4.0
+offset_right = 169.5
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[connection signal="pressed" from="image bois/upgrade button" to="image bois/texte poissons" method="_on_upgrade_button_pressed"]
+[node name="couts upgrade" type="VBoxContainer" parent="image bois/stats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="image bois/stats/couts upgrade"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 26
+text = "Coût amélioration"
+
+[node name="p1" type="HBoxContainer" parent="image bois/stats/couts upgrade"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="image bois/stats/couts upgrade/p1"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="image bois/stats/couts upgrade/p1"]
+layout_mode = 2
+text = "test"
+
+[node name="p2" type="HBoxContainer" parent="image bois/stats/couts upgrade"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="image bois/stats/couts upgrade/p2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="image bois/stats/couts upgrade/p2"]
+layout_mode = 2
+
+[node name="p3" type="HBoxContainer" parent="image bois/stats/couts upgrade"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="image bois/stats/couts upgrade/p3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="image bois/stats/couts upgrade/p3"]
+layout_mode = 2
+
+[node name="p4" type="HBoxContainer" parent="image bois/stats/couts upgrade"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="image bois/stats/couts upgrade/p4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="image bois/stats/couts upgrade/p4"]
+layout_mode = 2
+text = "test"
+
+[node name="ColorRect" type="ColorRect" parent="image bois/stats"]
+custom_minimum_size = Vector2(339.195, 2.97)
+layout_mode = 2
+color = Color(0.44291076, 0.44291076, 0.44291073, 1)
+
+[node name="generations" type="VBoxContainer" parent="image bois/stats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="image bois/stats/generations"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 26
+text = "Poissons actuels"
+
+[node name="p1" type="HBoxContainer" parent="image bois/stats/generations"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="image bois/stats/generations/p1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="image bois/stats/generations/p1"]
+layout_mode = 2
+text = "test"
+
+[node name="p2" type="HBoxContainer" parent="image bois/stats/generations"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="image bois/stats/generations/p2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="image bois/stats/generations/p2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="image bois/stats/generations/p2/Label"]
+layout_mode = 0
+
+[node name="Label" type="Label" parent="image bois/stats/generations/p2/Label"]
+layout_mode = 0
+
+[node name="p3" type="HBoxContainer" parent="image bois/stats/generations"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="image bois/stats/generations/p3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="image bois/stats/generations/p3"]
+layout_mode = 2
+
+[node name="p4" type="HBoxContainer" parent="image bois/stats/generations"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="image bois/stats/generations/p4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="image bois/stats/generations/p4"]
+layout_mode = 2
