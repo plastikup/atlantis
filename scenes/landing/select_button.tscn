@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://drtwycvtikau0"]
+
+[ext_resource type="Texture2D" uid="uid://j36ruxe4wyga" path="res://assets/landing/options.png" id="1_dimda"]
+[ext_resource type="Script" uid="uid://btf8dmtq12rnw" path="res://scripts/button_hover.gd" id="1_js7fm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_js7fm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3f44m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2xp0s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pdbh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vg3hp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nim5t"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(225, 95)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_js7fm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3f44m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2xp0s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6pdbh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vg3hp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nim5t")
+script = ExtResource("1_js7fm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dimda")
+expand_mode = 5
+stretch_mode = 5
