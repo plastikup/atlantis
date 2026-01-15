@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://blk5kmv1hoj3c"]
+
+[ext_resource type="Script" uid="uid://b8jil0qi65lj0" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="1_di7ow"]
+
+[sub_resource type="Texture2D" id="Texture2D_7xwqq"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("1_di7ow")
+path = "left"
+metadata/_custom_type_script = "uid://b8jil0qi65lj0"
+
+[node name="HBoxContainer2" type="HBoxContainer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("Texture2D_7xwqq")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(83.09, 0)
+layout_mode = 2
+text = "Go left"
+autowrap_mode = 2
