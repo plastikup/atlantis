@@ -10,6 +10,9 @@ extends CharacterBody2D
 
 var _turn_rate: float = 0.0
 
+func _ready() -> void:
+	PlayerInfo.radarElements.append({"type" : "player", "node" : self}) 
+
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("up", "down") 
 	var turn := Input.get_axis("left", "right")
