@@ -3,8 +3,6 @@ extends Node2D
 enum DialTypes { fishing, pressure }
 @export var DIAL_TYPE: DialTypes
 
-@export var DIAL_SIZE := 128
-var DIALS_SCALE = DIAL_SIZE / 2048.0
 const FULL_IMG_TRUE_IMG_RATIO := 3.0/4.0
 @export var DIAL_MARGIN := 0.25
 @export var DIAL_COLOR := Color.ALICE_BLUE
@@ -13,7 +11,8 @@ const FULL_IMG_TRUE_IMG_RATIO := 3.0/4.0
 
 const ANGLE_RANGE := PI * 0.61
 
-const EDGE_ANGLE = PI/2 + ANGLE_RANGE
+const EDGE_START_ANGLE = PI/2 - ANGLE_RANGE
+const EDGE_END_ANGLE = PI/2 + ANGLE_RANGE
 
 var color_ranges := []
 #var color_ranges := [{
@@ -21,13 +20,6 @@ var color_ranges := []
 	#'angle_to': -PI/2 + 0.1,
 	#'color': Color.LAWN_GREEN,
 #}]
-
-
-func _ready() -> void:
-	%needle.scale.y = (DIAL_SIZE * DIAL_MARGIN) / 48
-	
-	%bottom_dial.scale = Vector2(DIALS_SCALE, DIALS_SCALE)
-	%top_dial.scale = Vector2(DIALS_SCALE, DIALS_SCALE)
 
 
 func _process(_delta: float) -> void:
@@ -47,14 +39,9 @@ func set_new_color_range(new_color_ranges: Array) -> void:
 
 
 func _draw() -> void:
-	draw_arc(Vector2.ZERO, DIAL_SIZE * DIAL_MARGIN, -PI/2 + ANGLE_RANGE, -PI/2 - ANGLE_RANGE, 16, DIAL_COLOR)
-	
-	var image_center = Vector2(0, DIALS_SCALE * -136)
+	var image_center = Vector2(0, -136)
 	for color_range in color_ranges:
-		# draw from visual center
-		draw_filled_arc(Vector2.ZERO, image_center, DIALS_SCALE * 650, color_range.angle_from, color_range.angle_to, color_range.color, 32)
-		## draw from image center
-		#draw_filled_arc(image_center, DIALS_SCALE * 650, color_range.angle_from, color_range.angle_to, color_range.color, 32)
+		draw_filled_arc(Vector2.ZERO, image_center, 650, color_range.angle_from, color_range.angle_to, color_range.color, 32)
 
 
 func draw_filled_arc(
