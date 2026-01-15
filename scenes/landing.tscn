@@ -1,0 +1,193 @@
+[gd_scene load_steps=10 format=3 uid="uid://gklldj5cjux6"]
+
+[ext_resource type="Script" uid="uid://djhmbrt30vb2y" path="res://scripts/landing.gd" id="1_j5py0"]
+[ext_resource type="Texture2D" uid="uid://do0f5i76qct71" path="res://assets/landing/title.png" id="1_mfct4"]
+[ext_resource type="Texture2D" uid="uid://befwpiix28i53" path="res://assets/landing/submarine.png" id="2_j5py0"]
+[ext_resource type="Texture2D" uid="uid://oema3fyrjs6q" path="res://assets/landing/ocean_floor.jpg" id="2_yp7d7"]
+[ext_resource type="FontFile" uid="uid://k1qvplsvp6pa" path="res://assets/BlackOpsOne-Regular.ttf" id="3_8ljda"]
+[ext_resource type="PackedScene" uid="uid://drtwycvtikau0" path="res://scenes/landing/select_button.tscn" id="3_usvfl"]
+
+[sub_resource type="Animation" id="Animation_ahygv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(36, 72)]
+}
+
+[sub_resource type="Animation" id="Animation_x4ofr"]
+resource_name = "bg"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(36, 72), Vector2(-144, 128), Vector2(-303, 107), Vector2(-494, 157), Vector2(-516, 57), Vector2(-370, 58), Vector2(-176, 120), Vector2(0, 54), Vector2(99, 72), Vector2(88, 128), Vector2(36, 72)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bfh6i"]
+_data = {
+&"RESET": SubResource("Animation_ahygv"),
+&"bg": SubResource("Animation_x4ofr")
+}
+
+[node name="Landing" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j5py0")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 72.0
+offset_right = 970.6924
+offset_bottom = 479.03174
+texture = ExtResource("2_yp7d7")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect3"]
+libraries = {
+&"": SubResource("AnimationLibrary_bfh6i")
+}
+speed_scale = 0.25
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j5py0")
+expand_mode = 5
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5017361
+anchor_top = 0.11111111
+anchor_right = 0.8819444
+anchor_bottom = 0.38085416
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("1_mfct4")
+expand_mode = 5
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.318
+anchor_top = 0.40227327
+anchor_right = 0.682
+anchor_bottom = 0.59772676
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_8ljda")
+theme_override_font_sizes/font_size = 50
+text = "COOL NAME"
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 87.60325
+offset_bottom = 420.60324
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buttons" type="VBoxContainer" parent="TextureRect/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Play" parent="TextureRect/CenterContainer/Buttons" instance=ExtResource("3_usvfl")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/Buttons/Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -16.0
+offset_right = 44.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_8ljda")
+theme_override_font_sizes/font_size = 25
+text = "JOUER"
+
+[node name="Tutorial" parent="TextureRect/CenterContainer/Buttons" instance=ExtResource("3_usvfl")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/Buttons/Tutorial"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -16.0
+offset_right = 64.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_8ljda")
+theme_override_font_sizes/font_size = 25
+text = "TUTORIEL"
+
+[node name="Quit" parent="TextureRect/CenterContainer/Buttons" instance=ExtResource("3_usvfl")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer/Buttons/Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -16.0
+offset_right = 57.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_8ljda")
+theme_override_font_sizes/font_size = 25
+text = "QUITTER"
