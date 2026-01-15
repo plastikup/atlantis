@@ -18,3 +18,4 @@ turn_accel = 0.73
 position = Vector2(134, -6706)
 
 [node name="OnScreenUi" parent="." instance=ExtResource("4_bmvob")]
+level = 2

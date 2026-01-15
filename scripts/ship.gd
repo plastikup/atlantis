@@ -15,14 +15,17 @@ func _ready() -> void:
 	PlayerInfo.radarElements.append({"type" : "player", "node" : self}) 
 	signalHub.ship_upgraded.connect(update_ship_material)
 	update_ship_material()
+	signalHub.fish_some_fish.connect(gainFish)
 
 
 ## Updates ship's material and returns the current level of the ship
 
 func update_ship_material() -> int:
-	%AnimatedSprite2D.play(PlayerInfo.ship_level_to_name[PlayerInfo.ship_level])
+	%AnimatedSprite2D.play(PlayerInfo.level_to_name[PlayerInfo.ship_level])
 	return PlayerInfo.ship_level
 
+func gainFish(level) -> void:
+	PlayerInfo.fish_inv.level += 1
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("up", "down") 
@@ -52,4 +55,5 @@ func _physics_process(delta: float) -> void:
 	var dif_dir := (accel if direction != 0.0 else friction) * delta
 	velocity = velocity.move_toward(desired_velocity, dif_dir)
 	move_and_slide()
+	
 	

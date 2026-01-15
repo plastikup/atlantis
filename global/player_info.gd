@@ -2,10 +2,11 @@ extends Node
 
 var depthLevel := 0
 var radarElements := []
-enum ShipLevels { leather, wood, copper, silver, gold }
+enum typeLevels {leather, wood, copper, silver, gold }
 
-var ship_level := ShipLevels.leather
-const ship_level_to_name = { ShipLevels.leather: 'leather', ShipLevels.wood: 'wood', ShipLevels.copper: 'copper', ShipLevels.silver: 'silver', ShipLevels.gold: 'gold' }
+
+const level_to_name = {typeLevels.leather: 'leather', typeLevels.wood: 'wood', typeLevels.copper: 'copper', typeLevels.silver: 'silver', typeLevels.gold: 'gold' }
+var ship_level := typeLevels.leather
 
 enum upgrade_types {
 	SHIP_MATERIAL,
@@ -22,3 +23,6 @@ var player_upgrade_levels = {
 	upgrade_types.SPEED: 0,
 	upgrade_types.SONAR: 0
 }
+
+
+var fish_inv := {typeLevels.wood: 0, typeLevels.copper: 0, typeLevels.silver: 0, typeLevels.gold: 0 }
