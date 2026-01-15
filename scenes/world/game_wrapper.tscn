@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbbvrvjjexwuv"]
+[gd_scene load_steps=3 format=3 uid="uid://dbbvrvjjexwuv"]
 
 [ext_resource type="Script" uid="uid://b6e8jonecxx7o" path="res://scripts/game_wrapper.gd" id="1_i83fe"]
 [ext_resource type="PackedScene" uid="uid://bf3ivtxhsqjfh" path="res://scenes/ship.tscn" id="2_ceuy0"]
-[ext_resource type="PackedScene" uid="uid://b4dfhnyipfmlt" path="res://scenes/world/level2.tscn" id="3_eyapj"]
-[ext_resource type="PackedScene" uid="uid://h44e8moq2xrg" path="res://scenes/clue.tscn" id="4_bmvob"]
 
 [node name="game_wrapper" type="Node2D"]
 script = ExtResource("1_i83fe")
@@ -11,8 +9,3 @@ script = ExtResource("1_i83fe")
 [node name="Submarine" parent="." instance=ExtResource("2_ceuy0")]
 position = Vector2(-3843, -9403)
 motion_mode = 1
-
-[node name="TileMapLayer2" parent="." instance=ExtResource("3_eyapj")]
-
-[node name="Clue" parent="." instance=ExtResource("4_bmvob")]
-position = Vector2(-2523, -9398)
