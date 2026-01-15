@@ -2,15 +2,17 @@ extends Area2D
 
 const ACTION:= "interact"
 const FISH:= "fish"
-var cooldown_done:= false
 var is_inbound := false
-@export var level: PlayerInfo.typeLevels
+var clue_all_found := false
+@export var level: int
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed(ACTION):
-		signalHub.build_request(level)
-	elif event.is_action_pressed(FISH) and cooldown_done:
-		signalHub.fish_some_fish_request(level)
+	if is_inbound:
+		if event.is_action_pressed(FISH):
+			print("FISHIIIIIING")
+			signalHub.fish_some_fish_request(level)
+		elif event.is_action_pressed(ACTION) and clue_all_found:
+			signalHub.build_request(level)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

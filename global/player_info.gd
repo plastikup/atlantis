@@ -25,4 +25,5 @@ var player_upgrade_levels = {
 }
 
 
-var fish_inv := {typeLevels.wood: 0, typeLevels.copper: 0, typeLevels.silver: 0, typeLevels.gold: 0 }
+var fish_inv := [0,0,0,0]
+var clues_found := [0,0,0,0]

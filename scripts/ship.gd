@@ -25,7 +25,9 @@ func update_ship_material() -> int:
 	return PlayerInfo.ship_level
 
 func gainFish(level) -> void:
-	PlayerInfo.fish_inv.level += 1
+	print(level)
+	PlayerInfo.fish_inv[level] += 1
+	print(PlayerInfo.fish_inv[level])
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("up", "down") 
