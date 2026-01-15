@@ -111,6 +111,15 @@ dialogic_default_action={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="fish"
+2d_physics/layer_9="rocks"
+2d_physics/layer_17="outpost"
+2d_physics/layer_18="repair station"
+2d_physics/layer_25="clues"
+
 [rendering]
 
 renderer/rendering_method="mobile"
