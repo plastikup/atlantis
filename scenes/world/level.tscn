@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://b66v35x5jc1tc" path="res://ressources/tilesets/underwaterTileSet.tres" id="1_71a5w"]
 
-[node name="Level" type="Node2D"]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer"]
 tile_set = ExtResource("1_71a5w")
+
+[node name="Level" type="Node2D" parent="."]
