@@ -28,7 +28,7 @@ directories/dch_directory={
 "centreDeControle": "res://ressources/dialogic/characters/centreDeControle.dch"
 }
 directories/dtl_directory={
-"tutoriel": "res://ressources/dialogic/timelines/tutoriel.dtl"
+"oceangate1": "res://ressources/dialogic/timelines/oceangate/oceangate1.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
