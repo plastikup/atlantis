@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5x6l4ryrlohp"]
+
+[ext_resource type="Script" uid="uid://ccmtemnbqxow3" path="res://scenes/light.gd" id="1_2e2gu"]
+[ext_resource type="Texture2D" uid="uid://btdpg7la7s3hf" path="res://assets/levelswitcher/whiteLight.png" id="1_24oxn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2e2gu"]
+radius = 357.0224
+
+[node name="light" type="Area2D"]
+script = ExtResource("1_2e2gu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.27450982)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_24oxn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_2e2gu")

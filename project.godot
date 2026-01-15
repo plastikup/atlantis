@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 signalHub="*res://global/signal_hub.gd"
+gameManager="*res://global/game_manager.gd"
 
 [dialogic]
 
