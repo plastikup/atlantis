@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://drtyj2j3xpawk"]
+
+[ext_resource type="Script" uid="uid://eapyataqeo6v" path="res://scripts/ui/on_screen_ui.gd" id="1_x7kbn"]
+[ext_resource type="PackedScene" uid="uid://cudniyskfnp46" path="res://scenes/dial.tscn" id="2_0wh5l"]
+
+[node name="OnScreenUi" type="CanvasLayer"]
+script = ExtResource("1_x7kbn")
+
+[node name="dial" parent="." instance=ExtResource("2_0wh5l")]
+position = Vector2(143, 546)
+scale = Vector2(2, 2)
+DIAL_TYPE = 1

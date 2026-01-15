@@ -2,7 +2,14 @@ extends CanvasLayer
 
 var currentInputs := []
 @onready var inputElement = preload("res://scenes/ui/inputElement.tscn")
-	
+
+func _ready() -> void:
+	addInput("up", "Avancer", "up")
+	addInput("left", "Aller à gauche", "left")
+	addInput("down", "Reculer", "down")
+	addInput("right", "Aller à droite", "right")
+	drawInputs()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if currentInputs.size() == 0 :
@@ -12,7 +19,7 @@ func _process(delta: float) -> void:
 
 func addInput(id:String, text:String, icon:String) :
 	currentInputs.append({"id" : id, "text" : text, "icon" : icon})
-	drawInputs()
+	#drawInputs()
 	
 func removeInput(id:String):
 	for input in currentInputs:
@@ -22,9 +29,11 @@ func removeInput(id:String):
 	drawInputs()
 
 func drawInputs():
+	for x in $Control/BoxContainer/HBoxContainer/VBoxContainer.get_children():
+		x.queue_free()
 	for input in currentInputs:
 		var element = inputElement.instantiate()
 		$Control/BoxContainer/HBoxContainer/VBoxContainer.add_child(element)
 		element.get_node("Label").text = input.text
-		element.get_node("TextureRect").texture.path = input.icon
+		element.get_node("TextureRect").texture.path = input.icon # n'affiche que le dernier!! 
 		
