@@ -38,3 +38,4 @@ func _physics_process(delta: float) -> void:
 	var dif_dir := (accel if direction != 0.0 else friction) * delta
 	velocity = velocity.move_toward(desired_velocity, dif_dir)
 	move_and_slide()
+	
