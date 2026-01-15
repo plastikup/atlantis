@@ -8,6 +8,7 @@ radius = 74.0
 height = 242.0
 
 [node name="Submarine" type="CharacterBody2D"]
+floor_max_angle = 3.1415927
 script = ExtResource("1_2gnfn")
 
 [node name="Sprite" type="Sprite2D" parent="."]

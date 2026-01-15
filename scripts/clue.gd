@@ -12,7 +12,7 @@ const PROGRESS_SPEED := 25.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	signalHub.connect("sub_in_bound", )
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and is_in_bound:
@@ -39,6 +39,9 @@ func _mouse_enter() -> void:
 
 func _mouse_exit() -> void:
 	is_in_bound = false
+
+func in_bound() -> void:
+	sub_in_bound = true
 
 
 func _on_timer_timeout() -> void:
