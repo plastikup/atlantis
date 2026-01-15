@@ -1,9 +1,0 @@
-63f7b34db8d8cdea90c76aacccf841ec
-::res://::1768441480
-icon.svg::CompressedTexture2D::765509594263301499::1768437817::1768438125::1::::<><><>0<>0<>5b30905f2f859149584a7f0bb3c660d4<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://assets/::1768439728
-submarine.png::CompressedTexture2D::3191402163401691973::1768439715::1768439728::1::::<><><>0<>0<>87179721b919e6893f2f20a6720be842<>res://.godot/imported/submarine.png-b349967232663f93470b91f41189a961.ctex::
-::res://scenes/::1768441475
-ship.gd::GDScript::2847184152707400231::1768441237::0::1::::<>CharacterBody2D<><>0<>0<><>::
-ship.tscn::PackedScene::7028255774044444255::1768441475::0::1::::<><><>0<>0<><>::uid://bgtgybktkp3fv::::res://scenes/ship.gd<>uid://blp66sbauru02::::res://assets/submarine.png
-::res://scripts/::1768438899
