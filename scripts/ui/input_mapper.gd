@@ -33,5 +33,5 @@ func drawInputs():
 		var element = inputElement.instantiate()
 		$Control/BoxContainer/HBoxContainer/VBoxContainer.add_child(element)
 		element.get_node("Label").text = input.text
-		element.get_node("TextureRect").texture.path = input.icon
+		element.get_node("TextureRect").texture.path = input.icon # n'affiche que le dernier!! 
 		
