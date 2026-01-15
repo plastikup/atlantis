@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="atlantis"
-run/main_scene="res://scenes/ship.tscn"
+run/main_scene="uid://h44e8moq2xrg"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
