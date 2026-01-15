@@ -28,7 +28,22 @@ directories/dch_directory={
 "centreDeControle": "res://ressources/dialogic/characters/centreDeControle.dch"
 }
 directories/dtl_directory={
-"oceangate1": "res://ressources/dialogic/timelines/oceangate/oceangate1.dtl"
+"atlantis1": "res://ressources/dialogic/timelines/atlantis/atlantis1.dtl",
+"atlantis2": "res://ressources/dialogic/timelines/atlantis/atlantis2.dtl",
+"atlantis3": "res://ressources/dialogic/timelines/atlantis/atlantis3.dtl",
+"atlantis4": "res://ressources/dialogic/timelines/atlantis/atlantis4.dtl",
+"cousteau1": "res://ressources/dialogic/timelines/cousteau/cousteau1.dtl",
+"cousteau2": "res://ressources/dialogic/timelines/cousteau/cousteau2.dtl",
+"cousteau3": "res://ressources/dialogic/timelines/cousteau/cousteau3.dtl",
+"cousteau4": "res://ressources/dialogic/timelines/cousteau/cousteau4.dtl",
+"oceangate1": "res://ressources/dialogic/timelines/oceangate/oceangate1.dtl",
+"oceangate2": "res://ressources/dialogic/timelines/oceangate/oceangate2.dtl",
+"oceangate3": "res://ressources/dialogic/timelines/oceangate/oceangate3.dtl",
+"oceangate4": "res://ressources/dialogic/timelines/oceangate/oceangate4.dtl",
+"titanic1": "res://ressources/dialogic/timelines/titanic/titanic1.dtl",
+"titanic2": "res://ressources/dialogic/timelines/titanic/titanic2.dtl",
+"titanic3": "res://ressources/dialogic/timelines/titanic/titanic3.dtl",
+"titanic4": "res://ressources/dialogic/timelines/titanic/titanic4.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
