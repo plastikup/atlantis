@@ -11,6 +11,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	else:
 		is_held = false
 
+func _ready() -> void:
+	PlayerInfo.radarElements.append({"type" : "clue", "node" : self}) 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not is_done:
