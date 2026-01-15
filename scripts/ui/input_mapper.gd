@@ -8,6 +8,8 @@ func _ready() -> void:
 	addInput("left", "Aller à gauche", "left")
 	addInput("down", "Reculer", "down")
 	addInput("right", "Aller à droite", "right")
+	addInput("interact", "Intéragir", "interact")
+	addInput("fish", "Pêcher", "fish")
 	drawInputs()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
