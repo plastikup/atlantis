@@ -29,6 +29,8 @@ func removeInput(id:String):
 	drawInputs()
 
 func drawInputs():
+	for x in $Control/BoxContainer/HBoxContainer/VBoxContainer.get_children():
+		x.queue_free()
 	for input in currentInputs:
 		var element = inputElement.instantiate()
 		$Control/BoxContainer/HBoxContainer/VBoxContainer.add_child(element)
