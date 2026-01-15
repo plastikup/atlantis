@@ -25,13 +25,6 @@ func _process(delta: float) -> void:
 			timer.start()
 	else:
 		progress_bar.value = 100.0
-		
-	
-func _mouse_enter() -> void:
-	is_in_bound = true
-
-func _mouse_exit() -> void:
-	is_in_bound = false
 
 func _on_timer_timeout() -> void:
 	queue_free()
