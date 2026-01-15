@@ -9,3 +9,5 @@ script = ExtResource("1_i83fe")
 [node name="Submarine" parent="." instance=ExtResource("2_ceuy0")]
 position = Vector2(-3843, -9403)
 motion_mode = 1
+max_turn_speed = 1.04
+turn_accel = 0.73

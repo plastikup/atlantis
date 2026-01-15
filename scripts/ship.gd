@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		desired_velocity = forward.normalized() * (direction * max_speed)
 	else:
-		desired_velocity = forward.normalized() * (-abs(turn) * max_speed)
+		desired_velocity = forward.normalized() * (-abs(turn) * max_speed) / 2
 
 	# you set up the turn rate by increasing (or decreasing) with dif_dir 
 	# however move_towards function limits going over the desired_velocity

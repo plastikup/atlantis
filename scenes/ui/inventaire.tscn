@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://xggp8a7g1r6g"]
 
-[ext_resource type="Texture2D" uid="uid://j36ruxe4wyga" path="res://assets/landing/options.png" id="1_dde2n"]
+[ext_resource type="Texture2D" uid="uid://j36ruxe4wyga" path="res://assets/levelswitcher/options.png" id="1_dde2n"]
 [ext_resource type="Texture2D" uid="uid://k523i3rkbt8f" path="res://icon.svg" id="1_mnqpa"]
 
 [node name="Inventaire" type="CanvasLayer"]
