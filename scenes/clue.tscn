@@ -10,6 +10,9 @@ height = 518.0
 [node name="Clue" type="Area2D"]
 script = ExtResource("1_t4dib")
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("1_fylyi")
@@ -25,14 +28,14 @@ offset_bottom = -7.0
 [node name="ProgressBar" type="ProgressBar" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.68
-anchor_top = -0.2982456
-anchor_right = 1.4856668
-anchor_bottom = -0.24561404
-offset_left = 43.0
-offset_top = 21.0
-offset_right = -23.42501
-offset_bottom = 45.0
+anchor_left = -0.142
+anchor_top = 0.07
+anchor_right = 1.1730001
+anchor_bottom = 0.544
+offset_left = 2.6500006
+offset_top = 0.00999999
+offset_right = 0.024986267
+offset_bottom = -0.0080013275
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -40,3 +43,7 @@ position = Vector2(-3, -1)
 rotation = 1.5707964
 scale = Vector2(0.13, 0.13)
 shape = SubResource("CapsuleShape2D_t4dib")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4dfhnyipfmlt"]
-
-[ext_resource type="TileSet" uid="uid://b66v35x5jc1tc" path="res://ressources/tilesets/underwaterTileSet.tres" id="1_71a5w"]
-
-[node name="TileMapLayer" type="TileMapLayer"]
-tile_set = ExtResource("1_71a5w")
