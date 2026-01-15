@@ -1,8 +1,8 @@
 extends Control
 
 var paths := {
-	#"play": "res://scenes/start_menu.tscn",
-	#"tutorial": "res://scenes/shop.tscn",
+	"play": gameManager.game,
+	"tutorial": "res://scenes/shop.tscn"
 }
 
 @onready var play_button: Button = $TextureRect/CenterContainer/Buttons/Play
@@ -18,10 +18,10 @@ func _ready() -> void:
 	bgAnimation.play("bg")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _on_button_pressed(go_to: String):
+func _on_button_pressed(go_to: String) -> void:
 	print(go_to)
 	if go_to in paths:
-		get_tree().change_scene_to_file(paths[go_to])
+		paths[go_to].emit()
 		
 	
 func _on_quit_button_pressed():
