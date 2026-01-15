@@ -15,15 +15,7 @@ const ANGLE_RANGE := PI * 0.61
 
 const EDGE_ANGLE = PI/2 + ANGLE_RANGE
 
-var color_ranges := [{
-	'angle_from': EDGE_ANGLE,
-	'angle_to': -EDGE_ANGLE,
-	'color': Color.WHITE,
-}, {
-	'angle_from': -PI/2 - 0.1,
-	'angle_to': -PI/2 + 0.1,
-	'color': Color.DARK_GREEN,
-}]
+var color_ranges := []
 #var color_ranges := [{
 	#'angle_from': -PI/2 - 0.1,
 	#'angle_to': -PI/2 + 0.1,
