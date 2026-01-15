@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://njwaw4ip0yvr"]
+
+[ext_resource type="Script" uid="uid://c4dwxbg6uagmk" path="res://scripts/animation/fish_anim.gd" id="1_5xnu5"]
+[ext_resource type="Texture2D" uid="uid://dv8tog7vrrx0" path="res://assets/spriteshee_fish.png" id="2_t77x6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88uy3"]
+atlas = ExtResource("2_t77x6")
+region = Rect2(0, 0, 560, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukq2v"]
+atlas = ExtResource("2_t77x6")
+region = Rect2(560, 0, 560, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0vdy"]
+atlas = ExtResource("2_t77x6")
+region = Rect2(1120, 0, 560, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puarw"]
+atlas = ExtResource("2_t77x6")
+region = Rect2(1680, 0, 560, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liquj"]
+atlas = ExtResource("2_t77x6")
+region = Rect2(2240, 0, 560, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5ce8"]
+atlas = ExtResource("2_t77x6")
+region = Rect2(2800, 0, 560, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvq36"]
+atlas = ExtResource("2_t77x6")
+region = Rect2(3360, 0, 560, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gitgd"]
+atlas = ExtResource("2_t77x6")
+region = Rect2(3920, 0, 560, 560)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m45aw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88uy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukq2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0vdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puarw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_liquj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5ce8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvq36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gitgd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FishAnim" type="Node2D"]
+script = ExtResource("1_5xnu5")
+move_speed_px_s = 350.0
+roam_range_px = 600.0
+rotation_lerp_speed = 4.0
+
+[node name="Fish" type="AnimatedSprite2D" parent="."]
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_m45aw")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

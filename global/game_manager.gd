@@ -1,7 +1,7 @@
 extends Node
 
 const GAME_WRAPPER = preload("uid://dbbvrvjjexwuv")
-const LANDING = preload("uid://b2a5nmp8lmi2b")
+const LANDING = preload("res://scenes/landing.tscn")
 
 signal game
 signal main_menu
