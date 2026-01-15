@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://drtyj2j3xpawk"]
+[gd_scene load_steps=5 format=3 uid="uid://drtyj2j3xpawk"]
 
 [ext_resource type="Script" uid="uid://eapyataqeo6v" path="res://scripts/ui/on_screen_ui.gd" id="1_x7kbn"]
 [ext_resource type="PackedScene" uid="uid://bjuksg8m16blh" path="res://scenes/ui/radar.tscn" id="2_x7kbn"]
+[ext_resource type="PackedScene" uid="uid://bykr0hus5j7ls" path="res://scenes/barre_vie.tscn" id="3_yyhcv"]
+[ext_resource type="PackedScene" uid="uid://wyvvw1mqud5" path="res://scenes/ui/inputMapper.tscn" id="4_rx5g3"]
 
 [node name="OnScreenUi" type="CanvasLayer"]
+scale = Vector2(0.1, 0.1)
+transform = Transform2D(0.1, 0, 0, 0.1, 0, 0)
 script = ExtResource("1_x7kbn")
 
 [node name="Radar" parent="." instance=ExtResource("2_x7kbn")]
@@ -19,3 +23,8 @@ offset_bottom = 115.0
 grow_horizontal = 0
 grow_vertical = 1
 scale = Vector2(0.35, 0.35)
+
+[node name="health bar" parent="." instance=ExtResource("3_yyhcv")]
+
+[node name="InputMapper" parent="." instance=ExtResource("4_rx5g3")]
+
