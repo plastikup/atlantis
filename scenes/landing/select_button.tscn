@@ -16,7 +16,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nim5t"]
 
 [node name="Button" type="Button"]
-custom_minimum_size = Vector2(225, 95)
+custom_minimum_size = Vector2(175, 72)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
