@@ -1,5 +1,7 @@
 extends Node
 
+var depthLevel := 0
+var radarElements := []
 enum ShipLevels { leather, wood, copper, silver, gold }
 
 var ship_level := ShipLevels.leather
