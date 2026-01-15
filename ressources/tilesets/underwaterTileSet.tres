@@ -1,9 +1,6 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b66v35x5jc1tc"]
-
-[ext_resource type="Texture2D" uid="uid://ddqxttu5pccje" path="res://assets/tiles/rochesCentre.png" id="1_cov68"]
+[gd_resource type="TileSet" load_steps=2 format=3 uid="uid://b66v35x5jc1tc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e26c5"]
-texture = ExtResource("1_cov68")
 texture_region_size = Vector2i(1024, 1024)
 0:0/0 = 0
 
