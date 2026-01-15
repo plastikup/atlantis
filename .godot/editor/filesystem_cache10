@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1768439903
+::res://::1768441180
 icon.svg::CompressedTexture2D::765509594263301499::1768435164::1768435243::1::::<><><>0<>0<>5b30905f2f859149584a7f0bb3c660d4<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://addons/::1768176379
 ::res://addons/dialogic/::1768176379
@@ -628,13 +628,15 @@ event.gd::GDScript::8763588563558386910::1768176379::0::1::::DialogicEvent<>Reso
 timeline.gd::GDScript::5667425671830628919::1768176379::0::1::::DialogicTimeline<>Resource<><>0<>1<><>::
 TimelineResourceLoader.gd::GDScript::1953327801557244659::1768176379::0::1::::DialogicTimelineFormatLoader<>ResourceFormatLoader<><>0<>1<><>::
 TimelineResourceSaver.gd::GDScript::6005903703142383367::1768176379::0::1::::DialogicTimelineFormatSaver<>ResourceFormatSaver<><>0<>1<><>::
-::res://assets/::1768438781
+::res://assets/::1768441141
+::res://assets/tiles/::1768441180
+rochesCentre.png::CompressedTexture2D::7404290077199108478::1768441174::1768441180::1::::<><><>0<>0<>b0474963173058352cb710764fec991c<>res://.godot/imported/rochesCentre.png-424451eb1ea2bba77a75e6c95ded1a01.ctex::
 ::res://ressources/::1768439310
 ::res://ressources/dialogic/::1768439516
 ::res://ressources/dialogic/characters/::1768439516
 centreDeControle.dch::Resource/DialogicCharacter::3482884101736702417::1768439474::0::1::::<><>uid://bbea0efx0ybu7<>0<>0<><>::
 ::res://ressources/dialogic/timelines/::1768439583
 tutoriel.dtl::Resource/DialogicTimeline::6043196162468136783::1768439583::0::1::::<><>uid://j7ym07anlusi<>0<>0<><>::uid://bpveuex0vvrun
-::res://scenes/::1768439926
-testScene.tscn::PackedScene::1713930010084773235::1768439926::0::1::::<><><>0<>0<><>::
+::res://scenes/::1768440777
+dialogicTestScene.tscn::PackedScene::1713930010084773235::1768440777::0::1::::<><><>0<>0<><>::
 ::res://scripts/::1768438774
