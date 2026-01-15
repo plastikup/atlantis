@@ -27,7 +27,11 @@ func _physics_process(delta: float) -> void:
 
 	# you rotate the vector and add the max speed (negative or positive) or no speed
 	var forward := Vector2.RIGHT.rotated(rotation)
-	var desired_velocity := forward * (direction * max_speed)
+	var desired_velocity: Vector2
+	if direction:
+		desired_velocity = forward * (direction * max_speed)
+	else:
+		desired_velocity = forward * (-turn * max_speed)
 
 	# you set up the turn rate by increasing (or decreasing) with dif_dir 
 	# however move_towards function limits going over the desired_velocity

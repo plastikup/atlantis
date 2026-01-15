@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bf3ivtxhsqjfh"]
 
-[ext_resource type="Script" path="res://scenes/ship.gd" id="1_2gnfn"]
+[ext_resource type="Script" uid="uid://cxt5hlp2u6d25" path="res://scripts/ship.gd" id="1_2gnfn"]
 [ext_resource type="Texture2D" uid="uid://blp66sbauru02" path="res://assets/submarine.png" id="1_q631a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gnfn"]
