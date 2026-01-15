@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://yoigaphotysx"]
+
+[sub_resource type="GDScript" id="GDScript_5kspd"]
+resource_name = "tester"
+script/source = "extends Node2D
+
+@onready var tutorielTimeline = preload(\"res://ressources/dialogic/timelines/tutoriel.dtl\")
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Dialogic.start(tutorielTimeline)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="TestScene" type="Node2D"]
+script = SubResource("GDScript_5kspd")
