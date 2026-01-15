@@ -1,6 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://crpmwhl2n5tgq"]
+[gd_scene load_steps=11 format=3 uid="uid://crpmwhl2n5tgq"]
 
+[ext_resource type="Script" uid="uid://xwyt4nb66kgv" path="res://scripts/outpost/outpost.gd" id="1_4evlg"]
 [ext_resource type="Texture2D" uid="uid://dcmo1sj66fb66" path="res://assets/outpost/outpost_template.png" id="1_lk311"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lk311"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4evlg"]
 atlas = ExtResource("1_lk311")
@@ -49,6 +52,10 @@ animations = [{
 size = Vector2(246.5, 243)
 
 [node name="outpost" type="StaticBody2D"]
+scale = Vector2(5, 5)
+collision_layer = 65536
+physics_material_override = SubResource("PhysicsMaterial_lk311")
+script = ExtResource("1_4evlg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j6kdo")
@@ -57,3 +64,8 @@ frame_progress = 0.4968774
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.25, 0.5)
 shape = SubResource("RectangleShape2D_077m5")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

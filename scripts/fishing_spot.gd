@@ -3,7 +3,7 @@ extends Area2D
 const ACTION:= "interact"
 const FISH:= "fish"
 var is_inbound := false
-var clue_all_found := false
+var clue_all_found := true
 @export var level: int
 
 func _unhandled_input(event: InputEvent) -> void:
