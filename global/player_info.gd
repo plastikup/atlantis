@@ -1,6 +1,7 @@
 extends Node
 
 var depthLevel := 0
+var playerNode
 var radarElements := []
 enum typeLevels {leather, wood, copper, silver, gold }
 

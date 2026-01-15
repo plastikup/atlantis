@@ -12,7 +12,7 @@ var _turn_rate: float = 0.0
 
 	
 func _ready() -> void:
-	PlayerInfo.radarElements.append({"type" : "player", "node" : self}) 
+	PlayerInfo.playerNode = self
 	signalHub.ship_upgraded.connect(update_ship_material)
 	update_ship_material()
 	signalHub.fish_some_fish.connect(gainFish)

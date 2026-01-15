@@ -3,13 +3,17 @@
 [ext_resource type="Script" uid="uid://eapyataqeo6v" path="res://scripts/ui/on_screen_ui.gd" id="1_x7kbn"]
 [ext_resource type="PackedScene" uid="uid://cudniyskfnp46" path="res://scenes/dial.tscn" id="2_0wh5l"]
 [ext_resource type="PackedScene" uid="uid://bjuksg8m16blh" path="res://scenes/ui/radar.tscn" id="2_x7kbn"]
-[ext_resource type="PackedScene" uid="uid://bykr0hus5j7ls" path="res://scenes/barre_vie.tscn" id="3_yyhcv"]
+[ext_resource type="PackedScene" uid="uid://bpij1da81rhcw" path="res://scenes/barre_vie.tscn" id="3_yyhcv"]
 [ext_resource type="PackedScene" uid="uid://wyvvw1mqud5" path="res://scenes/ui/inputMapper.tscn" id="4_rx5g3"]
 
 [node name="OnScreenUi" type="CanvasLayer"]
-scale = Vector2(0.1, 0.1)
-transform = Transform2D(0.1, 0, 0, 0.1, 0, 0)
 script = ExtResource("1_x7kbn")
+
+[node name="InputMapper" parent="." instance=ExtResource("4_rx5g3")]
+
+[node name="dial" parent="." instance=ExtResource("2_0wh5l")]
+position = Vector2(147, 531)
+DIAL_TYPE = 1
 
 [node name="Radar" parent="." instance=ExtResource("2_x7kbn")]
 anchors_preset = 1
@@ -17,18 +21,19 @@ anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 0.0
-offset_left = -117.0
-offset_top = 115.0
-offset_right = -117.0
-offset_bottom = 115.0
+offset_left = -134.0
+offset_top = 128.99998
+offset_right = -134.0
+offset_bottom = 128.99998
 grow_horizontal = 0
 grow_vertical = 1
-scale = Vector2(0.35, 0.35)
+scale = Vector2(0.415, 0.415)
 
-[node name="health bar" parent="." instance=ExtResource("3_yyhcv")]
-
-[node name="InputMapper" parent="." instance=ExtResource("4_rx5g3")]
-
-[node name="dial" parent="." instance=ExtResource("2_0wh5l")]
-position = Vector2(800, 5810)
-DIAL_TYPE = 1
+[node name="Control" parent="." instance=ExtResource("3_yyhcv")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_top = 45.0
+offset_bottom = 45.0
+grow_vertical = 1
