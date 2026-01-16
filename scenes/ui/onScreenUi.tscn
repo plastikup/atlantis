@@ -59,7 +59,7 @@ theme_override_colors/font_shadow_color = Color(0.6117647, 0.6117647, 0.6117647,
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 80
-text = "kPa"
+text = "PSI"
 
 [node name="unitLabel2" type="Label" parent="kPaDial"]
 offset_left = -413.33374
@@ -83,12 +83,27 @@ DIAL_TYPE = 1
 
 [node name="unitLabel2" type="Label" parent="integrityDial"]
 offset_left = -413.33374
-offset_top = 299.99927
-offset_right = 407.66626
-offset_bottom = 480.99927
+offset_top = 193.33215
+offset_right = 432.66626
+offset_bottom = 558.33215
 theme_override_colors/font_color = Color(0.8156863, 0.8156863, 0.81960785, 1)
 theme_override_colors/font_shadow_color = Color(0.6117647, 0.6117647, 0.6117647, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 144
-text = "INTÉGRITÉ"
+text = "RÉSERVES 
+DE O"
+horizontal_alignment = 1
+
+[node name="unitLabel3" type="Label" parent="integrityDial"]
+offset_left = -206.66663
+offset_top = 440.0
+offset_right = 639.3334
+offset_bottom = 805.0
+theme_override_colors/font_color = Color(0.8156863, 0.8156863, 0.81960785, 1)
+theme_override_colors/font_shadow_color = Color(0.6117647, 0.6117647, 0.6117647, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 104
+text = "2"
+horizontal_alignment = 1
