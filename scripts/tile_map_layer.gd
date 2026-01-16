@@ -8,6 +8,10 @@ func _ready() -> void:
 
 
 func only_apply_current_tilemap_layer_collision() -> void:
-	var ship_level = PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]
-	print('unsmily face', get_parent().get_meta('level'), ship_level+1, get_parent().get_meta('level') == ship_level+1)
-	set_collision_enabled(get_parent().get_meta('level') == ship_level+1)
+	if get_parent().get_meta('level') == PlayerInfo.depthLevel+1:
+		set_collision_enabled(true)
+		get_parent().visible = true
+	else:
+		set_collision_enabled(false)
+		get_parent().visible = false
+	
