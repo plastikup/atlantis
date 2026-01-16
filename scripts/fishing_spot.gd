@@ -28,9 +28,11 @@ func _process(delta: float) -> void:
 			elif Input.is_action_just_pressed(ACTION) and clue_all_found:
 				if not isOutpostOpen:
 					signalHub.open_outpost(level)
+					signalHub.menu_popup()
 					isOutpostOpen = true
 				else:
 					signalHub.exit_outpost()
+					signalHub.menu_hide()
 					isOutpostOpen = false
 
 func _on_body_entered(body: Node2D) -> void:

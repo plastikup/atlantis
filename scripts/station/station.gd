@@ -11,9 +11,11 @@ func _process(delta: float) -> void:
 	pass
 
 func showShop() -> void:
+	signalHub.menu_popup()
 	show()
 
 
 func _on_close_pressed() -> void:
+	signalHub.menu_hide()
 	signalHub.close_shop()
 	hide()

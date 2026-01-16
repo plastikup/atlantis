@@ -2,7 +2,7 @@ extends Control
 
 var paths := {
 	"play": gameManager.game,
-	"tutorial": "res://scenes/shop.tscn"
+	"tutorial": gameManager.touches
 }
 
 @onready var play_button: Button = $TextureRect/CenterContainer/Buttons/Play
