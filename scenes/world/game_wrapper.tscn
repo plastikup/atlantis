@@ -16,18 +16,18 @@
 [node name="holes" type="Node2D" parent="."]
 
 [node name="hole_lvl_3" parent="holes" instance=ExtResource("2_mqjwq")]
-position = Vector2(44032, 18432)
-scale = Vector2(21, 6)
+position = Vector2(47104.004, 18432)
+scale = Vector2(18, 6)
 layer = 3
 
 [node name="hole_lvl_2" parent="holes" instance=ExtResource("2_mqjwq")]
-position = Vector2(12288, -2048)
-scale = Vector2(10, 11)
+position = Vector2(12288, 4095.9995)
+scale = Vector2(10, 5)
 layer = 2
 
 [node name="hole_lvl_1" parent="holes" instance=ExtResource("2_mqjwq")]
 position = Vector2(-6144, -20480)
-scale = Vector2(5, 10)
+scale = Vector2(5, 8)
 layer = 1
 
 [node name="Submarine" parent="." instance=ExtResource("2_ceuy0")]

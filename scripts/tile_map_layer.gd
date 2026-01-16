@@ -8,10 +8,7 @@ func _ready() -> void:
 
 
 func only_apply_current_tilemap_layer_collision() -> void:
-	if get_parent().get_meta('level') == PlayerInfo.depthLevel+1:
-		set_collision_enabled(true)
-		get_parent().visible = true
-	else:
-		set_collision_enabled(false)
-		get_parent().visible = false
+	var self_is_current_tilemap = get_parent().get_meta('level') == PlayerInfo.depthLevel+1
+	set_collision_enabled(self_is_current_tilemap)
+	get_parent().visible = self_is_current_tilemap
 	
