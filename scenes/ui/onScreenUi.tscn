@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://drtyj2j3xpawk"]
+[gd_scene load_steps=9 format=3 uid="uid://drtyj2j3xpawk"]
 
 [ext_resource type="Script" uid="uid://eapyataqeo6v" path="res://scripts/ui/on_screen_ui.gd" id="1_x7kbn"]
 [ext_resource type="PackedScene" uid="uid://cudniyskfnp46" path="res://scenes/dial.tscn" id="2_0wh5l"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://wyvvw1mqud5" path="res://scenes/ui/inputMapper.tscn" id="4_rx5g3"]
 [ext_resource type="Script" uid="uid://bggbelifdmian" path="res://scripts/ui/kPa_dial.gd" id="5_l1rox"]
 [ext_resource type="Script" uid="uid://dx4t62t4jo01o" path="res://scripts/ui/integrityDial.gd" id="7_m8w6x"]
+[ext_resource type="PackedScene" uid="uid://w28tcs617hls" path="res://scenes/ui/fishingGame.tscn" id="8_bwgjm"]
 
 [node name="OnScreenUi" type="CanvasLayer"]
 script = ExtResource("1_x7kbn")
@@ -108,3 +109,7 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 104
 text = "2"
 horizontal_alignment = 1
+
+[node name="FishingGame" parent="." instance=ExtResource("8_bwgjm")]
+position = Vector2(575, 350)
+scale = Vector2(0.4, 0.4)
