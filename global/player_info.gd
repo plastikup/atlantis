@@ -16,11 +16,11 @@ enum upgrade_types {
 
 const upgrade_level_values := {
 	upgrade_types.SHIP_MATERIAL: {
-		0: 25,
-		1: 50,
-		2: 100,
-		3: 200, 
-		4: 400
+		0: 75,
+		1: 150,
+		2: 300,
+		3: 600, 
+		4: 1200
 	},
 	upgrade_types.SPEED: {
 		# in percent of speed added
@@ -66,5 +66,5 @@ const dps_depth := {
 }
 
 
-var fish_inv := [200,2000,3000,4000]
-var clues_found := [[0,1],[0,3],[0,3],[0,4],[0,4]]
+var fish_inv := [0,0,0,0]
+var clues_found := [[0,1],[0,3],[0,3],[0,3],[0,3]]

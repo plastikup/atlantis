@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ckxj58p4qif0k" path="res://assets/shop/bg_panel.png" id="2_hp1fs"]
 [ext_resource type="FontFile" uid="uid://k1qvplsvp6pa" path="res://assets/BlackOpsOne-Regular.ttf" id="3_p5v54"]
 [ext_resource type="Texture2D" uid="uid://b8v0wwpyp8su2" path="res://assets/shop/upgrade.png" id="4_hs5g7"]
-[ext_resource type="Script" uid="uid://btf8dmtq12rnw" path="res://scripts/button_hover.gd" id="5_bvxwi"]
+[ext_resource type="Script" path="res://scripts/button_hover.gd" id="5_bvxwi"]
 [ext_resource type="PackedScene" uid="uid://bq438ku6gnh3p" path="res://scenes/station/cost_popup.tscn" id="6_s55wk"]
 [ext_resource type="Texture2D" uid="uid://ywhff3jdm334" path="res://assets/fish/wooden.png" id="8_8ufus"]
 
