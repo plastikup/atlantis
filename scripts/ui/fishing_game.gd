@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var highestFish = 3
-
+var shown := false
 var sectionStart 
 var sectionAngle
 var chosenFish
@@ -9,15 +9,31 @@ var chosenFish
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	defineWinSection()
+	signalHub.fish_some_fish.connect(showing)
+	hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("click"):
-		if $dial.needleAngle > sectionStart and $dial.needleAngle < sectionStart+sectionAngle:
-			defineWinSection()
+	if shown:
+		if Input.is_action_just_pressed("click"):
+			if $dial.needleAngle > sectionStart and $dial.needleAngle < sectionStart+sectionAngle:
+				defineWinSection()
+				PlayerInfo.fish_inv[PlayerInfo.depthLevel] += 1
+				print("reussis")
+			else:
+				print("perdu")
+			hide()
+			await get_tree().create_timer(0.5).timeout
+			shown = false
+			signalHub.menu_hide()
 		#if needle is in winsection : win and define new win section
 		
+func showing(_a) -> void:
+	shown = true
+	show()
+	signalHub.menu_popup()
+	print("yo")
 func defineWinSection():
 	chosenFish = determineFish()
 	print(chosenFish)

@@ -15,6 +15,9 @@ func _ready() -> void:
 	signalHub.access_outpost.connect(open_outpost)
 	signalHub.leave_outpost.connect(hide_shop)
 	signalHub.in_bound_area.connect(show_input_dependant)
+	
+	addInput("inventaire", "Inventaire", "inventaire")
+	drawInputs()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -57,7 +60,7 @@ func open_outpost(level) -> void:
 	
 func show_input_dependant(area) -> void:
 	if area == "Pêcher":
-		addInput("interact", "Pêchotron 3000", "interact")
+		addInput("interact", "Ouvrir/Fermer", "interact")
 		addInput("fish", "Pêcher", "fish")
 		drawInputs()
 	elif area == "Station":

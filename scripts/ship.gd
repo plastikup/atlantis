@@ -26,7 +26,6 @@ func _ready() -> void:
 	PlayerInfo.playerNode = self
 	signalHub.ship_upgraded.connect(update_ship_material)
 	update_ship_material()
-	signalHub.fish_some_fish.connect(gainFish)
 	signalHub.speed_upgrade.connect(onSpeedUpgraded)
 	signalHub.menu.connect(menu_shown)
 	signalHub.menu_hidden.connect(menu_hide)
@@ -44,9 +43,6 @@ func update_ship_material() -> int:
 	print(PlayerInfo.level_to_name[newLevel])
 	%AnimatedSprite2D.play(PlayerInfo.level_to_name[newLevel])
 	return newLevel
-
-func gainFish(level) -> void:
-	PlayerInfo.fish_inv[level] += 1
 
 func menu_shown() -> void:
 	menu_popup = true
