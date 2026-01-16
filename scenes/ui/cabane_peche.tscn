@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cx0x5gf248w2k"]
+[gd_scene load_steps=11 format=3 uid="uid://cx0x5gf248w2k"]
 
 [ext_resource type="Texture2D" uid="uid://b1rg3hv4msojh" path="res://assets/cabane.png" id="1_nary3"]
 [ext_resource type="Script" uid="uid://ep6ukrg3udw0" path="res://scripts/cabane_peche.gd" id="1_xtmaa"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b8v0wwpyp8su2" path="res://assets/shop/upgrade.png" id="4_hs5g7"]
 [ext_resource type="Script" path="res://scripts/button_hover.gd" id="5_bvxwi"]
 [ext_resource type="PackedScene" uid="uid://bq438ku6gnh3p" path="res://scenes/station/cost_popup.tscn" id="6_s55wk"]
-[ext_resource type="Script" uid="uid://d1g0fr6ekrh5b" path="res://scripts/vitesses_peche_auto.gd" id="7_8ufus"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bvxwi"]
 texture = ExtResource("4_hs5g7")
@@ -75,9 +74,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -169.5
-offset_top = 4.0
-offset_right = 169.5
+offset_left = -195.5
+offset_top = 84.0
+offset_right = 195.5
 offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -91,37 +90,6 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 26
 text = "Vitesse actuelle de la pêche"
 
-[node name="p1" type="HBoxContainer" parent="image bois/stats/couts upgrade"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="TextureRect" type="TextureRect" parent="image bois/stats/couts upgrade/p1"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Label" type="Label" parent="image bois/stats/couts upgrade/p1"]
-layout_mode = 2
-
-[node name="p2" type="HBoxContainer" parent="image bois/stats/couts upgrade"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="TextureRect" type="TextureRect" parent="image bois/stats/couts upgrade/p2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="image bois/stats/couts upgrade/p2"]
-layout_mode = 2
-
-[node name="p3" type="HBoxContainer" parent="image bois/stats/couts upgrade"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="TextureRect" type="TextureRect" parent="image bois/stats/couts upgrade/p3"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="image bois/stats/couts upgrade/p3"]
-layout_mode = 2
-
 [node name="p4" type="HBoxContainer" parent="image bois/stats/couts upgrade"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -129,67 +97,12 @@ size_flags_horizontal = 4
 [node name="TextureRect" type="TextureRect" parent="image bois/stats/couts upgrade/p4"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="image bois/stats/couts upgrade/p4"]
-layout_mode = 2
-script = ExtResource("7_8ufus")
-
-[node name="generations" type="VBoxContainer" parent="image bois/stats"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="image bois/stats/generations"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 26
-
-[node name="p1" type="HBoxContainer" parent="image bois/stats/generations"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="TextureRect" type="TextureRect" parent="image bois/stats/generations/p1"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="image bois/stats/generations/p1"]
-layout_mode = 2
-
-[node name="p2" type="HBoxContainer" parent="image bois/stats/generations"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="TextureRect" type="TextureRect" parent="image bois/stats/generations/p2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="image bois/stats/generations/p2"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="image bois/stats/generations/p2/Label"]
-layout_mode = 0
-
-[node name="Label" type="Label" parent="image bois/stats/generations/p2/Label"]
-layout_mode = 0
-
-[node name="p3" type="HBoxContainer" parent="image bois/stats/generations"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="TextureRect" type="TextureRect" parent="image bois/stats/generations/p3"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="image bois/stats/generations/p3"]
-layout_mode = 2
-
-[node name="p4" type="HBoxContainer" parent="image bois/stats/generations"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="TextureRect" type="TextureRect" parent="image bois/stats/generations/p4"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="image bois/stats/generations/p4"]
+[node name="info_vitesse" type="Label" parent="image bois/stats/couts upgrade/p4"]
 layout_mode = 2
 
 [node name="CostPopup" parent="image bois" instance=ExtResource("6_s55wk")]
 layout_mode = 1
 offset_left = 104.0
-offset_top = 312.0
+offset_top = 264.0
 offset_right = -96.0
-offset_bottom = -96.0
+offset_bottom = -144.0
