@@ -23,4 +23,3 @@ func _process(delta: float) -> void:
 		print('emitting')
 		signalHub.ship_died.emit()
 	$dial.set_needle_angle(float(PlayerInfo.depthLevel) *0.2 +0.1)
-
