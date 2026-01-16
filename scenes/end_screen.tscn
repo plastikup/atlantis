@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqis078y2idp2"]
+
+[ext_resource type="Texture2D" uid="uid://b45q6u81fajnw" path="res://assets/end.png" id="1_kq7ac"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -376.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kq7ac")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 408.0
+offset_right = 1160.0
+offset_bottom = 544.0
+theme_override_font_sizes/font_size = 45
+text = "FÉLICITATIONS! VOUS AVEZ TROUVÉ ATLANTIS!"
+horizontal_alignment = 1
+vertical_alignment = 1
