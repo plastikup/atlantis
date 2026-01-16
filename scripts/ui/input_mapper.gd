@@ -6,10 +6,10 @@ var showing:= true
 
 
 func _ready() -> void:
-	addInput("up", "Avancer", "up")
-	addInput("left", "Aller à gauche", "left")
-	addInput("down", "Reculer", "down")
-	addInput("right", "Aller à droite", "right")
+	#addInput("up", "Avancer", "up")
+	#addInput("left", "Aller à gauche", "left")
+	#addInput("down", "Reculer", "down")
+	#addInput("right", "Aller à droite", "right")
 	addInput("interact", "Intéragir", "interact")
 	addInput("fish", "Pêcher", "fish")
 	drawInputs()

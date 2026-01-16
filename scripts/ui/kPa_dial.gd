@@ -16,4 +16,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	PlayerInfo.shipHealth -= PlayerInfo.dps_depth[PlayerInfo.depthLevel]*delta
+	#print([PlayerInfo.shipHealth, PlayerInfo.depthLevel])
+

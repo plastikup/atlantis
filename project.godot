@@ -23,6 +23,7 @@ signalHub="*res://global/signal_hub.gd"
 gameManager="*res://global/game_manager.gd"
 PlayerInfo="*res://global/player_info.gd"
 BuyUtils="*res://global/buy_utils.gd"
+Music="*res://global/music.tscn"
 
 [dialogic]
 
@@ -176,4 +177,5 @@ fish={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

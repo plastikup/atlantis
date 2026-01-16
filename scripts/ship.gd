@@ -21,9 +21,10 @@ func _ready() -> void:
 ## Updates ship's material and returns the current level of the ship
 
 func update_ship_material() -> int:
-	print("ship material", PlayerInfo.ship_level, PlayerInfo.level_to_name[PlayerInfo.ship_level])
-	%AnimatedSprite2D.play(PlayerInfo.level_to_name[PlayerInfo.ship_level])
-	return PlayerInfo.ship_level
+	var newLevel = PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]
+	print(PlayerInfo.level_to_name[newLevel])
+	%AnimatedSprite2D.play(PlayerInfo.level_to_name[newLevel])
+	return newLevel
 
 func gainFish(level) -> void:
 	print(level)
@@ -33,6 +34,16 @@ func gainFish(level) -> void:
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("up", "down") 
 	var turn := Input.get_axis("left", "right")
+	
+	var level = PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]
+	if direction or turn:
+		%AnimatedSprite2D.play(PlayerInfo.level_to_name[level])
+		if !$motor.playing:
+			$motor.play()
+	else :
+		%AnimatedSprite2D.stop()
+		$motor.stop()
+		
 	
 	# you either want to go to max turn rate (negative or positive) or no turn rate
 	var target_turn_rate := turn * max_turn_speed 
