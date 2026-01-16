@@ -5,17 +5,18 @@ var is_held:= false
 var is_done:= false
 const PROGRESS_SPEED := 25.0
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("click"):
-		is_held = true
-	else:
-		is_held = false
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event.is_action_pressed("interact"):
+		#is_held = true
+	#else:
+		#is_held = false
 
 func _ready() -> void:
 	PlayerInfo.radarElements.append({"type" : "clue", "node" : self, "isNew" : true}) 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	is_held = Input.is_action_pressed("interact")
 	if not is_done:
 		if is_held and is_in_bound:
 			%ProgressBar.value += PROGRESS_SPEED * delta
@@ -28,8 +29,10 @@ func _process(delta: float) -> void:
 		%ProgressBar.value = 100.0
 
 func _on_timer_timeout() -> void:
-	
-	get_parent().queue_free()
+	PlayerInfo.clues_found[PlayerInfo.depthLevel][0] += 1
+	print(PlayerInfo.clues_found[PlayerInfo.depthLevel][0], PlayerInfo.clues_found[PlayerInfo.depthLevel][1])
+	signalHub.found_clue_rq()
+	get_parent().get_parent().queue_free()
 
 
 func _on_body_entered(body: Node2D) -> void:

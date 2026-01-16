@@ -13,6 +13,21 @@ script = ExtResource("1_x7kbn")
 
 [node name="InputMapper" parent="." instance=ExtResource("4_rx5g3")]
 
+[node name="Radar" parent="." instance=ExtResource("2_x7kbn")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -416.0
+offset_top = 96.0
+offset_right = -416.0
+offset_bottom = 96.0
+grow_horizontal = 0
+grow_vertical = 1
+scale = Vector2(0.35, 0.35)
+script = null
+
 [node name="Control" parent="." instance=ExtResource("3_yyhcv")]
 anchors_preset = 5
 anchor_left = 0.5
@@ -23,8 +38,6 @@ offset_top = 72.0
 offset_right = -392.0
 offset_bottom = 72.0
 grow_vertical = 1
-
-[node name="Radar" parent="." instance=ExtResource("2_x7kbn")]
 
 [node name="kPaDial" type="Node2D" parent="."]
 position = Vector2(115, 551)
@@ -66,7 +79,6 @@ scale = Vector2(0.15, 0.15)
 script = ExtResource("7_m8w6x")
 
 [node name="dial" parent="integrityDial" instance=ExtResource("2_0wh5l")]
-DIAL_TYPE = 1
 
 [node name="unitLabel2" type="Label" parent="integrityDial"]
 offset_left = -413.33374

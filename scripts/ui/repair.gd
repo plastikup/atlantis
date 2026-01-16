@@ -13,11 +13,32 @@ var repair_costs := {
 	}
 
 
+var fontActiveColor := Color.from_rgba8(255, 255, 255, 255)
+var fontImpossibleColor := Color.from_rgba8(70, 70, 70, 255)
+var fontMaxColor := Color.from_rgba8(250, 211, 0, 255)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	repair_btn.mouse_entered.connect(repair_hover_enter)
 	repair_btn.mouse_exited.connect(repair_hover_exit)
 	repair_btn.pressed.connect(repair_pressed)
+	
+
+func _process(delta: float) -> void:
+	
+	var currentLevel = PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]
+	var btnText = repair_btn.get_node("Label")
+	btnText.text = "AMÉLIORER"
+	
+	repair_popup.set_cost_infos(repair_costs[currentLevel])
+	
+	
+	if not BuyUtils.isUpgradePossible(repair_costs[currentLevel]):
+		btnText.add_theme_color_override("font_color", fontImpossibleColor)
+		repair_btn.disabled = true
+	else:
+		btnText.add_theme_color_override("font_color", fontActiveColor)
+		repair_btn.disabled = false
 
 	
 func repair_hover_enter() -> void:
@@ -33,4 +54,5 @@ func repair_pressed() -> void:
 		BuyUtils.buyUpgrade(repair_costs[currentLevel])
 		# repair ship
 		PlayerInfo.shipHealth = PlayerInfo.upgrade_level_values[type][currentLevel]
+		signalHub.ship_repaired_request()
 	

@@ -62,4 +62,4 @@ const dps_depth := {
 
 
 var fish_inv := [250,0,0,0]
-var clues_found := [0,0,0,0]
+var clues_found := [[0,1],[0,4],[0,3],[0,4],[0,4]]

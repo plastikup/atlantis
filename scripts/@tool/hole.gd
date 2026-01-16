@@ -13,3 +13,6 @@ func update_hole_type(value: HoleTypes):
 		%ColorRect.color = "#00000040"
 	elif value == HoleTypes.to_surface:
 		%ColorRect.color = "#FFFFFF40"
+
+
+@export var layer: int

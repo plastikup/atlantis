@@ -34,3 +34,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.get_node("ping").play()
 		var tween = create_tween()
 		tween.tween_property(body, "modulate:a", 0, 1)
+
+func active(value):
+	$AnimationPlayer.active = value
+	visible = value

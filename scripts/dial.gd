@@ -40,6 +40,10 @@ func _process(_delta: float) -> void:
 func set_needle_angle(needle_progress: float) -> void:
 	%needle.rotation = remap(needle_progress, 0, 1, -1, 1) * ANGLE_RANGE
 	needleAngle = remap(%needle.rotation, -ANGLE_RANGE, ANGLE_RANGE, minAngle, maxAngle)
+	
+func set_inverse_needle_angle(needle_progress: float) -> void:
+	%needle.rotation = remap(needle_progress, 0, 1, 1, 1) * ANGLE_RANGE
+	needleAngle = remap(%needle.rotation, -ANGLE_RANGE, ANGLE_RANGE, maxAngle, minAngle)
 
 ## Update the color ranges of the dial
 func set_new_color_range(new_color_ranges: Array) -> void:
