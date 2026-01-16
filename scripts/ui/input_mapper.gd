@@ -15,6 +15,8 @@ func _ready() -> void:
 	drawInputs()
 	signalHub.access_shop.connect(open_shop)
 	signalHub.hide_shop.connect(hide_shop)
+	signalHub.access_outpost.connect(open_outpost)
+	signalHub.leave_outpost.connect(hide_shop)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -48,5 +50,9 @@ func hide_shop() -> void:
 	show()
 	
 func open_shop() -> void:
+	showing = false
+	hide()
+	
+func open_outpost(level) -> void:
 	showing = false
 	hide()

@@ -11,7 +11,8 @@ var input_actions = {
 	"up": "Avancer",
 	"down": "Reculer",
 	"interact": "Intéragir",
-	"fish": "Pêcher"
+	"fish": "Pêcher",
+	"inventaire": "Inventaire"
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -34,6 +35,7 @@ func _create_action_list() -> void:
 		action_label.text = input_actions[action]
 		var events = InputMap.action_get_events(action)
 		if events.size() > 0:
+			print(events[0])
 			input_label.text = events[0].as_text().trim_suffix(" (Physical)")
 		else:
 			input_label.text = ""

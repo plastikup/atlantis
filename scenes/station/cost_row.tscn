@@ -18,7 +18,7 @@ script = ExtResource("1_mjib8")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(30, 0)
+custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 texture = ExtResource("1_1x5em")

@@ -5,13 +5,16 @@ const FISH:= "fish"
 @export var is_inbound := false
 @export var clue_all_found := false
 @export var level: int = 0
+var isOutpostOpen := false
+var isHeld := false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	signalHub.connect("found_clue", verify_clue_found)
-	print("the bluetooth device connected successfully");
+	signalHub.found_clue.connect(verify_clue_found)
 	hide()
+	isOutpostOpen = false
+	isHeld = false
 	
 
 
@@ -19,11 +22,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if clue_all_found:
 		if is_inbound:
-			if Input.is_action_pressed(FISH):
+			if Input.is_action_just_pressed(FISH):
 				print("FISHIIIIIING")
 				signalHub.fish_some_fish_request(level)
-			elif Input.is_action_pressed(ACTION) and clue_all_found:
-				signalHub.build_request(level)
+			elif Input.is_action_just_pressed(ACTION) and clue_all_found:
+				if not isOutpostOpen:
+					signalHub.open_outpost(level)
+					isOutpostOpen = true
+				else:
+					signalHub.exit_outpost()
+					isOutpostOpen = false
 
 func _on_body_entered(body: Node2D) -> void:
 	is_inbound = true
@@ -32,10 +40,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	is_inbound = false
 	
-func verify_clue_found(level) -> void:
-	print("verifying clues")
-	show()
+func verify_clue_found() -> void:
 	if PlayerInfo.clues_found[level][0] >= PlayerInfo.clues_found[level][1]:
-		print(PlayerInfo.clues_found[level][0], PlayerInfo.clues_found[level][1])
 		show()
 		clue_all_found = true

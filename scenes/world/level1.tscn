@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://cdq2egfjit30c"]
+[gd_scene load_steps=7 format=4 uid="uid://cdq2egfjit30c"]
 
+[ext_resource type="Script" uid="uid://di6gg41kmcx17" path="res://scripts/level/level.gd" id="1_jcvbe"]
 [ext_resource type="TileSet" uid="uid://b66v35x5jc1tc" path="res://ressources/tilesets/underwaterTileSet.tres" id="1_uhuya"]
 [ext_resource type="Script" uid="uid://rfuhtccr0qy8" path="res://scripts/tile_map_layer.gd" id="2_o1sx5"]
 [ext_resource type="PackedScene" uid="uid://m4ydiiy6moc5" path="res://scenes/station/station_body.tscn" id="3_cblth"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dxbd75ad8g2oc" path="res://scenes/fishing_spot.tscn" id="5_h3oqf"]
 
 [node name="level1" type="Node2D"]
+script = ExtResource("1_jcvbe")
 metadata/level = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -22,5 +24,4 @@ position = Vector2(-15734, -15056)
 mode = 9
 
 [node name="fishing_spot" parent="." instance=ExtResource("5_h3oqf")]
-visible = true
 position = Vector2(-22149, -18766)
