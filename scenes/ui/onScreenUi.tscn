@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bjuksg8m16blh" path="res://scenes/ui/radar.tscn" id="2_x7kbn"]
 [ext_resource type="PackedScene" uid="uid://bpij1da81rhcw" path="res://scenes/barre_vie.tscn" id="3_yyhcv"]
 [ext_resource type="PackedScene" uid="uid://wyvvw1mqud5" path="res://scenes/ui/inputMapper.tscn" id="4_rx5g3"]
-[ext_resource type="Script" uid="uid://bggbelifdmian" path="res://scripts/ui/kPa_dial.gd" id="5_l1rox"]
+[ext_resource type="Script" path="res://scripts/ui/kPa_dial.gd" id="5_l1rox"]
 
 [node name="OnScreenUi" type="CanvasLayer"]
 script = ExtResource("1_x7kbn")
@@ -18,10 +18,10 @@ anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 0.0
-offset_left = -584.0
-offset_top = 115.0
-offset_right = 750.28564
-offset_bottom = 115.0
+offset_left = -416.0
+offset_top = 96.0
+offset_right = -416.0
+offset_bottom = 96.0
 grow_horizontal = 0
 grow_vertical = 1
 scale = Vector2(0.35, 0.35)
@@ -32,8 +32,10 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
-offset_top = 45.0
-offset_bottom = 45.0
+offset_left = -392.0
+offset_top = 72.0
+offset_right = -392.0
+offset_bottom = 72.0
 grow_vertical = 1
 
 [node name="kPaDial" type="Node2D" parent="."]
