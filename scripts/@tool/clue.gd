@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 
 enum ClueTypes { column, egg, trident , shell, plaque, main_cousteau, lumiere, xbox, cousteau, coquillage, collier, billet, assiete}
@@ -103,18 +102,10 @@ const progress_bar_y_offset := {
 }
 
 
-@export var mode: ClueTypes:
-	set(value):
-		mode = value
-		update_clue_type()
-@export var prefer_bottom_text: bool:
-	set(value):
-		prefer_bottom_text = value
-		update_clue_type()
+@export var mode: ClueTypes
+@export var prefer_bottom_text: bool
 
-func update_clue_type():
-	if not Engine.is_editor_hint(): return
-	
+func _ready():	
 	%SpriteAgent.scale = Vector2(sprite_agent_scales[mode], sprite_agent_scales[mode])
 	
 	%Sprite2D.texture = clue_images[mode]

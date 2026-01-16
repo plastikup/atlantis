@@ -22,4 +22,5 @@ position = Vector2(-15734, -15056)
 mode = 9
 
 [node name="fishing_spot" parent="." instance=ExtResource("5_h3oqf")]
-position = Vector2(-8997, -15590)
+visible = true
+position = Vector2(-22149, -18766)

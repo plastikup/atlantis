@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" uid="uid://c1y1fp372ydq6" path="res://scripts/@tool/clue.gd" id="1_stuec"]
 [ext_resource type="Script" uid="uid://dyq4ci6i3pfij" path="res://scripts/clue.gd" id="1_t4dib"]
-[ext_resource type="Texture2D" uid="uid://2lxlxw38i1y4" path="res://assets/items/colonne.png" id="3_stuec"]
+[ext_resource type="Texture2D" uid="uid://bocw1v2rm8p0p" path="res://assets/items/xbox.png" id="3_stuec"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_stuec"]
-radius = 61.0
+radius = 50.0
 
 [node name="Clue" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_stuec")
+mode = 7
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -17,10 +18,11 @@ one_shot = true
 
 [node name="SpriteAgent" type="Node2D" parent="."]
 unique_name_in_owner = true
-scale = Vector2(3, 3)
+scale = Vector2(1.5, 1.5)
 
 [node name="Area2D" type="Area2D" parent="SpriteAgent"]
 scale = Vector2(7.692308, 7.692308)
+collision_layer = 16777216
 script = ExtResource("1_t4dib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteAgent/Area2D"]
@@ -53,8 +55,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -2200.0
-offset_bottom = -2023.0
+offset_top = -1350.0
+offset_bottom = -1173.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 240
