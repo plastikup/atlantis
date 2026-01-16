@@ -1,14 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://c4w3c1aum23jd"]
+[gd_scene load_steps=16 format=3 uid="uid://c4w3c1aum23jd"]
 
 [ext_resource type="PackedScene" uid="uid://bo8p0litp4f56" path="res://scenes/station/station.tscn" id="1_mqjwq"]
 [ext_resource type="PackedScene" uid="uid://bsuv80sw3pmv" path="res://scenes/world/parallax.tscn" id="1_unsus"]
 [ext_resource type="PackedScene" uid="uid://bf3ivtxhsqjfh" path="res://scenes/ship.tscn" id="2_ceuy0"]
 [ext_resource type="PackedScene" uid="uid://dl14cbx4vfaii" path="res://scenes/hole.tscn" id="2_mqjwq"]
 [ext_resource type="PackedScene" uid="uid://drtyj2j3xpawk" path="res://scenes/ui/onScreenUi.tscn" id="4_bmvob"]
+[ext_resource type="PackedScene" uid="uid://c1npt13uo7yr7" path="res://scenes/world/level5.tscn" id="4_hu6m7"]
 [ext_resource type="PackedScene" uid="uid://b6u7q0mg7cf26" path="res://scenes/fade_in_out.tscn" id="4_oqlwg"]
 [ext_resource type="PackedScene" uid="uid://78u133481kbt" path="res://scenes/world/level4.tscn" id="5_unsus"]
 [ext_resource type="PackedScene" uid="uid://b4dfhnyipfmlt" path="res://scenes/world/level2.tscn" id="6_djqdj"]
-[ext_resource type="PackedScene" uid="uid://b6kqema8r87ja" path="res://scenes/world/level5.tscn" id="7_ctqw0"]
+[ext_resource type="PackedScene" uid="uid://b6kqema8r87ja" path="res://scenes/world/level3.tscn" id="7_ctqw0"]
 [ext_resource type="PackedScene" uid="uid://cdq2egfjit30c" path="res://scenes/world/level1.tscn" id="7_thgnc"]
 [ext_resource type="PackedScene" uid="uid://ctl2iveotall8" path="res://scenes/world/water.tscn" id="10_hu6m7"]
 [ext_resource type="PackedScene" uid="uid://cx0x5gf248w2k" path="res://scenes/ui/cabane_peche.tscn" id="12_djqdj"]
@@ -58,12 +59,11 @@ scale = Vector2(8.027025, 8.027025)
 
 [node name="levels" type="Node2D" parent="."]
 
-[node name="level5" parent="levels" instance=ExtResource("7_ctqw0")]
+[node name="level5" parent="levels" instance=ExtResource("4_hu6m7")]
 
 [node name="level4" parent="levels" instance=ExtResource("5_unsus")]
 
 [node name="level3" parent="levels" instance=ExtResource("7_ctqw0")]
-levelID = 2
 
 [node name="level2" parent="levels" instance=ExtResource("6_djqdj")]
 
