@@ -1,12 +1,68 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6u7q0mg7cf26"]
+[gd_scene load_steps=3 format=3 uid="uid://b6u7q0mg7cf26"]
 
 [ext_resource type="Script" uid="uid://ce350s0si5j5g" path="res://scripts/fade_in_out.gd" id="1_ntfos"]
+[ext_resource type="Texture2D" uid="uid://bcpi0tijxhu3m" path="res://assets/items/cousteau.png" id="2_b52yj"]
 
-[node name="Node2D" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_ntfos")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
-offset_right = 1464.0
-offset_bottom = 752.0
+offset_right = 1152.0
+offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
-script = ExtResource("1_ntfos")
+
+[node name="deathOverlay" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Label" type="Label" parent="deathOverlay"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 113.0
+offset_top = 73.0
+offset_right = 1043.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.6386245, 0.6386245, 0.6386245, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 80
+text = "Votre vaisseau n'a
+jamais été retrouvé..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="deathOverlay"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 359.0
+offset_top = 318.0
+offset_right = 1045.0
+offset_bottom = 563.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.6386245, 0.6386245, 0.6386245, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 40
+text = "Vous allez réapparaitre sans vos ressources sur la surface de la mer"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="deathOverlay"]
+offset_left = 79.0
+offset_top = 269.0
+offset_right = 1103.0
+offset_bottom = 1293.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_b52yj")

@@ -16,5 +16,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var old_health = PlayerInfo.shipHealth
 	PlayerInfo.shipHealth -= PlayerInfo.dps_depth[PlayerInfo.depthLevel]*delta
-	#print([PlayerInfo.shipHealth, PlayerInfo.depthLevel])
+	if old_health >= 0 and PlayerInfo.shipHealth <= 0:
+		print('emitting')
+		signalHub.ship_died.emit()
+	print(PlayerInfo.shipHealth)
