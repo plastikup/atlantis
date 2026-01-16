@@ -9,9 +9,10 @@ script = ExtResource("1_8jcdt")
 
 [node name="needle" type="ColorRect" parent="."]
 unique_name_in_owner = true
-offset_left = -1.0
+custom_minimum_size = Vector2(16, 0)
+offset_left = -7.0
 offset_top = -48.0
-offset_right = 1.0
+offset_right = 9.0
 scale = Vector2(1, 10.67)
 pivot_offset = Vector2(1, 48)
 color = Color(0.42745098, 0.42745098, 0.43137255, 1)

@@ -18,4 +18,3 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	PlayerInfo.shipHealth -= PlayerInfo.dps_depth[PlayerInfo.depthLevel]*delta
 	#print([PlayerInfo.shipHealth, PlayerInfo.depthLevel])
-

@@ -12,12 +12,11 @@ func start_game() -> void:
 	var currentLevel = PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]
 	var maxHealth = PlayerInfo.upgrade_level_values[PlayerInfo.upgrade_types.SHIP_MATERIAL][currentLevel]
 	max_value = maxHealth
-	value = 10
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
+	
 func on_life_updated(newValue: int):
 	value = newValue
 	
