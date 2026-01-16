@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="atlantis"
-run/main_scene="uid://c4w3c1aum23jd"
+run/main_scene="uid://gklldj5cjux6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/image="uid://ewr7hsxefwsc"
 config/icon="uid://dfly6p6apm2tt"
