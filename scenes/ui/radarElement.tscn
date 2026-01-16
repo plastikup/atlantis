@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cavjxmcmyl3v1"]
+
+[ext_resource type="Script" uid="uid://catscqv8g6s2n" path="res://scripts/ui/radar_element.gd" id="1_qvmys"]
+[ext_resource type="AudioStream" uid="uid://b55csl56srqmi" path="res://assets/audio/sonar-ping.mp3" id="2_eq3k0"]
+
+[sub_resource type="Gradient" id="Gradient_trvtg"]
+offsets = PackedFloat32Array(0.21333334, 0.53333336)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qvmys"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_trvtg")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eq3k0"]
+radius = 5.7142854
+
+[node name="radarElement" type="StaticBody2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_qvmys")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_qvmys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eq3k0")
+
+[node name="ping" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_eq3k0")
