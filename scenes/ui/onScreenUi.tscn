@@ -14,6 +14,7 @@ script = ExtResource("1_x7kbn")
 [node name="InputMapper" parent="." instance=ExtResource("4_rx5g3")]
 
 [node name="Control" parent="." instance=ExtResource("3_yyhcv")]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -25,9 +26,22 @@ offset_bottom = 72.0
 grow_vertical = 1
 
 [node name="Radar" parent="." instance=ExtResource("2_x7kbn")]
+visible = true
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 126.99999
+offset_top = -127.0
+offset_right = 126.99999
+offset_bottom = -127.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
 
 [node name="kPaDial" type="Node2D" parent="."]
-position = Vector2(115, 551)
+position = Vector2(122, 140)
 scale = Vector2(0.15, 0.15)
 script = ExtResource("5_l1rox")
 
@@ -61,7 +75,7 @@ theme_override_font_sizes/font_size = 144
 text = "PRESSION"
 
 [node name="integrityDial" type="Node2D" parent="."]
-position = Vector2(355, 551)
+position = Vector2(1033, 140)
 scale = Vector2(0.15, 0.15)
 script = ExtResource("7_m8w6x")
 
