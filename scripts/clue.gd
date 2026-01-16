@@ -33,9 +33,10 @@ func _process(delta: float) -> void:
 		%ProgressBar.value = 100.0
 
 func _on_timer_timeout() -> void:
+	
+	var id = PlayerInfo.clues_found[PlayerInfo.depthLevel][0]
 	PlayerInfo.clues_found[PlayerInfo.depthLevel][0] += 1
-	print(PlayerInfo.clues_found[PlayerInfo.depthLevel][0], PlayerInfo.clues_found[PlayerInfo.depthLevel][1])
-	signalHub.found_clue_rq()
+	signalHub.found_clue_rq(PlayerInfo.depthLevel, id)
 	get_parent().get_parent().queue_free()
 
 

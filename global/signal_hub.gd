@@ -45,9 +45,9 @@ func fish_some_fish_request(level) -> void:
 	
 func ship_upgraded_request() -> void:
 	ship_upgraded.emit()
-func found_clue_rq() -> void:
-	print("found clue")
-	found_clue.emit()
+	
+func found_clue_rq(level: int, id: int) -> void:
+	found_clue.emit(level, id)
 	
 func open_shop() -> void:
 	access_shop.emit()
@@ -68,7 +68,6 @@ func emit_speed_upgrade() -> void:
 	speed_upgrade.emit()
 	
 func menu_popup() -> void:
-	print("open")
 	menu.emit()
 
 func menu_hide() -> void:
