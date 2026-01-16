@@ -57,5 +57,5 @@ func setCurrentMaxHealthIndicator(currentMaxHealth):
 	}])
 
 func setCurrentHealthIndicator(health):
-	$dial.set_inverse_needle_angle(remap(health, 0, PlayerInfo.upgrade_level_values[PlayerInfo.upgrade_types.SHIP_MATERIAL][4], 0, 1))
+	$dial.set_needle_angle(remap(health, 0, PlayerInfo.upgrade_level_values[PlayerInfo.upgrade_types.SHIP_MATERIAL][4], 1, 0))
 	
