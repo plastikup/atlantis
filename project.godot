@@ -47,7 +47,8 @@ directories/dtl_directory={
 "titanic1": "res://ressources/dialogic/timelines/titanic/titanic1.dtl",
 "titanic2": "res://ressources/dialogic/timelines/titanic/titanic2.dtl",
 "titanic3": "res://ressources/dialogic/timelines/titanic/titanic3.dtl",
-"titanic4": "res://ressources/dialogic/timelines/titanic/titanic4.dtl"
+"titanic4": "res://ressources/dialogic/timelines/titanic/titanic4.dtl",
+"tutoriel": "res://ressources/dialogic/timelines/tutoriel.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true

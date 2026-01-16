@@ -1,0 +1,9 @@
+centreDeControle: Bonjour commandant ou commandante du vaisseau en quête d'Atlantis.
+centreDeControle: Vous êtes investi d'une mission de la plus grande importance.
+centreDeControle: Pour commencer votre trajet vers les fins fonds de l'ocean, vous allez devoir améliorer votre vaisseau pour pouvoir survivre les PRESSIONS fatales des abysses.
+centreDeControle: Pour ce faire, vous allez devoir récolter des POISSONS-RESSOURCES car les améliorations ou les réparations en cas de dégats sont couteuses.
+centreDeControle: CEPENDANT, ces poissons-ressources sont très rares.
+centreDeControle: Pour trouver leur emplacement, vous allez devoir scanner des artefacts pour trouver des indices sur leur localisation ...
+centreDeControle: Et grâce à votre extraordinaire intellect, vous allez aussi pouvoir automatiser la collecte de ces poissons, mais ces mécanismes restent eux aussi très couteux.
+centreDeControle: Commencer par scanner le le coquillage artéfact pour trouver la localisation du banc de poissons-ressources.
+do signalHub.menu_hide()
