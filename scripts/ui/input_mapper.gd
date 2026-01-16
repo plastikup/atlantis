@@ -10,13 +10,11 @@ func _ready() -> void:
 	#addInput("left", "Aller à gauche", "left")
 	#addInput("down", "Reculer", "down")
 	#addInput("right", "Aller à droite", "right")
-	addInput("interact", "Intéragir", "interact")
-	addInput("fish", "Pêcher", "fish")
-	drawInputs()
 	signalHub.access_shop.connect(open_shop)
 	signalHub.hide_shop.connect(hide_shop)
 	signalHub.access_outpost.connect(open_outpost)
 	signalHub.leave_outpost.connect(hide_shop)
+	signalHub.in_bound_area.connect(show_input_dependant)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -56,3 +54,23 @@ func open_shop() -> void:
 func open_outpost(level) -> void:
 	showing = false
 	hide()
+	
+func show_input_dependant(area) -> void:
+	if area == "Pêcher":
+		addInput("interact", "Pêchotron 3000", "interact")
+		addInput("fish", "Pêcher", "fish")
+		drawInputs()
+	elif area == "Station":
+		addInput("interact", "Station", "interact")
+		drawInputs()
+	elif area == "Scan":
+		addInput("interact", "Scanner", "interact")
+		drawInputs()
+	elif area == "leave_fs":
+		removeInput("interact")
+		removeInput("fish")
+		drawInputs()
+	elif area == "leave_station":
+		removeInput("interact")
+		drawInputs()
+		
