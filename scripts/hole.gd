@@ -25,6 +25,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		PlayerInfo.depthLevel += 1 if get_parent().layer-1 == PlayerInfo.depthLevel else -1
 		signalHub.switch_scene.emit()
 		signalHub.area_entered("leave_station")
+		await get_tree().create_timer(1).timeout
 		if get_parent().layer-1 == PlayerInfo.depthLevel:
 			signalHub.area_entered("Descendre")
 		else:
