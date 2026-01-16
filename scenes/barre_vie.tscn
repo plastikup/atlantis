@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpij1da81rhcw"]
 
-[ext_resource type="Script" path="res://scripts/progress_bar.gd" id="1_1quqg"]
+[ext_resource type="Script" uid="uid://cq52wy4perj26" path="res://scripts/health_bar.gd" id="1_1quqg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8mrh"]
 corner_radius_top_left = 15
