@@ -24,9 +24,5 @@ position = Vector2(101424, 23696)
 mode = 1
 
 [node name="Clue3" parent="." instance=ExtResource("4_6c2hu")]
-position = Vector2(76800, 22528)
-prefer_bottom_text = true
-
-[node name="Clue4" parent="." instance=ExtResource("4_6c2hu")]
 position = Vector2(88936, 41944)
 mode = 0
