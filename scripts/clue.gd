@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 		%ProgressBar.value = 100.0
 
 func _on_timer_timeout() -> void:
+	
 	get_parent().queue_free()
 
 

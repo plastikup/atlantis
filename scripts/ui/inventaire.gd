@@ -1,9 +1,10 @@
 extends VBoxContainer
 
-@onready var woodFish: Label = $HBoxContainer/VBoxContainer/Label
-@onready var copperFish: Label = $HBoxContainer/VBoxContainer2/Label
-@onready var silverFish: Label = $HBoxContainer2/VBoxContainer/Label
-@onready var goldFish: Label = $HBoxContainer2/VBoxContainer2/Label
+@onready var woodFish: Label = $MarginContainer/HBoxContainer/VBoxContainer4/Label
+@onready var copperFish: Label = $MarginContainer/HBoxContainer/VBoxContainer3/Label
+@onready var silverFish: Label = $MarginContainer/HBoxContainer/VBoxContainer/Label
+@onready var goldFish: Label = $MarginContainer/HBoxContainer/VBoxContainer2/Label
+
 
 
 
