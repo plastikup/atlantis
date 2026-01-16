@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4w3c1aum23jd"]
+[gd_scene load_steps=10 format=3 uid="uid://c4w3c1aum23jd"]
 
+[ext_resource type="PackedScene" uid="uid://bo8p0litp4f56" path="res://scenes/station/station.tscn" id="1_mqjwq"]
 [ext_resource type="PackedScene" uid="uid://bf3ivtxhsqjfh" path="res://scenes/ship.tscn" id="2_ceuy0"]
 [ext_resource type="PackedScene" uid="uid://dl14cbx4vfaii" path="res://scenes/hole.tscn" id="2_mqjwq"]
 [ext_resource type="PackedScene" uid="uid://drtyj2j3xpawk" path="res://scenes/ui/onScreenUi.tscn" id="4_bmvob"]
@@ -44,3 +45,7 @@ turn_accel = 0.73
 [node name="OnScreenUi" parent="." instance=ExtResource("4_bmvob")]
 
 [node name="screen_fader" parent="." instance=ExtResource("4_oqlwg")]
+
+[node name="Station UI" type="CanvasLayer" parent="."]
+
+[node name="Station" parent="Station UI" instance=ExtResource("1_mqjwq")]

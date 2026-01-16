@@ -12,13 +12,14 @@ radius = 2242.6746
 [node name="station_body" type="Area2D"]
 script = ExtResource("1_6lmw4")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="StaticBody2d" type="StaticBody2D" parent="."]
+collision_layer = 131072
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2d"]
 position = Vector2(-1, 1.5)
 shape = SubResource("RectangleShape2D_6lmw4")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2d"]
 texture = ExtResource("1_yotp8")
 
 [node name="Station_zone" type="CollisionShape2D" parent="."]
