@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bf3ivtxhsqjfh"]
+[gd_scene load_steps=30 format=3 uid="uid://bf3ivtxhsqjfh"]
 
 [ext_resource type="Script" uid="uid://cxt5hlp2u6d25" path="res://scripts/ship.gd" id="1_2gnfn"]
 [ext_resource type="Texture2D" uid="uid://bvxlo2i0atmu5" path="res://assets/ships/copper/Timeline 1_0000.png" id="3_q0sdf"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://btkddh6lvpykc" path="res://assets/ships/wooden/Timeline 1_0001.png" id="24_8jkn4"]
 [ext_resource type="Texture2D" uid="uid://b2g1oqm5itocv" path="res://assets/ships/wooden/Timeline 1_0002.png" id="25_eiv43"]
 [ext_resource type="Texture2D" uid="uid://b0jcpdxlbd8np" path="res://assets/ships/wooden/Timeline 1_0003.png" id="26_kbhtu"]
+[ext_resource type="AudioStream" uid="uid://cj1xfo1ed6tbm" path="res://assets/audio/motor.mp3" id="27_q0sdf"]
 [ext_resource type="Texture2D" uid="uid://ulacpgvjwuod" path="res://assets/ships/wooden/Timeline 1_0004.png" id="27_tol08"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7tpya"]
@@ -163,3 +164,8 @@ unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_mvhns")
 animation = &"copper"
 autoplay = "default"
+frame_progress = 0.55542797
+
+[node name="motor" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("27_q0sdf")
+volume_db = 5.0

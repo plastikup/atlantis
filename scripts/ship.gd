@@ -35,6 +35,15 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("up", "down") 
 	var turn := Input.get_axis("left", "right")
 	
+	if direction or turn:
+		%AnimatedSprite2D.play(PlayerInfo.level_to_name[PlayerInfo.ship_level])
+		if !$motor.playing:
+			$motor.play()
+	else :
+		%AnimatedSprite2D.stop()
+		$motor.stop()
+		
+	
 	# you either want to go to max turn rate (negative or positive) or no turn rate
 	var target_turn_rate := turn * max_turn_speed 
 	
