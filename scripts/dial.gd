@@ -14,9 +14,13 @@ const ANGLE_RANGE := PI * 0.61
 const EDGE_START_ANGLE = PI/2 - ANGLE_RANGE
 const EDGE_END_ANGLE = PI/2 + ANGLE_RANGE
 
+var needleAngle
+var minAngle = -3.65
+var maxAngle = 0.55
+
 var color_ranges := [{
-	'angle_from': EDGE_START_ANGLE,
-	'angle_to': -EDGE_END_ANGLE,
+	'angle_from': minAngle,
+	'angle_to': maxAngle,
 	'color': Color.WHITE,
 }]
 #var color_ranges := [{
@@ -35,6 +39,7 @@ func _process(_delta: float) -> void:
 ## Expects a float between 0 and 1 to represent the needle's progress between a from angle and a to angle
 func set_needle_angle(needle_progress: float) -> void:
 	%needle.rotation = remap(needle_progress, 0, 1, -1, 1) * ANGLE_RANGE
+	needleAngle = remap(%needle.rotation, -ANGLE_RANGE, ANGLE_RANGE, minAngle, maxAngle)
 
 ## Update the color ranges of the dial
 func set_new_color_range(new_color_ranges: Array) -> void:
