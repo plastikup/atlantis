@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4w3c1aum23jd"]
+[gd_scene load_steps=15 format=3 uid="uid://c4w3c1aum23jd"]
 
 [ext_resource type="PackedScene" uid="uid://bo8p0litp4f56" path="res://scenes/station/station.tscn" id="1_mqjwq"]
 [ext_resource type="PackedScene" uid="uid://bsuv80sw3pmv" path="res://scenes/world/parallax.tscn" id="1_unsus"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cdq2egfjit30c" path="res://scenes/world/level1.tscn" id="7_thgnc"]
 [ext_resource type="PackedScene" uid="uid://ctl2iveotall8" path="res://scenes/world/water.tscn" id="10_hu6m7"]
 [ext_resource type="PackedScene" uid="uid://cx0x5gf248w2k" path="res://scenes/ui/cabane_peche.tscn" id="12_djqdj"]
+[ext_resource type="PackedScene" uid="uid://xggp8a7g1r6g" path="res://scenes/ui/inventaire.tscn" id="13_thgnc"]
+[ext_resource type="PackedScene" uid="uid://cai70vjatwuh4" path="res://scenes/ui/dialog.tscn" id="14_ctqw0"]
 
 [node name="game_wrapper" type="Node2D"]
 
@@ -79,3 +81,7 @@ script = null
 [node name="Station UI" type="CanvasLayer" parent="."]
 
 [node name="Station" parent="Station UI" instance=ExtResource("1_mqjwq")]
+
+[node name="Inventaire" parent="." instance=ExtResource("13_thgnc")]
+
+[node name="Dialog" parent="." instance=ExtResource("14_ctqw0")]

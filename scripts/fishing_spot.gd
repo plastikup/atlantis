@@ -44,7 +44,7 @@ func _on_body_exited(body: Node2D) -> void:
 	is_inbound = false
 	signalHub.area_entered("leave_fs")
 	
-func verify_clue_found() -> void:
+func verify_clue_found(level, id) -> void:
 	if PlayerInfo.clues_found[get_parent().levelID][0] >= PlayerInfo.clues_found[get_parent().levelID][1]:
 		show()
 		clue_all_found = true

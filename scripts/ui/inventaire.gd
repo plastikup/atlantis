@@ -5,7 +5,7 @@ extends VBoxContainer
 @onready var silverFish: Label = $MarginContainer/HBoxContainer/VBoxContainer/Label
 @onready var goldFish: Label = $MarginContainer/HBoxContainer/VBoxContainer2/Label
 
-
+var isInventoryOpen := false
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -20,7 +20,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	signalHub.open_inventory.connect(on_open_inventory)
+	signalHub.close_inventory.connect(on_close_inventory)
+	
+	isInventoryOpen = false
+	on_close_inventory()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,3 +33,18 @@ func _process(delta: float) -> void:
 	copperFish.text = "%04d" % PlayerInfo.fish_inv[1]
 	silverFish.text = "%04d" % PlayerInfo.fish_inv[2]
 	goldFish.text = "%04d" % PlayerInfo.fish_inv[3]
+	
+	if Input.is_action_just_pressed("inventaire"):
+		if isInventoryOpen:
+			signalHub.close_inventory_request()
+		else:
+			signalHub.open_inventory_request()
+			
+	
+func on_open_inventory() -> void:
+	get_parent().show()
+	isInventoryOpen = true
+	
+func on_close_inventory() -> void:
+	get_parent().hide()
+	isInventoryOpen = false
