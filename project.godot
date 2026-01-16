@@ -14,7 +14,7 @@ config/name="atlantis"
 run/main_scene="uid://gklldj5cjux6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/image="uid://ewr7hsxefwsc"
-config/icon="res://icon.svg"
+config/icon="uid://dfly6p6apm2tt"
 
 [autoload]
 
