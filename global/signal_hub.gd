@@ -6,6 +6,7 @@ signal fishing_spot_br
 signal fish_some_fish
 signal found_clue
 signal access_shop
+signal hide_shop
 signal switch_scene
 
 func build_request(level) -> void:
@@ -22,3 +23,6 @@ func found_clue_rq() -> void:
 	
 func open_shop() -> void:
 	access_shop.emit()
+	
+func close_shop() -> void:
+	hide_shop.emit()

@@ -15,4 +15,5 @@ func showShop() -> void:
 
 
 func _on_close_pressed() -> void:
+	signalHub.close_shop()
 	hide()
