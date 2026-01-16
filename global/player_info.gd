@@ -46,4 +46,4 @@ var shipHealth = upgrade_level_values[upgrade_types.SHIP_MATERIAL][0]
 
 
 var fish_inv := [250,0,0,0]
-var clues_found := [0,0,0,0]
+var clues_found := [[0,1],[0,4],[0,3],[0,4],[0,4]]

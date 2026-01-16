@@ -35,6 +35,6 @@ func _on_body_exited(body: Node2D) -> void:
 	is_inbound = false
 	
 func verify_clue_found(level) -> void:
-	if PlayerInfo.clues_found[level] >= 3:
+	if PlayerInfo.clues_found[level][0] >= PlayerInfo.clues_found[level][1]:
 		show()
 		clue_all_found = true
