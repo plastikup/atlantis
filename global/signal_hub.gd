@@ -10,6 +10,8 @@ signal hide_shop
 signal switch_scene
 signal ship_repaired
 signal ship_died
+signal sonar_upgrade
+signal speed_upgrade
 
 func build_request(level) -> void:
 	fishing_spot_br.emit(level)
@@ -18,7 +20,6 @@ func fish_some_fish_request(level) -> void:
 	fish_some_fish.emit(level)
 	
 func ship_upgraded_request() -> void:
-	print("wow")
 	ship_upgraded.emit()
 func found_clue_rq() -> void:
 	print("found clue")
@@ -35,3 +36,9 @@ func ship_repaired_request() -> void:
 	
 func ship_died_request() -> void:
 	ship_died.emit()
+	
+func emit_sonar_upgrade() -> void:
+	sonar_upgrade.emit()
+	
+func emit_speed_upgrade() -> void:
+	speed_upgrade.emit()

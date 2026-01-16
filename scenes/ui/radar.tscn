@@ -47,7 +47,6 @@ _data = {
 }
 
 [node name="Radar" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -96,9 +95,10 @@ texture = ExtResource("2_7awml")
 position = Vector2(0, -128.5)
 shape = SubResource("RectangleShape2D_x3jq8")
 
-[node name="elements" type="Node" parent="."]
+[node name="elements" type="Node2D" parent="."]
 
 [node name="radarElement" parent="elements" instance=ExtResource("4_0uh72")]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 active = false

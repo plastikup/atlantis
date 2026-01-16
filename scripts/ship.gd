@@ -10,13 +10,24 @@ extends CharacterBody2D
 
 var _turn_rate: float = 0.0
 
+var upgraded_speed: float
+var upgraded_accel: float
+var upgraded_friction: float
+
+var upgraded_turn_speed: float
+var upgraded_turn_accel: float
+var upgraded_turn_friction: float
+
 	
 func _ready() -> void:
 	PlayerInfo.playerNode = self
 	signalHub.ship_upgraded.connect(update_ship_material)
 	update_ship_material()
 	signalHub.fish_some_fish.connect(gainFish)
-
+	signalHub.speed_upgrade.connect(onSpeedUpgraded)
+	
+	upgraded_speed = max_speed
+	upgraded_turn_speed = max_turn_speed
 
 ## Updates ship's material and returns the current level of the ship
 
@@ -30,6 +41,18 @@ func gainFish(level) -> void:
 	print(level)
 	PlayerInfo.fish_inv[level] += 1
 	print(PlayerInfo.fish_inv[level])
+	
+func onSpeedUpgraded() -> void: 
+	var type = PlayerInfo.upgrade_types.SPEED
+	upgraded_speed = max_speed * (1 + PlayerInfo.upgrade_level_values[type][PlayerInfo.player_upgrade_levels[type]] / 100.0)
+	upgraded_accel = accel * (1 + PlayerInfo.upgrade_level_values[type][PlayerInfo.player_upgrade_levels[type]] / 100.0)
+	upgraded_friction = friction * (1 + PlayerInfo.upgrade_level_values[type][PlayerInfo.player_upgrade_levels[type]] / 100.0)
+	
+	upgraded_turn_speed = max_turn_speed * (1 + PlayerInfo.upgrade_level_values[type][PlayerInfo.player_upgrade_levels[type]] / 100.0)
+	upgraded_turn_accel = turn_accel * (1 + PlayerInfo.upgrade_level_values[type][PlayerInfo.player_upgrade_levels[type]] / 100.0)
+	upgraded_turn_friction = turn_friction * (1 + PlayerInfo.upgrade_level_values[type][PlayerInfo.player_upgrade_levels[type]] / 100.0)
+	
+	print(max_speed, upgraded_speed)
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("up", "down") 
@@ -60,9 +83,9 @@ func _physics_process(delta: float) -> void:
 	var forward := Vector2.RIGHT.rotated(rotation)
 	var desired_velocity: Vector2
 	if direction:
-		desired_velocity = forward.normalized() * (direction * max_speed)
+		desired_velocity = forward.normalized() * (direction * upgraded_speed)
 	else:
-		desired_velocity = forward.normalized() * (-abs(turn) * max_speed) / 2
+		desired_velocity = forward.normalized() * (-abs(turn) * upgraded_speed) / 2
 
 	# you set up the turn rate by increasing (or decreasing) with dif_dir 
 	# however move_towards function limits going over the desired_velocity

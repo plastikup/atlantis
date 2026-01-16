@@ -144,3 +144,7 @@ func upgrade_btn_pressed() -> void:
 		PlayerInfo.player_upgrade_levels[currentPageID] += 1
 		if currentPageID == PlayerInfo.upgrade_types.SHIP_MATERIAL:
 			signalHub.ship_upgraded_request()
+		if currentPageID == PlayerInfo.upgrade_types.SONAR:
+			signalHub.emit_sonar_upgrade()
+		if currentPageID == PlayerInfo.upgrade_types.SPEED:
+			signalHub.emit_speed_upgrade()
