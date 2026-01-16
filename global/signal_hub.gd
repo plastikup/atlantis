@@ -6,6 +6,7 @@ signal fishing_spot_br
 signal fish_some_fish
 signal found_clue
 signal access_shop
+signal switch_scene
 
 func build_request(level) -> void:
 	fishing_spot_br.emit(level)

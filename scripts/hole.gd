@@ -1,6 +1,6 @@
 extends Area2D
 
-const ACTION_LEVEL_SWITCH = "left"
+const ACTION_LEVEL_SWITCH = "interact"
 var in_bound := false
 
 enum HoleTypes { to_bottom, to_surface }
@@ -12,11 +12,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(ACTION_LEVEL_SWITCH) and in_bound:
-		level_switch()
-
-
-func level_switch():
-	pass
+		signalHub.switch_scene.emit()
 
 
 func _on_body_entered(_body: Node2D) -> void:
