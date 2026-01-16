@@ -17,19 +17,19 @@ tile_set = ExtResource("1_nbxp7")
 script = ExtResource("2_br8on")
 
 [node name="fishing_spot" parent="." instance=ExtResource("2_yhvtt")]
-position = Vector2(64579, 36225)
+position = Vector2(63040, 34944)
 
 [node name="Clue" parent="." instance=ExtResource("4_6c2hu")]
 position = Vector2(40324, 34558)
 mode = 2
 
 [node name="Clue2" parent="." instance=ExtResource("4_6c2hu")]
-position = Vector2(61951, 25578)
+position = Vector2(59264, 24424)
 mode = 1
 
 [node name="Clue3" parent="." instance=ExtResource("4_6c2hu")]
-position = Vector2(36814, 19414)
+position = Vector2(34640, 23256)
 prefer_bottom_text = true
 
 [node name="Clue4" parent="." instance=ExtResource("4_6c2hu")]
-position = Vector2(47799, 45100)
+position = Vector2(47288, 43184)
