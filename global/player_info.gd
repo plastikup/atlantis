@@ -11,6 +11,7 @@ enum upgrade_types {
 	SHIP_MATERIAL,
 	SPEED,
 	SONAR,
+	AUTO_FISHING_SPEED
 }
 
 const upgrade_level_values := {
@@ -32,13 +33,21 @@ const upgrade_level_values := {
 	upgrade_types.SONAR: {
 		0: 0,
 		1: 1
+	},
+	upgrade_types.AUTO_FISHING_SPEED: {
+		0: 1,
+		1: 3,
+		2: 5,
+		3: 10,
+		4: 15
 	}
 }
 
 var player_upgrade_levels := {
 	upgrade_types.SHIP_MATERIAL: 0,
 	upgrade_types.SPEED: 0,
-	upgrade_types.SONAR: 0
+	upgrade_types.SONAR: 0,
+	upgrade_types.AUTO_FISHING_SPEED: 0
 }
 
 var shipHealth = upgrade_level_values[upgrade_types.SHIP_MATERIAL][0]
