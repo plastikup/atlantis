@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctl2iveotall8"]
+
+[ext_resource type="Shader" uid="uid://cwn51h1uhdgvy" path="res://ressources/water.gdshader" id="1_hernp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hernp"]
+shader = ExtResource("1_hernp")
+shader_parameter/base_color = Color(0.101960786, 0.4, 0.9019608, 0.3137255)
+shader_parameter/blob_strength = 0.18
+shader_parameter/blob_scale = 60.0
+shader_parameter/flow_speed = 0.2
+shader_parameter/flow_direction = Vector2(1, 0.1)
+
+[node name="Water" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+material = SubResource("ShaderMaterial_hernp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 19646.0
+offset_bottom = 10603.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24313726, 0.25490198, 1, 1)
