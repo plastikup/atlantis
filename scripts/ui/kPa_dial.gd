@@ -1,5 +1,6 @@
 extends Node2D
 
+
 const COLORS := [Color.DARK_GREEN, Color.GREEN_YELLOW, Color.YELLOW, Color.ORANGE, Color.RED]
 #const COLORS := [Color.DARK_GREEN, Color.GREEN_YELLOW, Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT]
 
@@ -21,4 +22,5 @@ func _process(delta: float) -> void:
 	if old_health >= 0 and PlayerInfo.shipHealth <= 0:
 		print('emitting')
 		signalHub.ship_died.emit()
-	print(PlayerInfo.shipHealth)
+	$dial.set_needle_angle(float(PlayerInfo.depthLevel) *0.2 +0.1)
+

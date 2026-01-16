@@ -15,7 +15,9 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	is_inbound = true
+	signalHub.area_entered("Station")
 
 func _on_body_exited(body: Node2D) -> void:
 	is_inbound = false
+	signalHub.area_entered("leave_station")
 	

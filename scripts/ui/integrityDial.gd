@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var health := 0
+#@export var health := 0
+var maxHealthNeedleAngle
 
 #const COLORS := [Color.DARK_GREEN, Color.GREEN_YELLOW, Color.YELLOW, Color.ORANGE, Color.RED]
 #const COLORS := [Color.DARK_GREEN, Color.GREEN_YELLOW, Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT]
@@ -26,7 +27,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	PlayerInfo.shipHealth -= PlayerInfo.dps_depth[PlayerInfo.depthLevel]*delta
 	#print([PlayerInfo.shipHealth, PlayerInfo.depthLevel])
-	setCurrentHealthIndicator(health)
+	setCurrentHealthIndicator(PlayerInfo.shipHealth)
+	#print(PlayerInfo.shipHealth)
 
 func start_game() -> void:
 	var currentLevel = PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]
@@ -45,7 +47,7 @@ func on_ship_upgraded():
 	setCurrentHealthIndicator(maxHealth)
 
 func setCurrentMaxHealthIndicator(currentMaxHealth):
-	var maxHealthNeedleAngle = remap(currentMaxHealth, 0, PlayerInfo.upgrade_level_values[PlayerInfo.upgrade_types.SHIP_MATERIAL][4], $dial.maxAngle, $dial.minAngle)
+	maxHealthNeedleAngle = remap(currentMaxHealth, 0, PlayerInfo.upgrade_level_values[PlayerInfo.upgrade_types.SHIP_MATERIAL][4], $dial.maxAngle, $dial.minAngle)
 	$dial.set_new_color_range([{
 		'angle_from': $dial.minAngle,
 		'angle_to': $dial.maxAngle,
@@ -57,5 +59,8 @@ func setCurrentMaxHealthIndicator(currentMaxHealth):
 	}])
 
 func setCurrentHealthIndicator(health):
-	$dial.set_needle_angle(remap(health, 0, PlayerInfo.upgrade_level_values[PlayerInfo.upgrade_types.SHIP_MATERIAL][4], 1, 0))
+	var healthAngle = remap(health, 0, PlayerInfo.upgrade_level_values[PlayerInfo.upgrade_types.SHIP_MATERIAL][PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]], maxHealthNeedleAngle, $dial.maxAngle)
+	healthAngle = clamp(healthAngle, -3.65, 0.33)
+	print(healthAngle)
+	$dial.set_needle_angle(remap(healthAngle, $dial.maxAngle, $dial.minAngle, 1, maxHealthNeedleAngle/$dial.maxAngle))
 	
