@@ -47,7 +47,6 @@ _data = {
 }
 
 [node name="Radar" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -102,7 +101,6 @@ shape = SubResource("RectangleShape2D_x3jq8")
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-active = false
 libraries = {
 &"": SubResource("AnimationLibrary_ynixt")
 }

@@ -12,8 +12,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if associatedNode:
-		var posDif = associatedNode.global_position - PlayerInfo.playerNode.global_position
-		var elementPos = radarScreenPos + (posDif/posdivider).normalized() * clamp((posDif/posdivider).length(), 0, 105)
-		self.position = elementPos
-		#print(elementPos)
+	if associatedNode and PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SONAR]:
+		if level == PlayerInfo.depthLevel:
+			visible = true
+			var posDif = associatedNode.global_position - PlayerInfo.playerNode.global_position
+			var elementPos = radarScreenPos + (posDif/posdivider).normalized() * clamp((posDif/posdivider).length(), 0, 105)
+			self.position = elementPos
+			#print(elementPos)
+		else : 
+			visible = false

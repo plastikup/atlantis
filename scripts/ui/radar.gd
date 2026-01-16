@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 			newElement.associatedNode = x.node
 			newElement.level = x.level
 			$elements.add_child(newElement)
+			newElement.modulate.a = 0
 				
 			match x.type:
 				"clue":
@@ -40,3 +41,5 @@ func active(value):
 	print("sonar b")
 	$AnimationPlayer.active = value
 	visible = value
+	for x in $elements.get_children():
+		x.visible = value
