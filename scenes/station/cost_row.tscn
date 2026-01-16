@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6aojct0f50fl"]
+[gd_scene load_steps=3 format=3 uid="uid://c6aojct0f50fl"]
 
 [ext_resource type="Texture2D" uid="uid://k523i3rkbt8f" path="res://icon.svg" id="1_1x5em"]
+[ext_resource type="Script" uid="uid://b2sh28uxad1qc" path="res://scripts/ui/cost_row.gd" id="1_mjib8"]
 
 [node name="HBoxContainer" type="HBoxContainer"]
 anchors_preset = -1
@@ -13,6 +14,7 @@ offset_right = -30.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
+script = ExtResource("1_mjib8")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]

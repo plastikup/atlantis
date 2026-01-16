@@ -14,7 +14,7 @@ enum upgrade_types {
 	SONAR,
 }
 
-var upgrade_level_values := {
+const upgrade_level_values := {
 	upgrade_types.SHIP_MATERIAL: {
 		0: 25,
 		1: 50,
@@ -29,6 +29,10 @@ var upgrade_level_values := {
 		2: 10,
 		3: 25,
 		4: 50
+	},
+	upgrade_types.SONAR: {
+		0: 0,
+		1: 1
 	}
 }
 
@@ -41,5 +45,5 @@ var player_upgrade_levels := {
 var shipHealth = upgrade_level_values[upgrade_types.SHIP_MATERIAL][0]
 
 
-var fish_inv := [0,0,0,0]
+var fish_inv := [250,0,0,0]
 var clues_found := [0,0,0,0]
