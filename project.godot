@@ -22,6 +22,7 @@ ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 signalHub="*res://global/signal_hub.gd"
 gameManager="*res://global/game_manager.gd"
 PlayerInfo="*res://global/player_info.gd"
+BuyUtils="*res://global/buy_utils.gd"
 
 [dialogic]
 

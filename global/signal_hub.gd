@@ -10,3 +10,7 @@ func build_request(level) -> void:
 	
 func fish_some_fish_request(level) -> void:
 	fish_some_fish.emit(level)
+	
+func ship_upgraded_request() -> void:
+	print("wow")
+	ship_upgraded.emit()

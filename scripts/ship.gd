@@ -21,6 +21,7 @@ func _ready() -> void:
 ## Updates ship's material and returns the current level of the ship
 
 func update_ship_material() -> int:
+	print("ship material")
 	%AnimatedSprite2D.play(PlayerInfo.level_to_name[PlayerInfo.ship_level])
 	return PlayerInfo.ship_level
 
