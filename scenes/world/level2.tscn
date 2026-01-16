@@ -12,6 +12,7 @@ levelID = 1
 metadata/level = 2
 
 [node name="fishing_spot" parent="." instance=ExtResource("3_rse4b")]
+unique_name_in_owner = true
 position = Vector2(14938, -8365)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
