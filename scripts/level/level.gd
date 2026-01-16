@@ -7,7 +7,8 @@ const OUTPOST = preload("uid://crpmwhl2n5tgq")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	signalHub.fishing_spot_br.connect(build_outpost)
-	fishing_spot.level = levelID
+	#fishing_spot.level = levelID
+	Dialogic.start("res://ressources/dialogic/timelines/tutoriel.dtl")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
