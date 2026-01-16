@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://crpmwhl2n5tgq"]
 
 [ext_resource type="Script" uid="uid://xwyt4nb66kgv" path="res://scripts/outpost/outpost.gd" id="1_4evlg"]
-[ext_resource type="Texture2D" uid="uid://dcmo1sj66fb66" path="res://assets/outpost/outpost_template.png" id="1_lk311"]
+[ext_resource type="Texture2D" uid="uid://dcmo1sj66fb66" path="res://assets/radar/outpost/outpost_template.png" id="1_lk311"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lk311"]
 
