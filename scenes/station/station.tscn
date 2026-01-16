@@ -119,7 +119,7 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 33
 text = "NOM TRÈS COOL"
 
 [node name="Level" type="Label" parent="HBoxContainer/Shop/VBoxContainer/MarginContainer2/VBoxContainer"]
@@ -247,7 +247,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_left = -415
+theme_override_constants/margin_bottom = -355
 metadata/_edit_use_anchors_ = true
 
 [node name="UpgradePopup" parent="HBoxContainer/Shop/MarginContainer" instance=ExtResource("6_mm2pm")]
