@@ -169,7 +169,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_8ljda")
 theme_override_font_sizes/font_size = 25
-text = "TUTORIEL"
+text = "TOUCHES"
 
 [node name="Quit" parent="TextureRect/CenterContainer/Buttons" instance=ExtResource("3_usvfl")]
 layout_mode = 2

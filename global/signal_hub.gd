@@ -14,6 +14,8 @@ signal ship_repaired
 signal ship_died
 signal sonar_upgrade
 signal speed_upgrade
+signal menu
+signal menu_hidden
 
 func build_request(level) -> void:
 	fishing_spot_br.emit(level)
@@ -50,3 +52,10 @@ func emit_sonar_upgrade() -> void:
 	
 func emit_speed_upgrade() -> void:
 	speed_upgrade.emit()
+	
+func menu_popup() -> void:
+	print("open")
+	menu.emit()
+
+func menu_hide() -> void:
+	menu_hidden.emit()

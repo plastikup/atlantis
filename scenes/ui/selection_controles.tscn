@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://beqjw13elmvpw"]
 
-[ext_resource type="Script" uid="uid://b8docdi0vigsl" path="res://scripts/selection_controles.gd" id="1_25o61"]
+[ext_resource type="Script" path="res://scripts/selection_controles.gd" id="1_25o61"]
 [ext_resource type="PackedScene" uid="uid://7yxsno6sr1c1" path="res://scenes/ui/controles_modifiable.tscn" id="1_w6jm6"]
 
 [node name="Control" type="Control"]

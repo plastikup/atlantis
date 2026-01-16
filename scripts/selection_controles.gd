@@ -62,6 +62,8 @@ func _input(event):
 			action_to_remap = null
 			remapping_button = null
 			accept_event()
+	if event.is_action_pressed("escape"):
+		gameManager.load_landing()
 
 func _update_action_list(button, event):
 	button.find_child("touches").text = event.as_text().trim_suffix(" (Physical)")
