@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4w3c1aum23jd"]
+[gd_scene load_steps=12 format=3 uid="uid://c4w3c1aum23jd"]
 
 [ext_resource type="PackedScene" uid="uid://bo8p0litp4f56" path="res://scenes/station/station.tscn" id="1_mqjwq"]
+[ext_resource type="PackedScene" uid="uid://bsuv80sw3pmv" path="res://scenes/world/parallax.tscn" id="1_unsus"]
 [ext_resource type="PackedScene" uid="uid://bf3ivtxhsqjfh" path="res://scenes/ship.tscn" id="2_ceuy0"]
 [ext_resource type="PackedScene" uid="uid://dl14cbx4vfaii" path="res://scenes/hole.tscn" id="2_mqjwq"]
 [ext_resource type="PackedScene" uid="uid://drtyj2j3xpawk" path="res://scenes/ui/onScreenUi.tscn" id="4_bmvob"]
@@ -12,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://ctl2iveotall8" path="res://scenes/world/water.tscn" id="10_hu6m7"]
 
 [node name="game_wrapper" type="Node2D"]
+
+[node name="Parallax2D" parent="." instance=ExtResource("1_unsus")]
+scale = Vector2(1.5, 1.5)
 
 [node name="holes" type="Node2D" parent="."]
 
@@ -32,13 +36,12 @@ layer = 1
 
 [node name="Submarine" parent="." instance=ExtResource("2_ceuy0")]
 z_index = 21
-position = Vector2(-20480.002, -18432)
+position = Vector2(-12288.001, -18432)
 motion_mode = 1
 max_turn_speed = 1.04
 turn_accel = 0.73
 
 [node name="Water" parent="." instance=ExtResource("10_hu6m7")]
-visible = false
 top_level = true
 z_index = 20
 position = Vector2(-45184.004, -29568)
@@ -47,10 +50,13 @@ scale = Vector2(8.027025, 8.027025)
 [node name="levels" type="Node2D" parent="."]
 
 [node name="level4" parent="levels" instance=ExtResource("4_hu6m7")]
+visible = false
 
 [node name="level3" parent="levels" instance=ExtResource("5_unsus")]
+visible = false
 
 [node name="level2" parent="levels" instance=ExtResource("6_djqdj")]
+visible = false
 
 [node name="level1" parent="levels" instance=ExtResource("7_thgnc")]
 

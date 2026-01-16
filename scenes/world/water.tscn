@@ -14,6 +14,7 @@ shader_parameter/flow_direction = Vector2(1, 0.1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -10
+z_as_relative = false
 material = SubResource("ShaderMaterial_hernp")
 anchors_preset = 15
 anchor_right = 1.0
