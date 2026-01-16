@@ -21,6 +21,8 @@ func blackout_fade() -> void:
 	tween.tween_property(%ColorRect, "modulate:a", 0, 1)
 
 func warning_fade() -> void:
+	await get_tree().create_timer(3).timeout
+
 	reset_to_initial()
 	%ColorRect.color = Color.DARK_ORANGE
 	%deathOverlay.visible = true

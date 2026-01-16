@@ -31,6 +31,7 @@ func _ready() -> void:
 	signalHub.menu.connect(menu_shown)
 	signalHub.menu_hidden.connect(menu_hide)
 	
+	signalHub.ship_died.connect(animateDeathBubbles)
 	signalHub.reload_scene.connect(reset_position_and_stats)
 	
 	upgraded_speed = max_speed
@@ -105,7 +106,19 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(desired_velocity, dif_dir)
 		move_and_slide()
 		
-		
+func animateDeathBubbles() -> void:
+	%DeathAnimationSprite2D.visible = true
+	%DeathAnimationSprite2D.play('default')
+
+	await get_tree().create_timer(1.6).timeout
+	%AnimatedSprite2D.visible = false
+
+	await $DeathAnimationSprite2D.animation_finished
+	%DeathAnimationSprite2D.visible = false
+	
+	await get_tree().create_timer(1.0).timeout
+	%AnimatedSprite2D.visible = true
+
 func reset_position_and_stats() -> void:
 	position = initial_position
 	PlayerInfo.fish_inv = [0,0,0,0]

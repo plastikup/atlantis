@@ -25,10 +25,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	PlayerInfo.shipHealth -= PlayerInfo.dps_depth[PlayerInfo.depthLevel]*delta
 	#print([PlayerInfo.shipHealth, PlayerInfo.depthLevel])
-	setCurrentHealthIndicator(PlayerInfo.shipHealth)
 	#print(PlayerInfo.shipHealth)
+	
+	var old_health = PlayerInfo.shipHealth
+	PlayerInfo.shipHealth -= PlayerInfo.dps_depth[PlayerInfo.depthLevel]*delta
+	print(old_health, PlayerInfo.shipHealth)
+	if old_health >= 0 and PlayerInfo.shipHealth <= 0:
+		print('emitting')
+		signalHub.ship_died.emit()
+	setCurrentHealthIndicator(PlayerInfo.shipHealth)
+	
 
 func start_game() -> void:
 	var currentLevel = PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]

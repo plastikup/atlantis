@@ -182,7 +182,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("36_i0rmv")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
@@ -216,9 +216,11 @@ frame_progress = 0.55542797
 
 [node name="DeathAnimationSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+visible = false
 scale = Vector2(0.9999998, 0.9999998)
 sprite_frames = SubResource("SpriteFrames_2578s")
 frame_progress = 0.4869053
+speed_scale = 0.5
 
 [node name="motor" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("27_q0sdf")

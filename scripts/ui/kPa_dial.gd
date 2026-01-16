@@ -17,9 +17,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var old_health = PlayerInfo.shipHealth
-	PlayerInfo.shipHealth -= PlayerInfo.dps_depth[PlayerInfo.depthLevel]*delta
-	if old_health >= 0 and PlayerInfo.shipHealth <= 0:
-		print('emitting')
-		signalHub.ship_died.emit()
 	$dial.set_needle_angle(float(PlayerInfo.depthLevel) *0.2 +0.1)
