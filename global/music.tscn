@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgie1qv5rls3d"]
+
+[ext_resource type="AudioStream" uid="uid://cqmtww46trx8c" path="res://assets/audio/music/Mermaids in Town.wav" id="1_1k5wo"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_1k5wo")
+volume_db = -2.0
+autoplay = true
