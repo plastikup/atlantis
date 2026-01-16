@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 			x.isNew = false
 			var newElement = radarElement.instantiate()
 			newElement.associatedNode = x.node
+			newElement.level = x.level
 			$elements.add_child(newElement)
 				
 			match x.type:

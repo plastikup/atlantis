@@ -61,6 +61,6 @@ func setCurrentMaxHealthIndicator(currentMaxHealth):
 func setCurrentHealthIndicator(health):
 	var healthAngle = remap(health, 0, PlayerInfo.upgrade_level_values[PlayerInfo.upgrade_types.SHIP_MATERIAL][PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]], maxHealthNeedleAngle, $dial.maxAngle)
 	healthAngle = clamp(healthAngle, -3.65, 0.33)
-	print(healthAngle)
+	#print(healthAngle)
 	$dial.set_needle_angle(remap(healthAngle, $dial.maxAngle, $dial.minAngle, 1, maxHealthNeedleAngle/$dial.maxAngle))
 	

@@ -4,6 +4,7 @@ var associatedNode
 var radarScreenPos
 var clamps = 105
 var posdivider = 90
+var level
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
