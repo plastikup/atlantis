@@ -37,7 +37,9 @@ func _on_timer_timeout() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	is_in_bound = true
+	signalHub.area_entered("Scan")
 
 
 func _on_body_exited(body: Node2D) -> void:
 	is_in_bound = false
+	signalHub.area_entered("leave_fs")

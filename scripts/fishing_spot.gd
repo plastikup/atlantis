@@ -37,10 +37,13 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	is_inbound = true
+	if clue_all_found:
+		signalHub.area_entered("Pêcher")
 
 
 func _on_body_exited(body: Node2D) -> void:
 	is_inbound = false
+	signalHub.area_entered("leave_fs")
 	
 func verify_clue_found() -> void:
 	if PlayerInfo.clues_found[level][0] >= PlayerInfo.clues_found[level][1]:

@@ -16,7 +16,12 @@ signal sonar_upgrade
 signal speed_upgrade
 signal menu
 signal menu_hidden
+signal in_bound_area
 
+
+func area_entered(area) -> void:
+	in_bound_area.emit(area)
+	
 func build_request(level) -> void:
 	fishing_spot_br.emit(level)
 	
