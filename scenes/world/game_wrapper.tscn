@@ -63,7 +63,8 @@ scale = Vector2(8.027025, 8.027025)
 
 [node name="level4" parent="levels" instance=ExtResource("5_unsus")]
 
-[node name="level3" parent="levels" instance=ExtResource("7_8iper")]
+[node name="level3" parent="levels" instance=ExtResource("7_ctqw0")]
+metadata/level = 3
 
 [node name="level2" parent="levels" instance=ExtResource("6_djqdj")]
 

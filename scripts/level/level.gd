@@ -1,6 +1,8 @@
 extends Node2D
 
 const OUTPOST = preload("uid://crpmwhl2n5tgq")
+@onready var fishing_spot: Area2D = $fishing_spot
+
 #@onready var fishing_spot: Area2D = $fishing_spot
 @export var levelID: int
 
@@ -16,8 +18,9 @@ func _process(delta: float) -> void:
 	pass
 
 func build_outpost(_level) -> void:
-	if levelID == _level: 
+	if levelID == _level:
+		print(levelID, 'OJISUUFNCEIFUE')
 		var outpost_new := OUTPOST.instantiate()
 		add_child(outpost_new)
-		outpost_new.position = %fishing_spot.position
+		outpost_new.position = fishing_spot.position
 		outpost_new.level = levelID

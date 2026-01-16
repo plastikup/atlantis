@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bf3ivtxhsqjfh"]
+[gd_scene load_steps=41 format=3 uid="uid://bf3ivtxhsqjfh"]
 
 [ext_resource type="Script" uid="uid://cxt5hlp2u6d25" path="res://scripts/ship.gd" id="1_2gnfn"]
 [ext_resource type="Texture2D" uid="uid://bvxlo2i0atmu5" path="res://assets/ships/copper/Timeline 1_0000.png" id="3_q0sdf"]
@@ -27,7 +27,16 @@
 [ext_resource type="Texture2D" uid="uid://b0jcpdxlbd8np" path="res://assets/ships/wooden/Timeline 1_0003.png" id="26_kbhtu"]
 [ext_resource type="AudioStream" uid="uid://cj1xfo1ed6tbm" path="res://assets/audio/motor.mp3" id="27_q0sdf"]
 [ext_resource type="Texture2D" uid="uid://ulacpgvjwuod" path="res://assets/ships/wooden/Timeline 1_0004.png" id="27_tol08"]
-[ext_resource type="PackedScene" uid="uid://w28tcs617hls" path="res://scenes/ui/fishingGame.tscn" id="28_u7rkd"]
+[ext_resource type="Texture2D" uid="uid://bnb5vb2e6qond" path="res://assets/ships/explosion/Timeline 1_0000.png" id="27_wrc1v"]
+[ext_resource type="Texture2D" uid="uid://d1p1y3vfymydn" path="res://assets/ships/explosion/Timeline 1_0001.png" id="28_qdbuh"]
+[ext_resource type="Texture2D" uid="uid://cw3k5m82701qf" path="res://assets/ships/explosion/Timeline 1_0002.png" id="29_h75by"]
+[ext_resource type="Texture2D" uid="uid://dbtam5xcektfe" path="res://assets/ships/explosion/Timeline 1_0003.png" id="30_3mg5m"]
+[ext_resource type="Texture2D" uid="uid://c7idl4omfcq70" path="res://assets/ships/explosion/Timeline 1_0004.png" id="31_k8rhd"]
+[ext_resource type="Texture2D" uid="uid://bnnxfg6l5ic4g" path="res://assets/ships/explosion/Timeline 1_0005.png" id="32_iuxt1"]
+[ext_resource type="Texture2D" uid="uid://c76ux3xi8ghv5" path="res://assets/ships/explosion/Timeline 1_0006.png" id="33_od8g6"]
+[ext_resource type="Texture2D" uid="uid://c6ay4if1ip6te" path="res://assets/ships/explosion/Timeline 1_0007.png" id="34_vsg0s"]
+[ext_resource type="Texture2D" uid="uid://bahbpmjw3qloy" path="res://assets/ships/explosion/Timeline 1_0008.png" id="35_3lop3"]
+[ext_resource type="Texture2D" uid="uid://drhos7we762hr" path="res://assets/ships/explosion/Timeline 1_0009.png" id="36_i0rmv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7tpya"]
 radius = 356.5056
@@ -140,6 +149,44 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_2578s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_wrc1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qdbuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_h75by")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_3mg5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_k8rhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_iuxt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_od8g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_vsg0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_3lop3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_i0rmv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Submarine" type="CharacterBody2D"]
 scale = Vector2(3.2, 3.2)
 collision_mask = 16974080
@@ -166,6 +213,12 @@ sprite_frames = SubResource("SpriteFrames_mvhns")
 animation = &"copper"
 autoplay = "default"
 frame_progress = 0.55542797
+
+[node name="DeathAnimationSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.9999998, 0.9999998)
+sprite_frames = SubResource("SpriteFrames_2578s")
+frame_progress = 0.4869053
 
 [node name="motor" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("27_q0sdf")
