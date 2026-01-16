@@ -20,7 +20,8 @@ var upgraded_turn_speed: float
 var upgraded_turn_accel: float
 var upgraded_turn_friction: float
 
-	
+var initial_position = Vector2(-12288, -18432)
+
 func _ready() -> void:
 	PlayerInfo.playerNode = self
 	signalHub.ship_upgraded.connect(update_ship_material)
@@ -29,6 +30,8 @@ func _ready() -> void:
 	signalHub.speed_upgrade.connect(onSpeedUpgraded)
 	signalHub.menu.connect(menu_shown)
 	signalHub.menu_hidden.connect(menu_hide)
+	
+	signalHub.reload_scene.connect(reset_position_and_stats)
 	
 	upgraded_speed = max_speed
 	upgraded_turn_speed = max_turn_speed
@@ -103,3 +106,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		
 		
+func reset_position_and_stats() -> void:
+	position = initial_position
+	PlayerInfo.fish_inv = [0,0,0,0]
+	PlayerInfo.shipHealth = PlayerInfo.upgrade_level_values[PlayerInfo.upgrade_types.SHIP_MATERIAL][0]

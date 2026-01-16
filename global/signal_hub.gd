@@ -11,7 +11,8 @@ signal access_shop
 signal hide_shop
 signal switch_scene
 signal ship_repaired
-signal ship_died
+signal ship_died # only used for ui
+signal reload_scene # used by game after ui loads (there's a delay between the two)
 signal sonar_upgrade
 signal speed_upgrade
 signal menu

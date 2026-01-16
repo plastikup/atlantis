@@ -4,6 +4,7 @@ extends TileMapLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	signalHub.switch_scene.connect(only_apply_current_tilemap_layer_collision)
+	signalHub.reload_scene.connect(only_apply_current_tilemap_layer_collision)
 	only_apply_current_tilemap_layer_collision()
 
 
