@@ -18,10 +18,10 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
-offset_left = -392.0
-offset_top = 72.0
-offset_right = -392.0
-offset_bottom = 72.0
+offset_left = 4.0
+offset_top = 59.0
+offset_right = 4.0
+offset_bottom = 59.0
 grow_vertical = 1
 
 [node name="Radar" parent="." instance=ExtResource("2_x7kbn")]

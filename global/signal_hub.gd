@@ -38,7 +38,6 @@ func ship_died_request() -> void:
 	ship_died.emit()
 	
 func emit_sonar_upgrade() -> void:
-	print("sonar a")
 	sonar_upgrade.emit()
 	
 func emit_speed_upgrade() -> void:
