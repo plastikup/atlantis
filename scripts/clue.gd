@@ -5,7 +5,7 @@ var is_held:= false
 var is_done:= false
 const PROGRESS_SPEED := 25.0
 
-@export var depthLevel = 0
+var depthLevel
 
 #func _unhandled_input(event: InputEvent) -> void:
 	#if event.is_action_pressed("interact"):
@@ -14,7 +14,9 @@ const PROGRESS_SPEED := 25.0
 		#is_held = false
 
 func _ready() -> void:
+	depthLevel = get_parent().get_parent().get_parent().name.replace("level", "").to_int()-1
 	PlayerInfo.radarElements.append({"type" : "clue", "node" : self, "isNew" : true, "level" : depthLevel}) 
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

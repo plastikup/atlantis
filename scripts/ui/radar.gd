@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 			newElement.associatedNode = x.node
 			newElement.level = x.level
 			$elements.add_child(newElement)
-			newElement.modulate.a = 0
 				
 			match x.type:
 				"clue":
@@ -27,11 +26,12 @@ func _process(delta: float) -> void:
 					newElement.modulate = Color.BLUE
 				"fish":
 					newElement.modulate = Color.YELLOW
+			newElement.modulate.a = 0
 			
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.get_parent().name == "elements":
+	if body.get_parent().name == "elements" and body.visible:
 		body.modulate.a = 1
 		body.get_node("ping").play()
 		var tween = create_tween()
