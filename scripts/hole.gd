@@ -24,11 +24,21 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(ACTION_LEVEL_SWITCH) and in_bound:
 		PlayerInfo.depthLevel += 1 if get_parent().layer-1 == PlayerInfo.depthLevel else -1
 		signalHub.switch_scene.emit()
+		signalHub.area_entered("leave_station")
+		if get_parent().layer-1 == PlayerInfo.depthLevel:
+			signalHub.area_entered("Descendre")
+		else:
+			signalHub.area_entered("Monter")
 		print(PlayerInfo.depthLevel)
 
 
 func _on_body_entered(_body: Node2D) -> void:
 	in_bound = true
+	if get_parent().layer-1 == PlayerInfo.depthLevel:
+		signalHub.area_entered("Descendre")
+	else:
+		signalHub.area_entered("Monter")
 
 func _on_body_exited(_body: Node2D) -> void:
 	in_bound = false
+	signalHub.area_entered("leave_station")
