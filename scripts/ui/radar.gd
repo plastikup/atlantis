@@ -4,7 +4,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,5 +36,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		tween.tween_property(body, "modulate:a", 0, 1)
 
 func active(value):
+	print("sonar b")
 	$AnimationPlayer.active = value
 	visible = value

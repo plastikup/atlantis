@@ -5,6 +5,7 @@ func _ready() -> void:
 	%dial.set_needle_angle(PlayerInfo.depthLevel * 2*PI/4)
 	signalHub.access_shop.connect(open_shop)
 	signalHub.hide_shop.connect(hide_shop)
+	#signalHub.sonar_upgrade.connect(on_sonar_upgrade)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -15,3 +16,4 @@ func hide_shop() -> void:
 	
 func open_shop() -> void:
 	hide()
+	
