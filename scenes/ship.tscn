@@ -161,6 +161,5 @@ position_smoothing_enabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_mvhns")
-animation = &"wooden"
+animation = &"copper"
 autoplay = "default"
-frame_progress = 0.55542797

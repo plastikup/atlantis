@@ -5,8 +5,7 @@ var playerNode
 var radarElements := []
 enum typeLevels {leather, wood, copper, silver, gold }
 
-const level_to_name = {typeLevels.leather: 'leather', typeLevels.wood: 'wood', typeLevels.copper: 'copper', typeLevels.silver: 'silver', typeLevels.gold: 'gold' }
-var ship_level := typeLevels.leather
+const level_to_name = {typeLevels.leather: 'leather', typeLevels.wood: 'wooden', typeLevels.copper: 'copper', typeLevels.silver: 'silver', typeLevels.gold: 'gold' }
 
 enum upgrade_types {
 	SHIP_MATERIAL,
