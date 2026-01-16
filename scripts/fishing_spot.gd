@@ -4,7 +4,6 @@ const ACTION:= "interact"
 const FISH:= "fish"
 @export var is_inbound := false
 @export var clue_all_found := false
-@export var level: int = 0
 var isOutpostOpen := false
 var isHeld := false
 
@@ -24,10 +23,10 @@ func _process(delta: float) -> void:
 		if is_inbound:
 			if Input.is_action_just_pressed(FISH):
 				print("FISHIIIIIING")
-				signalHub.fish_some_fish_request(level)
+				signalHub.fish_some_fish_request(get_parent().levelID)
 			elif Input.is_action_just_pressed(ACTION) and clue_all_found:
 				if not isOutpostOpen:
-					signalHub.open_outpost(level)
+					signalHub.open_outpost(get_parent().levelID)
 					signalHub.menu_popup()
 					isOutpostOpen = true
 				else:
@@ -46,6 +45,6 @@ func _on_body_exited(body: Node2D) -> void:
 	signalHub.area_entered("leave_fs")
 	
 func verify_clue_found() -> void:
-	if PlayerInfo.clues_found[level][0] >= PlayerInfo.clues_found[level][1]:
+	if PlayerInfo.clues_found[get_parent().levelID][0] >= PlayerInfo.clues_found[get_parent().levelID][1]:
 		show()
 		clue_all_found = true
