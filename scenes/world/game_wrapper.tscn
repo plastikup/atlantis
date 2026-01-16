@@ -47,6 +47,26 @@ motion_mode = 1
 max_turn_speed = 1.04
 turn_accel = 0.73
 
+[node name="Water" parent="." instance=ExtResource("10_hu6m7")]
+top_level = true
+z_index = 20
+position = Vector2(-45184.004, -29568)
+scale = Vector2(8.027025, 8.027025)
+
+[node name="levels" type="Node2D" parent="."]
+
+[node name="level4" parent="levels" instance=ExtResource("4_hu6m7")]
+
+[node name="level3" parent="levels" instance=ExtResource("5_unsus")]
+
+[node name="level2" parent="levels" instance=ExtResource("6_djqdj")]
+
+[node name="level1" parent="levels" instance=ExtResource("7_thgnc")]
+
 [node name="OnScreenUi" parent="." instance=ExtResource("4_bmvob")]
 
 [node name="screen_fader" parent="." instance=ExtResource("4_oqlwg")]
+
+[node name="Station UI" type="CanvasLayer" parent="."]
+
+[node name="Station" parent="Station UI" instance=ExtResource("1_mqjwq")]

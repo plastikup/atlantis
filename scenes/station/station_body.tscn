@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://m4ydiiy6moc5"]
+
+[ext_resource type="Script" uid="uid://c7u4k2ocva8q3" path="res://scripts/station/station_body.gd" id="1_6lmw4"]
+[ext_resource type="Texture2D" uid="uid://cbexd03jnqyug" path="res://assets/station/spiderman.jpeg" id="1_yotp8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lmw4"]
+size = Vector2(1280, 1277)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yotp8"]
+radius = 2242.6746
+
+[node name="station_body" type="Area2D"]
+script = ExtResource("1_6lmw4")
+
+[node name="StaticBody2d" type="StaticBody2D" parent="."]
+collision_layer = 131072
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2d"]
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_6lmw4")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2d"]
+texture = ExtResource("1_yotp8")
+
+[node name="Station_zone" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yotp8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

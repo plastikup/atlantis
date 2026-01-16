@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://w28tcs617hls"]
+
+[ext_resource type="Script" uid="uid://ccmn1pktjqfni" path="res://scripts/ui/fishing_game.gd" id="1_gcdl2"]
+[ext_resource type="PackedScene" uid="uid://cudniyskfnp46" path="res://scenes/dial.tscn" id="1_lhlel"]
+
+[node name="FishingGame" type="Node2D"]
+script = ExtResource("1_gcdl2")
+
+[node name="dial" parent="." instance=ExtResource("1_lhlel")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -117.575)
+zoom = Vector2(0.385, 0.385)

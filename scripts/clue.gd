@@ -12,7 +12,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		is_held = false
 
 func _ready() -> void:
-	PlayerInfo.radarElements.append({"type" : "clue", "node" : self}) 
+	PlayerInfo.radarElements.append({"type" : "clue", "node" : self, "isNew" : true}) 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 		%ProgressBar.value = 100.0
 
 func _on_timer_timeout() -> void:
+	
 	get_parent().queue_free()
 
 
