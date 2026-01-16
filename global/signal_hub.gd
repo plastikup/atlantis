@@ -18,6 +18,14 @@ signal speed_upgrade
 signal menu
 signal menu_hidden
 signal in_bound_area
+signal open_inventory
+signal close_inventory
+
+func open_inventory_request() -> void:
+	open_inventory.emit()
+	
+func close_inventory_request() -> void:
+	close_inventory.emit()
 
 
 func area_entered(area) -> void:

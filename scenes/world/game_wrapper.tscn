@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cdq2egfjit30c" path="res://scenes/world/level1.tscn" id="7_thgnc"]
 [ext_resource type="PackedScene" uid="uid://ctl2iveotall8" path="res://scenes/world/water.tscn" id="10_hu6m7"]
 [ext_resource type="PackedScene" uid="uid://cx0x5gf248w2k" path="res://scenes/ui/cabane_peche.tscn" id="12_djqdj"]
+[ext_resource type="PackedScene" uid="uid://xggp8a7g1r6g" path="res://scenes/ui/inventaire.tscn" id="13_thgnc"]
 
 [node name="game_wrapper" type="Node2D"]
 
@@ -79,3 +80,5 @@ script = null
 [node name="Station UI" type="CanvasLayer" parent="."]
 
 [node name="Station" parent="Station UI" instance=ExtResource("1_mqjwq")]
+
+[node name="Inventaire" parent="." instance=ExtResource("13_thgnc")]
