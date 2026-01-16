@@ -16,20 +16,20 @@
 [node name="hole_lvl_3" parent="holes" instance=ExtResource("2_mqjwq")]
 position = Vector2(44032, 18432)
 scale = Vector2(21, 6)
+layer = 3
+metadata/level = 3
 
 [node name="hole_lvl_2" parent="holes" instance=ExtResource("2_mqjwq")]
 position = Vector2(12288, -2048)
 scale = Vector2(10, 11)
+layer = 2
+metadata/level = 2
 
 [node name="hole_lvl_1" parent="holes" instance=ExtResource("2_mqjwq")]
 position = Vector2(-6144, -20480)
 scale = Vector2(5, 10)
-
-[node name="Submarine" parent="." instance=ExtResource("2_ceuy0")]
-position = Vector2(-20480.002, -18432)
-motion_mode = 1
-max_turn_speed = 1.04
-turn_accel = 0.73
+layer = 1
+metadata/level = 1
 
 [node name="levels" type="Node2D" parent="."]
 
@@ -40,6 +40,12 @@ turn_accel = 0.73
 [node name="level2" parent="levels" instance=ExtResource("6_djqdj")]
 
 [node name="level1" parent="levels" instance=ExtResource("7_thgnc")]
+
+[node name="Submarine" parent="." instance=ExtResource("2_ceuy0")]
+position = Vector2(-20480.002, -18432)
+motion_mode = 1
+max_turn_speed = 1.04
+turn_accel = 0.73
 
 [node name="OnScreenUi" parent="." instance=ExtResource("4_bmvob")]
 

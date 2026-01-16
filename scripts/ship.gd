@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var camera: Camera2D = %Camera2D
+
 @export var max_speed: float = 300.0
 @export var accel: float = 900.0
 @export var friction: float = 300.0
@@ -19,7 +21,6 @@ func _ready() -> void:
 
 
 ## Updates ship's material and returns the current level of the ship
-
 func update_ship_material() -> int:
 	%AnimatedSprite2D.play(PlayerInfo.level_to_name[PlayerInfo.ship_level])
 	return PlayerInfo.ship_level
