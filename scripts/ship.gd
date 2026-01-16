@@ -8,6 +8,8 @@ extends CharacterBody2D
 @export var turn_accel: float = 10.0
 @export var turn_friction: float = 4.0
 
+var menu_popup:= false
+
 var _turn_rate: float = 0.0
 
 var upgraded_speed: float
@@ -25,6 +27,8 @@ func _ready() -> void:
 	update_ship_material()
 	signalHub.fish_some_fish.connect(gainFish)
 	signalHub.speed_upgrade.connect(onSpeedUpgraded)
+	signalHub.menu.connect(menu_shown)
+	signalHub.menu_hidden.connect(menu_hide)
 	
 	upgraded_speed = max_speed
 	upgraded_turn_speed = max_turn_speed
@@ -39,6 +43,12 @@ func update_ship_material() -> int:
 
 func gainFish(level) -> void:
 	PlayerInfo.fish_inv[level] += 1
+
+func menu_shown() -> void:
+	menu_popup = true
+	
+func menu_hide() -> void:
+	menu_popup = false
 	
 func onSpeedUpgraded() -> void: 
 	var type = PlayerInfo.upgrade_types.SPEED
@@ -53,42 +63,43 @@ func onSpeedUpgraded() -> void:
 	print(max_speed, upgraded_speed)
 
 func _physics_process(delta: float) -> void:
-	var direction := Input.get_axis("up", "down") 
-	var turn := Input.get_axis("left", "right")
-	
-	var level = PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]
-	if direction or turn:
-		%AnimatedSprite2D.play(PlayerInfo.level_to_name[level])
-		if !$motor.playing:
-			$motor.play()
-	else :
-		%AnimatedSprite2D.stop()
-		$motor.stop()
+	if not menu_popup:
+		var direction := Input.get_axis("up", "down") 
+		var turn := Input.get_axis("left", "right")
 		
-	
-	# you either want to go to max turn rate (negative or positive) or no turn rate
-	var target_turn_rate := turn * max_turn_speed 
-	
-	# you look if you want to decrease with friction or increase with acceleration
-	var turn_rate_dif := (turn_accel if turn else turn_friction) * delta 
-	
-	# you set up the turn rate by increasing (or decreasing) with turn_rate_dif 
-	# however move_towards function limits going over the target_turn_rate
-	_turn_rate = move_toward(_turn_rate, target_turn_rate, turn_rate_dif) 
-	rotation += _turn_rate * delta
+		var level = PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]
+		if direction or turn:
+			%AnimatedSprite2D.play(PlayerInfo.level_to_name[level])
+			if !$motor.playing:
+				$motor.play()
+		else :
+			%AnimatedSprite2D.stop()
+			$motor.stop()
+			
+		
+		# you either want to go to max turn rate (negative or positive) or no turn rate
+		var target_turn_rate := turn * max_turn_speed 
+		
+		# you look if you want to decrease with friction or increase with acceleration
+		var turn_rate_dif := (turn_accel if turn else turn_friction) * delta 
+		
+		# you set up the turn rate by increasing (or decreasing) with turn_rate_dif 
+		# however move_towards function limits going over the target_turn_rate
+		_turn_rate = move_toward(_turn_rate, target_turn_rate, turn_rate_dif) 
+		rotation += _turn_rate * delta
 
-	# you rotate the vector and add the max speed (negative or positive) or no speed
-	var forward := Vector2.RIGHT.rotated(rotation)
-	var desired_velocity: Vector2
-	if direction:
-		desired_velocity = forward.normalized() * (direction * upgraded_speed)
-	else:
-		desired_velocity = forward.normalized() * (-abs(turn) * upgraded_speed) / 2
+		# you rotate the vector and add the max speed (negative or positive) or no speed
+		var forward := Vector2.RIGHT.rotated(rotation)
+		var desired_velocity: Vector2
+		if direction:
+			desired_velocity = forward.normalized() * (direction * upgraded_speed)
+		else:
+			desired_velocity = forward.normalized() * (-abs(turn) * upgraded_speed) / 2
 
-	# you set up the turn rate by increasing (or decreasing) with dif_dir 
-	# however move_towards function limits going over the desired_velocity
-	var dif_dir := (accel if direction != 0.0 else friction) * delta
-	velocity = velocity.move_toward(desired_velocity, dif_dir)
-	move_and_slide()
-	
-	
+		# you set up the turn rate by increasing (or decreasing) with dif_dir 
+		# however move_towards function limits going over the desired_velocity
+		var dif_dir := (accel if direction != 0.0 else friction) * delta
+		velocity = velocity.move_toward(desired_velocity, dif_dir)
+		move_and_slide()
+		
+		
