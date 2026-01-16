@@ -10,7 +10,6 @@ extends TextureRect
 @onready var left_arrow = $VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/Left
 @onready var right_arrow = $VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/Right
 
-
 var upgrade_costs := {
 	PlayerInfo.upgrade_types.SHIP_MATERIAL: {
 		1: [[PlayerInfo.typeLevels.wood, 25]],
@@ -108,15 +107,7 @@ func _load_page() -> void:
 		btnText.text = "AMÉLIORER"
 		upgrade_popup.set_cost_infos(upgrade_costs[currentPageID][currentLevel + 1])
 		
-		var possible = true
-		for info in upgrade_costs[currentPageID][currentLevel + 1]:
-			var fishType = info[0]
-			var fishCount = info[1]
-			if fishCount > PlayerInfo.fish_inv[fishType - 1]:
-				possible = false
-				break
-		
-		if not possible:
+		if not BuyUtils.isUpgradePossible(upgrade_costs[currentPageID][currentLevel + 1]):
 			btnText.add_theme_color_override("font_color", fontImpossibleColor)
 			upgrade_btn.disabled = true
 		else:
@@ -147,4 +138,10 @@ func upgrade_hover_exit() -> void:
 	upgrade_popup.fade_out()
 
 func upgrade_btn_pressed() -> void: 
-	PlayerInfo.player_upgrade_levels[currentPageID] += 1
+	var currentLevel = PlayerInfo.player_upgrade_levels[currentPageID]
+	if BuyUtils.isUpgradePossible(upgrade_costs[currentPageID][currentLevel + 1]):
+		BuyUtils.buyUpgrade(upgrade_costs[currentPageID][currentLevel + 1])
+		PlayerInfo.player_upgrade_levels[currentPageID] += 1
+		if currentPageID == PlayerInfo.upgrade_types.SHIP_MATERIAL:
+			print("ship")
+			signalHub.ship_upgraded_request()
