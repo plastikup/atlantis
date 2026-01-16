@@ -2,6 +2,8 @@ extends CanvasLayer
 
 var currentInputs := []
 @onready var inputElement = preload("res://scenes/ui/inputElement.tscn")
+var showing:= true
+
 
 func _ready() -> void:
 	addInput("up", "Avancer", "up")
@@ -11,12 +13,14 @@ func _ready() -> void:
 	addInput("interact", "Intéragir", "interact")
 	addInput("fish", "Pêcher", "fish")
 	drawInputs()
+	signalHub.access_shop.connect(open_shop)
+	signalHub.hide_shop.connect(hide_shop)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if currentInputs.size() == 0 :
 		self.visible = false
-	else :
+	elif showing:
 		self.visible = true
 
 func addInput(id:String, text:String, icon:String) :
@@ -39,3 +43,10 @@ func drawInputs():
 		element.get_node("Label").text = input.text
 		element.get_node("TextureRect").texture.path = input.icon # n'affiche que le dernier!! 
 		
+func hide_shop() -> void:
+	showing = true
+	show()
+	
+func open_shop() -> void:
+	showing = false
+	hide()

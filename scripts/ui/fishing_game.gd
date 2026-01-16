@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var highestFish = 1
+@export var highestFish = 3
 
 var sectionStart 
 var sectionAngle
@@ -19,16 +19,11 @@ func _process(delta: float) -> void:
 		#if needle is in winsection : win and define new win section
 		
 func defineWinSection():
-	#get desired fish
-	if highestFish > 1:
-		var fishTotal = 0 
-		for x in highestFish:
-			fishTotal += x
-	else:
-		chosenFish = 1
-		sectionAngle = 0.7
-		sectionStart = randf_range($dial.minAngle, ($dial.maxAngle-sectionAngle))
-		
+	chosenFish = determineFish()
+	print(chosenFish)
+	sectionAngle = determineSectionAngle()
+	print(sectionAngle)
+	sectionStart = randf_range($dial.minAngle, ($dial.maxAngle-sectionAngle))
 	$dial.set_new_color_range([{
 	'angle_from': $dial.minAngle,
 	'angle_to': $dial.maxAngle,
@@ -38,3 +33,33 @@ func defineWinSection():
 	'angle_to': sectionStart+sectionAngle,
 	'color': Color.GREEN,
 }])
+
+func determineFish():
+	var rdm = randf()
+	if highestFish == 2:
+		if rdm < 0.33:
+			return 2
+		else : return 1
+	elif highestFish == 3:
+		if rdm < 0.20:
+			return 3
+		elif rdm < 0.60:
+			return 2
+		else :
+			return 1 
+	elif highestFish == 4 :
+		if rdm < 0.10:
+			return 4
+		elif rdm < 0.25:
+			return 3
+		elif rdm < 0.60:
+			return 2
+		else :
+			return 1 
+	else:
+		return 1
+
+func determineSectionAngle() :
+	return 2*(1.0-(float(chosenFish)/(float(highestFish)+0.5)))
+	
+		

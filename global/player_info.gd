@@ -5,8 +5,7 @@ var playerNode
 var radarElements := []
 enum typeLevels {leather, wood, copper, silver, gold }
 
-const level_to_name = {typeLevels.leather: 'leather', typeLevels.wood: 'wood', typeLevels.copper: 'copper', typeLevels.silver: 'silver', typeLevels.gold: 'gold' }
-var ship_level := typeLevels.leather
+const level_to_name = {typeLevels.leather: 'leather', typeLevels.wood: 'wooden', typeLevels.copper: 'copper', typeLevels.silver: 'silver', typeLevels.gold: 'gold' }
 
 enum upgrade_types {
 	SHIP_MATERIAL,
@@ -52,6 +51,14 @@ var player_upgrade_levels := {
 }
 
 var shipHealth = upgrade_level_values[upgrade_types.SHIP_MATERIAL][0]
+
+const dps_depth := {
+	0 : 0,
+	1: 2.5,
+	2: 5,
+	3: 10,
+	4: 20
+}
 
 
 var fish_inv := [250,0,0,0]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bo8p0litp4f56"]
+[gd_scene load_steps=17 format=3 uid="uid://bo8p0litp4f56"]
 
 [ext_resource type="Texture2D" uid="uid://ckxj58p4qif0k" path="res://assets/shop/bg_panel.png" id="1_fwkoa"]
+[ext_resource type="Script" uid="uid://dnsqwcj34nqxp" path="res://scripts/station/station.gd" id="1_nc51b"]
 [ext_resource type="Texture2D" uid="uid://bjqeoqqg2a4mg" path="res://assets/shop/title.png" id="2_s6h3s"]
 [ext_resource type="Script" uid="uid://cpj51pbulicd" path="res://scripts/ui/shop.gd" id="3_s6ofo"]
 [ext_resource type="Script" path="res://scripts/button_hover.gd" id="4_kphry"]
@@ -29,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nc51b")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 self_modulate = Color(0.66656864, 0.6665687, 0.66656864, 1)
@@ -429,3 +431,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "FERMER"
+
+[connection signal="pressed" from="MarginContainer/CenterContainer/Close" to="." method="_on_close_pressed"]
