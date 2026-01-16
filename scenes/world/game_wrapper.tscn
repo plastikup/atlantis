@@ -52,15 +52,18 @@ scale = Vector2(8.027025, 8.027025)
 
 [node name="level4" parent="levels" instance=ExtResource("4_hu6m7")]
 visible = false
+script = null
 
 [node name="level3" parent="levels" instance=ExtResource("5_unsus")]
 visible = false
-levelID = 2
+script = null
 
 [node name="level2" parent="levels" instance=ExtResource("6_djqdj")]
 visible = false
+script = null
 
 [node name="level1" parent="levels" instance=ExtResource("7_thgnc")]
+script = null
 
 [node name="OnScreenUi" parent="." instance=ExtResource("4_bmvob")]
 

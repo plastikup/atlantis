@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var turn_accel: float = 10.0
 @export var turn_friction: float = 4.0
 
-var menu_popup:= false
+var menu_popup:= true
 
 var _turn_rate: float = 0.0
 

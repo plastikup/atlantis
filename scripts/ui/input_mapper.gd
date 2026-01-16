@@ -66,6 +66,12 @@ func show_input_dependant(area) -> void:
 	elif area == "Scan":
 		addInput("interact", "Scanner", "interact")
 		drawInputs()
+	elif area == "Monter":
+		addInput("interact", area, "interact")
+		drawInputs()
+	elif area == "Descendre":
+		addInput("interact", area, "interact")
+		drawInputs()
 	elif area == "leave_fs":
 		removeInput("interact")
 		removeInput("fish")
