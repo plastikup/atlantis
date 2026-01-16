@@ -4,11 +4,21 @@ const ACTION_LEVEL_SWITCH = "interact"
 var in_bound := false
 
 enum HoleTypes { to_bottom, to_surface }
-var mode: HoleTypes
 
 
 func _ready() -> void:
-	mode = get_parent().mode
+	signalHub.switch_scene.connect(apply_shades)
+	apply_shades()
+
+func apply_shades() -> void:
+	await get_tree().create_timer(1.0).timeout
+	
+	if get_parent().layer-1 == PlayerInfo.depthLevel:
+		%ColorRect.color = '#00000066'
+		print(1)
+	else:
+		%ColorRect.color = '#FFFFFF66'
+		print(2)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(ACTION_LEVEL_SWITCH) and in_bound:
