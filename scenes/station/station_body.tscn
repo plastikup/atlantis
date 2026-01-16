@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://m4ydiiy6moc5"]
 
 [ext_resource type="Script" uid="uid://c7u4k2ocva8q3" path="res://scripts/station/station_body.gd" id="1_6lmw4"]
-[ext_resource type="Texture2D" uid="uid://cbexd03jnqyug" path="res://assets/station/spiderman.jpeg" id="1_yotp8"]
+[ext_resource type="Texture2D" uid="uid://c8yxv0e1pr6lf" path="res://assets/station/station.png" id="2_6lmw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lmw4"]
 size = Vector2(1280, 1277)
@@ -19,8 +19,16 @@ collision_layer = 131072
 position = Vector2(-1, 1.5)
 shape = SubResource("RectangleShape2D_6lmw4")
 
+[node name="spriteShadow" type="Sprite2D" parent="StaticBody2d"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(92, 230)
+scale = Vector2(5.45, 5.45)
+texture = ExtResource("2_6lmw4")
+
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2d"]
-texture = ExtResource("1_yotp8")
+position = Vector2(41, 156.00002)
+scale = Vector2(5.45, 5.45)
+texture = ExtResource("2_6lmw4")
 
 [node name="Station_zone" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yotp8")
