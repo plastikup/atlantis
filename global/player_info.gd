@@ -43,6 +43,14 @@ var player_upgrade_levels := {
 
 var shipHealth = upgrade_level_values[upgrade_types.SHIP_MATERIAL][0]
 
+const dps_depth := {
+	0 : 0,
+	1: 2.5,
+	2: 5,
+	3: 10,
+	4: 20
+}
+
 
 var fish_inv := [250,0,0,0]
 var clues_found := [0,0,0,0]

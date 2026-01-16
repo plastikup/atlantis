@@ -143,5 +143,4 @@ func upgrade_btn_pressed() -> void:
 		BuyUtils.buyUpgrade(upgrade_costs[currentPageID][currentLevel + 1])
 		PlayerInfo.player_upgrade_levels[currentPageID] += 1
 		if currentPageID == PlayerInfo.upgrade_types.SHIP_MATERIAL:
-			print("ship")
 			signalHub.ship_upgraded_request()
