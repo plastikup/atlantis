@@ -3,7 +3,7 @@ extends Node
 var depthLevel := 0
 var playerNode
 var radarElements := []
-enum typeLevels {leather, wood, copper, silver, gold }
+enum typeLevels { leather, wood, copper, silver, gold }
 
 const level_to_name = {typeLevels.leather: 'leather', typeLevels.wood: 'wooden', typeLevels.copper: 'copper', typeLevels.silver: 'silver', typeLevels.gold: 'gold' }
 

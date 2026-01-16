@@ -10,6 +10,7 @@ signal hide_shop
 signal switch_scene
 signal ship_repaired
 signal ship_died
+signal switch_scene
 
 func build_request(level) -> void:
 	fishing_spot_br.emit(level)
