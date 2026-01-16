@@ -1,5 +1,6 @@
 extends Node2D
 
+
 const COLORS := [Color.DARK_GREEN, Color.GREEN_YELLOW, Color.YELLOW, Color.ORANGE, Color.RED]
 #const COLORS := [Color.DARK_GREEN, Color.GREEN_YELLOW, Color.TRANSPARENT, Color.TRANSPARENT, Color.TRANSPARENT]
 
@@ -18,3 +19,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	PlayerInfo.shipHealth -= PlayerInfo.dps_depth[PlayerInfo.depthLevel]*delta
 	#print([PlayerInfo.shipHealth, PlayerInfo.depthLevel])
+	$dial.set_needle_angle(float(PlayerInfo.depthLevel) *0.2 +0.1)
