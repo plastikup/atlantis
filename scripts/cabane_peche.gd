@@ -7,7 +7,7 @@ var currentIsMaxed = false
 var fontActiveColor := Color.from_rgba8(255, 255, 255, 255)
 var fontImpossibleColor := Color.from_rgba8(70, 70, 70, 255)
 var fontMaxColor := Color.from_rgba8(250, 211, 0, 255)
-var outpostID : int = 3
+var outpostID : int = 0
 
 const fishImgs = {
 	PlayerInfo.typeLevels.wood: preload("res://assets/fish/wooden.png"),
@@ -22,8 +22,20 @@ func _ready() -> void:
 	upgrade_btn.mouse_exited.connect(upgrade_hover_exit)
 	upgrade_btn.pressed.connect(upgrade_btn_pressed)
 	
-	fish_img.texture = fishImgs[outpostID + 1]
+	signalHub.access_outpost.connect(open_outpost)
+	signalHub.leave_outpost.connect(leave_outpost)
 	
+	fish_img.texture = fishImgs[outpostID + 1]
+	hide()
+	
+
+func open_outpost(level):
+	outpostID = level
+	fish_img.texture = fishImgs[outpostID + 1]
+	show()
+	
+func leave_outpost():
+	hide()
 
 var upgrade_costs := {
 	0: {
@@ -91,4 +103,7 @@ func upgrade_btn_pressed() -> void:
 	var costs = upgrade_costs[outpostID][currentLevel + 1]
 	if BuyUtils.isUpgradePossible(costs):
 		BuyUtils.buyUpgrade(costs)
+		if currentLevel == 0:
+			signalHub.build_request(outpostID)
 		PlayerInfo.outpost_upgrade_levels[outpostID] += 1
+		

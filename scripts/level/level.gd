@@ -7,6 +7,7 @@ const OUTPOST = preload("uid://crpmwhl2n5tgq")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	signalHub.fishing_spot_br.connect(build_outpost)
+	fishing_spot.level = levelID
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,7 +15,8 @@ func _process(delta: float) -> void:
 	pass
 
 func build_outpost(_level) -> void:
-	var outpost_new := OUTPOST.instantiate()
-	add_child(outpost_new)
-	outpost_new.position = fishing_spot.position
-	outpost_new.level = levelID
+	if levelID == _level: 
+		var outpost_new := OUTPOST.instantiate()
+		add_child(outpost_new)
+		outpost_new.position = fishing_spot.position
+		outpost_new.level = levelID

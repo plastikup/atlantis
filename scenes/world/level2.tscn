@@ -18,7 +18,7 @@ use_kinematic_bodies = true
 script = ExtResource("2_rse4b")
 
 [node name="fishing_spot" parent="." instance=ExtResource("3_rse4b")]
-position = Vector2(15360, -6144)
+position = Vector2(14938, -8365)
 
 [node name="Clue" parent="." instance=ExtResource("2_5b02a")]
 position = Vector2(10707, 3259)

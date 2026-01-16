@@ -55,6 +55,7 @@ visible = false
 
 [node name="level3" parent="levels" instance=ExtResource("5_unsus")]
 visible = false
+levelID = 2
 
 [node name="level2" parent="levels" instance=ExtResource("6_djqdj")]
 visible = false
@@ -65,10 +66,10 @@ visible = false
 
 [node name="screen_fader" parent="." instance=ExtResource("4_oqlwg")]
 
-[node name="Station UI" type="CanvasLayer" parent="."]
-
-[node name="Station" parent="Station UI" instance=ExtResource("1_mqjwq")]
-
 [node name="Outpost UI" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="Outpost UI" instance=ExtResource("12_djqdj")]
+
+[node name="Station UI" type="CanvasLayer" parent="."]
+
+[node name="Station" parent="Station UI" instance=ExtResource("1_mqjwq")]

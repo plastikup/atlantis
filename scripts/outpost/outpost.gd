@@ -1,16 +1,9 @@
 extends StaticBody2D
 
-@export var production:= 5.0
 var level := 0 # will be initialized by level
 
 const ACTION:= "interact"
 var is_inbound := false
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if is_inbound:
-		if event.is_action_pressed(ACTION):
-				signalHub.open_shop()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,4 +19,8 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	PlayerInfo.fish_inv[level] += production
+	var upgradeLevel = PlayerInfo.outpost_upgrade_levels[level]
+	var generatedFish = PlayerInfo.upgrade_level_values[PlayerInfo.upgrade_types.AUTO_FISHING_SPEED][upgradeLevel]
+	PlayerInfo.fish_inv[level] += generatedFish
+	print(generatedFish, " of level ", level)
+	print(position)

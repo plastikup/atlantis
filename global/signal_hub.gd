@@ -4,6 +4,8 @@ extends Node
 signal ship_upgraded
 signal fishing_spot_br
 signal fish_some_fish
+signal access_outpost
+signal leave_outpost
 signal found_clue
 signal access_shop
 signal hide_shop
@@ -15,6 +17,12 @@ signal speed_upgrade
 
 func build_request(level) -> void:
 	fishing_spot_br.emit(level)
+	
+func open_outpost(level) -> void:
+	access_outpost.emit(level)
+	
+func exit_outpost() -> void:
+	leave_outpost.emit()
 	
 func fish_some_fish_request(level) -> void:
 	fish_some_fish.emit(level)
