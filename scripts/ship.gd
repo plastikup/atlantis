@@ -35,8 +35,9 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("up", "down") 
 	var turn := Input.get_axis("left", "right")
 	
+	var level = PlayerInfo.player_upgrade_levels[PlayerInfo.upgrade_types.SHIP_MATERIAL]
 	if direction or turn:
-		%AnimatedSprite2D.play(PlayerInfo.level_to_name[PlayerInfo.ship_level])
+		%AnimatedSprite2D.play(PlayerInfo.level_to_name[level])
 		if !$motor.playing:
 			$motor.play()
 	else :

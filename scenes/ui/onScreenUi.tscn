@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bjuksg8m16blh" path="res://scenes/ui/radar.tscn" id="2_x7kbn"]
 [ext_resource type="PackedScene" uid="uid://bpij1da81rhcw" path="res://scenes/barre_vie.tscn" id="3_yyhcv"]
 [ext_resource type="PackedScene" uid="uid://wyvvw1mqud5" path="res://scenes/ui/inputMapper.tscn" id="4_rx5g3"]
-[ext_resource type="Script" path="res://scripts/ui/kPa_dial.gd" id="5_l1rox"]
+[ext_resource type="Script" uid="uid://bggbelifdmian" path="res://scripts/ui/kPa_dial.gd" id="5_l1rox"]
 
 [node name="OnScreenUi" type="CanvasLayer"]
 script = ExtResource("1_x7kbn")
