@@ -21,6 +21,7 @@ func ship_upgraded_request() -> void:
 	print("wow")
 	ship_upgraded.emit()
 func found_clue_rq() -> void:
+	print("found clue")
 	found_clue.emit()
 	
 func open_shop() -> void:

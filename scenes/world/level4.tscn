@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://c1npt13uo7yr7"]
+[gd_scene load_steps=5 format=4 uid="uid://c1npt13uo7yr7"]
 
-[ext_resource type="Script" uid="uid://di6gg41kmcx17" path="res://scripts/level/level_4.gd" id="1_br8on"]
 [ext_resource type="TileSet" uid="uid://b66v35x5jc1tc" path="res://ressources/tilesets/underwaterTileSet.tres" id="1_nbxp7"]
 [ext_resource type="Script" uid="uid://rfuhtccr0qy8" path="res://scripts/tile_map_layer.gd" id="2_br8on"]
 [ext_resource type="PackedScene" uid="uid://dxbd75ad8g2oc" path="res://scenes/fishing_spot.tscn" id="2_yhvtt"]
+[ext_resource type="PackedScene" uid="uid://h44e8moq2xrg" path="res://scenes/clue.tscn" id="4_6c2hu"]
 
 [node name="level4" type="Node2D"]
 metadata/level = 4
@@ -14,4 +14,19 @@ tile_set = ExtResource("1_nbxp7")
 script = ExtResource("2_br8on")
 
 [node name="fishing_spot" parent="." instance=ExtResource("2_yhvtt")]
-position = Vector2(-3080, -458)
+position = Vector2(64579, 36225)
+
+[node name="Clue" parent="." instance=ExtResource("4_6c2hu")]
+position = Vector2(40324, 34558)
+mode = 2
+
+[node name="Clue2" parent="." instance=ExtResource("4_6c2hu")]
+position = Vector2(61951, 25578)
+mode = 1
+
+[node name="Clue3" parent="." instance=ExtResource("4_6c2hu")]
+position = Vector2(36814, 19414)
+prefer_bottom_text = true
+
+[node name="Clue4" parent="." instance=ExtResource("4_6c2hu")]
+position = Vector2(47799, 45100)
