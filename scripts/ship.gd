@@ -38,9 +38,7 @@ func update_ship_material() -> int:
 	return newLevel
 
 func gainFish(level) -> void:
-	print(level)
 	PlayerInfo.fish_inv[level] += 1
-	print(PlayerInfo.fish_inv[level])
 	
 func onSpeedUpgraded() -> void: 
 	var type = PlayerInfo.upgrade_types.SPEED

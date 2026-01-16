@@ -35,19 +35,24 @@ const upgrade_level_values := {
 		1: 1
 	},
 	upgrade_types.AUTO_FISHING_SPEED: {
-		0: 1,
-		1: 3,
-		2: 5,
-		3: 10,
-		4: 15
+		0: 0,
+		1: 1,
+		2: 4,
+		3: 10
 	}
 }
 
 var player_upgrade_levels := {
 	upgrade_types.SHIP_MATERIAL: 0,
 	upgrade_types.SPEED: 0,
-	upgrade_types.SONAR: 0,
-	upgrade_types.AUTO_FISHING_SPEED: 0
+	upgrade_types.SONAR: 0
+}
+
+var outpost_upgrade_levels := {
+	0: 0,
+	1: 0, 
+	2: 0, 
+	3: 0
 }
 
 var shipHealth = upgrade_level_values[upgrade_types.SHIP_MATERIAL][0]
@@ -61,5 +66,5 @@ const dps_depth := {
 }
 
 
-var fish_inv := [1,2,3,4]
+var fish_inv := [200,2000,3000,4000]
 var clues_found := [[0,1],[0,4],[0,3],[0,4],[0,4]]

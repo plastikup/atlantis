@@ -2,25 +2,52 @@ extends Control
 @onready var upgrade_btn := $"image bois/upgrade button"
 @onready var upgrade_popup := $"image bois/CostPopup"
 @onready var upgrade_vitesse_actuelle := $"image bois/stats/couts upgrade/p4/info_vitesse"
-var currentLevel = PlayerInfo.player_upgrade_levels[3]
+@onready var fish_img := $TextureRect
 var currentIsMaxed = false
 var fontActiveColor := Color.from_rgba8(255, 255, 255, 255)
 var fontImpossibleColor := Color.from_rgba8(70, 70, 70, 255)
 var fontMaxColor := Color.from_rgba8(250, 211, 0, 255)
+var outpostID : int = 3
+
+const fishImgs = {
+	PlayerInfo.typeLevels.wood: preload("res://assets/fish/wooden.png"),
+	PlayerInfo.typeLevels.silver: preload("res://assets/fish/silver.png"),
+	PlayerInfo.typeLevels.copper: preload("res://assets/fish/copper.png"),
+	PlayerInfo.typeLevels.gold: preload("res://assets/fish/gold.png")
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	upgrade_btn.mouse_entered.connect(upgrade_hover_enter)
 	upgrade_btn.mouse_exited.connect(upgrade_hover_exit)
 	upgrade_btn.pressed.connect(upgrade_btn_pressed)
+	
+	fish_img.texture = fishImgs[outpostID + 1]
+	
 
 var upgrade_costs := {
-	PlayerInfo.upgrade_types.AUTO_FISHING_SPEED: {
-		1: [[PlayerInfo.typeLevels.wood, 20]],
-		2: [[PlayerInfo.typeLevels.wood, 40], [PlayerInfo.typeLevels.copper, 20]],
-		3: [[PlayerInfo.typeLevels.wood, 80], [PlayerInfo.typeLevels.copper, 40], [PlayerInfo.typeLevels.silver, 20]],
-		4: [[PlayerInfo.typeLevels.wood, 160], [PlayerInfo.typeLevels.copper, 80], [PlayerInfo.typeLevels.silver, 40], [PlayerInfo.typeLevels.gold, 20]]}		
+	0: {
+		1: [[PlayerInfo.typeLevels.wood, 10]],
+		2: [[PlayerInfo.typeLevels.wood, 30]],
+		3: [[PlayerInfo.typeLevels.wood, 70]],
+	},
+	1: {
+		1: [[PlayerInfo.typeLevels.copper, 10], [PlayerInfo.typeLevels.wood, 20]],
+		2: [[PlayerInfo.typeLevels.copper, 30], [PlayerInfo.typeLevels.wood, 50]],
+		3: [[PlayerInfo.typeLevels.copper, 70], [PlayerInfo.typeLevels.wood, 120]],
+	}, 
+	2: {
+		1: [[PlayerInfo.typeLevels.silver, 10], [PlayerInfo.typeLevels.copper, 20], [PlayerInfo.typeLevels.wood, 40]],
+		2: [[PlayerInfo.typeLevels.silver, 30], [PlayerInfo.typeLevels.copper, 50], [PlayerInfo.typeLevels.wood, 80]],
+		3: [[PlayerInfo.typeLevels.silver, 70], [PlayerInfo.typeLevels.copper, 120], [PlayerInfo.typeLevels.wood, 180]],
+	},
+	3: {
+		1: [[PlayerInfo.typeLevels.gold, 10], [PlayerInfo.typeLevels.silver, 20], [PlayerInfo.typeLevels.copper, 40], [PlayerInfo.typeLevels.wood, 80]],
+		2: [[PlayerInfo.typeLevels.gold, 30], [PlayerInfo.typeLevels.silver, 50], [PlayerInfo.typeLevels.copper, 80], [PlayerInfo.typeLevels.wood, 120]],
+		3: [[PlayerInfo.typeLevels.gold, 70], [PlayerInfo.typeLevels.silver, 120], [PlayerInfo.typeLevels.copper, 180], [PlayerInfo.typeLevels.wood, 250]],
 	}
+		
+}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,9 +60,10 @@ func upgrade_hover_exit() -> void:
 	upgrade_popup.fade_out()
 	
 func _load_page() -> void:
+	
 	currentIsMaxed = false
+	var currentLevel = PlayerInfo.outpost_upgrade_levels[outpostID]
 	upgrade_vitesse_actuelle.text = "%d poissons par seconde" % PlayerInfo.upgrade_level_values[3][currentLevel]
-	currentLevel = PlayerInfo.player_upgrade_levels[3]
 	
 	if currentLevel + 1 == len(PlayerInfo.upgrade_level_values[3]):
 		upgrade_btn.text = "NIVEAU MAX"
@@ -44,10 +72,14 @@ func _load_page() -> void:
 		upgrade_popup.fade_out()
 		currentIsMaxed = true
 	else:
-		upgrade_btn.text = "AMÉLIORER"
-		upgrade_popup.set_cost_infos(upgrade_costs[3][currentLevel + 1])
+		if currentLevel == 0:
+			upgrade_btn.text = "CONSTRUIRE"
+		else: 
+			upgrade_btn.text = "AMÉLIORER"
+		var costs = upgrade_costs[outpostID][currentLevel + 1]
+		upgrade_popup.set_cost_infos(costs)
 		
-		if not BuyUtils.isUpgradePossible(upgrade_costs[3][currentLevel + 1]):
+		if not BuyUtils.isUpgradePossible(costs):
 			upgrade_btn.add_theme_color_override("font_color", fontImpossibleColor)
 			upgrade_btn.disabled = true
 		else:
@@ -55,10 +87,8 @@ func _load_page() -> void:
 			upgrade_btn.disabled = false
 			
 func upgrade_btn_pressed() -> void: 
-	currentLevel = PlayerInfo.player_upgrade_levels[3]
-	if BuyUtils.isUpgradePossible(upgrade_costs[3][currentLevel + 1]):
-		BuyUtils.buyUpgrade(upgrade_costs[3][currentLevel + 1])
-		PlayerInfo.player_upgrade_levels[3] += 1
-		if 3 == PlayerInfo.upgrade_types.SHIP_MATERIAL:
-			print("ship")
-			signalHub.ship_upgraded_request()
+	var currentLevel = PlayerInfo.outpost_upgrade_levels[outpostID]
+	var costs = upgrade_costs[outpostID][currentLevel + 1]
+	if BuyUtils.isUpgradePossible(costs):
+		BuyUtils.buyUpgrade(costs)
+		PlayerInfo.outpost_upgrade_levels[outpostID] += 1

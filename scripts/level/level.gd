@@ -2,6 +2,7 @@ extends Node2D
 
 const OUTPOST = preload("uid://crpmwhl2n5tgq")
 @onready var fishing_spot: Area2D = $fishing_spot
+@export var levelID: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,3 +17,4 @@ func build_outpost(_level) -> void:
 	var outpost_new := OUTPOST.instantiate()
 	add_child(outpost_new)
 	outpost_new.position = fishing_spot.position
+	outpost_new.level = levelID

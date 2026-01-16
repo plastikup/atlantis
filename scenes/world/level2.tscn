@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=4 uid="uid://b4dfhnyipfmlt"]
+[gd_scene load_steps=6 format=4 uid="uid://b4dfhnyipfmlt"]
 
+[ext_resource type="Script" uid="uid://di6gg41kmcx17" path="res://scripts/level/level.gd" id="1_lrmpq"]
 [ext_resource type="TileSet" uid="uid://b66v35x5jc1tc" path="res://ressources/tilesets/underwaterTileSet.tres" id="1_uek7m"]
 [ext_resource type="PackedScene" uid="uid://h44e8moq2xrg" path="res://scenes/clue.tscn" id="2_5b02a"]
 [ext_resource type="Script" uid="uid://rfuhtccr0qy8" path="res://scripts/tile_map_layer.gd" id="2_rse4b"]
 [ext_resource type="PackedScene" uid="uid://dxbd75ad8g2oc" path="res://scenes/fishing_spot.tscn" id="3_rse4b"]
 
 [node name="level2" type="Node2D"]
+script = ExtResource("1_lrmpq")
+levelID = 1
 metadata/level = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
