@@ -5,9 +5,9 @@ extends Node
 
 const fishImgs = {
 	PlayerInfo.typeLevels.wood: preload("res://assets/fish/wooden.png"),
-	PlayerInfo.typeLevels.silver: preload("res://assets/fish/wooden.png"),
-	PlayerInfo.typeLevels.copper: preload("res://assets/fish/wooden.png"),
-	PlayerInfo.typeLevels.gold: preload("res://assets/fish/wooden.png")
+	PlayerInfo.typeLevels.silver: preload("res://assets/fish/silver.png"),
+	PlayerInfo.typeLevels.copper: preload("res://assets/fish/copper.png"),
+	PlayerInfo.typeLevels.gold: preload("res://assets/fish/gold.png")
 }
 
 
